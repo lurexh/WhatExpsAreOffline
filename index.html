@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WhatExpsAreOffline — The worst roblox executor stat tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4efe3;--paper-2:#ebe4d4;--paper-3:#e2d9c4;
+  --ink:#16130d;--ink-2:#3a3428;--ink-3:#6b6455;--ink-4:#9a9080;
+  --rule:#d4cbb5;--rule-hi:#b8ad91;
+  --red:#b8232a;--red-2:#8a1a1f;
+  --green:#2d6e34;--amber:#a56d0f;--gold:#c58a17;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;font-size:inherit}
+
+.container{max-width:1200px;margin:0 auto;padding:32px 28px 80px}
+
+header.masthead{padding:20px 0 32px;margin-bottom:36px}
+.masthead-top{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
+  color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--rule);
+  gap:16px;flex-wrap:wrap;text-transform:uppercase
+}
+.masthead-top a{color:var(--red)}
+.masthead-top a:hover{text-decoration:underline}
+h1.masthead-title{
+  font-weight:900;font-size:clamp(2.4rem,7vw,5.2rem);
+  letter-spacing:-.045em;line-height:.96;text-align:center;
+  color:var(--ink);padding:36px 0 12px;margin:0
+}
+h1.masthead-title .accent{color:var(--red)}
+.masthead-tag{
+  text-align:center;font-size:clamp(.95rem,1.6vw,1.05rem);
+  color:var(--ink-3);padding:0 0 26px;border-bottom:1px solid var(--rule)
+}
+
+.discord-hero{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;
+  gap:20px;padding:18px 22px;background:var(--paper-2);
+  border:1px solid var(--ink);border-left:4px solid var(--red);
+  margin-bottom:28px;transition:background .15s
+}
+.discord-hero:hover{background:var(--paper-3)}
+.dh-icon{width:34px;height:34px;color:var(--red);flex-shrink:0}
+.dh-icon svg{width:100%;height:100%;display:block}
+.dh-body{min-width:0;overflow:hidden}
+.dh-title{font-weight:700;font-size:1.05rem;line-height:1.2;color:var(--ink);margin-bottom:2px}
+.dh-sub{font-size:.85rem;color:var(--ink-3)}
+.dh-arrow{font-size:1.3rem;color:var(--red);flex-shrink:0;transition:transform .15s}
+.discord-hero:hover .dh-arrow{transform:translateX(4px)}
+
+.statbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:22px;
+  padding:14px 22px;background:var(--paper-2);border:1px solid var(--rule-hi);
+  margin-bottom:20px;font-family:'JetBrains Mono',monospace;
+  font-size:12px;letter-spacing:.03em
+}
+.stat{display:flex;align-items:baseline;gap:8px}
+.stat .n{font-size:1.35rem;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.stat .lbl{color:var(--ink-3);text-transform:uppercase;font-size:10.5px;letter-spacing:.12em}
+.stat.online .n{color:var(--green)}
+.stat.offline .n{color:var(--ink-3)}
+.stat.flagged .n{color:var(--red)}
+.stat.saved .n{color:var(--gold)}
+.stat-divider{color:var(--rule-hi);font-size:14px}
+
+.controls{
+  display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;
+  padding:14px 0;border-bottom:1px solid var(--rule);margin-bottom:16px
+}
+.search-wrap{
+  display:flex;align-items:center;gap:8px;flex:1;min-width:200px;
+  border-bottom:1px solid var(--ink);padding:4px 0;position:relative
+}
+.search-wrap svg{width:14px;height:14px;color:var(--ink-3);flex-shrink:0}
+.search-wrap input{
+  flex:1;background:transparent;border:none;outline:none;color:var(--ink);
+  font-family:'Inter',sans-serif;font-size:.92rem;padding:4px 0
+}
+.search-wrap input::placeholder{color:var(--ink-4)}
+.kbd{
+  font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;
+  border:1px solid var(--rule-hi);color:var(--ink-3);background:var(--paper);
+  border-radius:3px;letter-spacing:.03em;flex-shrink:0;user-select:none
+}
+.search-wrap input:focus ~ .kbd{opacity:0}
+
+.filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fbtn{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;
+  text-transform:uppercase;padding:5px 11px;border:1px solid var(--rule-hi);
+  color:var(--ink-2);background:transparent;transition:all .12s
+}
+.fbtn:hover{border-color:var(--ink);color:var(--ink)}
+.fbtn.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+section.platform{margin-bottom:52px}
+.section-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;padding-bottom:10px;border-bottom:2px solid var(--ink)
+}
+.section-head .title{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.section-head .count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+
+.col-head{
+  display:grid;grid-template-columns:26px 40px 1fr 110px 110px 70px 70px 130px 24px;
+  gap:14px;align-items:center;padding:12px 4px 10px;border-bottom:1px solid var(--rule);
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-4);user-select:none
+}
+.col-head .sortable{
+  cursor:pointer;transition:color .1s;display:flex;align-items:center;gap:5px;
+  white-space:nowrap;overflow:hidden
+}
+.col-head .sortable:hover{color:var(--ink)}
+.col-head .sortable .arrow{font-size:8px;opacity:0;transition:opacity .1s;color:var(--red)}
+.col-head .sortable.active{color:var(--ink);font-weight:600}
+.col-head .sortable.active .arrow{opacity:1}
+.col-head .r{justify-content:flex-end}
+
+.row{border-bottom:1px solid var(--rule);transition:background .12s}
+.row:hover{background:var(--paper-2)}
+.row.open{background:var(--paper-2);border-bottom-color:var(--ink)}
+.row.pinned{background:rgba(197,138,23,.05)}
+.row.pinned:hover{background:rgba(197,138,23,.09)}
+.row.pinned.open{background:rgba(197,138,23,.09);border-bottom-color:var(--ink)}
+
+.row-main{
+  display:grid;grid-template-columns:26px 40px 1fr 110px 110px 70px 70px 130px 24px;
+  gap:14px;align-items:center;padding:12px 4px;cursor:pointer;user-select:none
+}
+
+.star-cell{
+  display:flex;align-items:center;justify-content:center;
+  width:26px;height:26px;cursor:pointer;transition:transform .12s,color .12s;
+  color:var(--rule-hi)
+}
+.star-cell svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;transition:fill .15s,stroke .15s}
+.star-cell:hover{color:var(--gold);transform:scale(1.15)}
+.star-cell.on{color:var(--gold)}
+.star-cell.on svg{fill:var(--gold);stroke:var(--gold)}
+
+.logo-cell{
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  background:var(--paper-3);border:1px solid var(--rule-hi);overflow:hidden;flex-shrink:0
+}
+.logo-cell img{width:100%;height:100%;object-fit:contain;display:block}
+.logo-cell .initial{font-size:1rem;color:var(--ink-2);font-weight:700}
+
+.name-cell{min-width:0;overflow:hidden}
+.name-cell .name{
+  font-weight:600;font-size:.98rem;color:var(--ink);letter-spacing:-.005em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block
+}
+.name-cell .byline{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;margin-top:1px
+}
+
+.status-cell{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;display:flex;align-items:center;gap:7px;white-space:nowrap
+}
+.status-cell .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--ink-4)}
+.status-cell.online{color:var(--green)}
+.status-cell.online .dot{background:var(--green);box-shadow:0 0 0 2px rgba(45,110,52,.18)}
+.status-cell.offline{color:var(--ink-3)}
+.status-cell.offline .dot{background:var(--ink-4)}
+.status-cell.flagged{color:var(--red)}
+.status-cell.flagged .dot{background:var(--red);box-shadow:0 0 0 2px rgba(184,35,42,.2)}
+
+.num-cell{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-2);text-align:right;white-space:nowrap}
+.num-cell.muted{color:var(--ink-4)}
+.num-cell.hi{color:var(--ink);font-weight:600}
+
+.price-cell{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2);
+  text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.price-cell .free{color:var(--green);font-weight:600;letter-spacing:.05em}
+
+.chev-cell{display:flex;justify-content:center;align-items:center;color:var(--ink-3);transition:transform .2s}
+.row.open .chev-cell{transform:rotate(180deg);color:var(--ink)}
+.version-cell{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+
+.row-detail{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.row.open .row-detail{max-height:2400px}
+.detail-inner{padding:6px 4px 24px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.detail-left,.detail-right{min-width:0}
+
+.desc{
+  font-size:.88rem;line-height:1.7;color:var(--ink-2);
+  max-height:300px;overflow-y:auto;padding-right:10px;white-space:pre-wrap
+}
+.desc::-webkit-scrollbar{width:6px}
+.desc::-webkit-scrollbar-track{background:transparent}
+.desc::-webkit-scrollbar-thumb{background:var(--rule-hi);border-radius:3px}
+.desc strong{color:var(--ink);font-weight:600}
+.desc a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+.desc-empty{color:var(--ink-4);font-style:italic}
+
+.spec-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.spec-table tr{border-bottom:1px solid var(--rule)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td{padding:9px 0;vertical-align:top}
+.spec-table td.k{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-3);
+  letter-spacing:.06em;text-transform:uppercase;width:130px;padding-right:12px
+}
+.spec-table td.v{
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink);
+  word-break:break-word;text-align:right
+}
+.spec-table td.v.ok{color:var(--green);font-weight:600}
+.spec-table td.v.bad{color:var(--red);font-weight:600}
+.spec-table td.v.warn{color:var(--amber);font-weight:600}
+.spec-table td.v.mono-sm{font-size:11px;color:var(--ink-2)}
+
+.bans{
+  margin-top:14px;padding:11px 14px;border-left:3px solid var(--green);
+  background:rgba(45,110,52,.06);font-size:.83rem;color:var(--ink-2);line-height:1.5
+}
+.bans.flagged{border-left-color:var(--red);background:rgba(184,35,42,.06)}
+
+.feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.feat{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;
+  color:var(--ink-2);padding:3px 9px;background:var(--paper);
+  border:1px solid var(--rule-hi);text-transform:uppercase
+}
+
+.links{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
+.link-item{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink);padding-bottom:2px;
+  border-bottom:1px solid var(--ink);transition:color .12s,border-color .12s
+}
+.link-item:hover{color:var(--red);border-color:var(--red)}
+
+.empty{padding:28px;text-align:center;color:var(--ink-3);font-size:.95rem;border:1px dashed var(--rule-hi);background:var(--paper-2);margin-top:12px}
+.error{
+  padding:18px 22px;background:rgba(184,35,42,.06);border:1px solid var(--red);
+  border-left:4px solid var(--red);margin-bottom:28px;font-size:.9rem;color:var(--ink)
+}
+.error .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:6px;font-weight:600}
+.error code{font-family:'JetBrains Mono',monospace;background:var(--paper-3);padding:1px 6px;font-size:.85em}
+
+.skel{height:56px;background:linear-gradient(90deg,var(--paper),var(--paper-2),var(--paper));background-size:200% 100%;animation:sh 1.5s infinite;border-bottom:1px solid var(--rule)}
+@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+footer{
+  margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap;font-size:.85rem;color:var(--ink-3)
+}
+footer .credit a{color:var(--red);border-bottom:1px solid currentColor}
+footer .credit a:hover{color:var(--red-2)}
+footer .discord-footer{
+  display:inline-flex;align-items:center;gap:9px;padding:9px 16px;
+  background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;transition:background .12s
+}
+footer .discord-footer:hover{background:var(--red)}
+footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
+
+@media (max-width:900px){
+  .col-head{display:none}
+  .row-main{grid-template-columns:26px 40px 1fr auto;row-gap:6px;padding:14px 4px}
+  .star-cell{grid-column:1;grid-row:1}
+  .logo-cell{grid-column:2;grid-row:1}
+  .name-cell{grid-column:3;grid-row:1}
+  .price-cell{grid-column:4;grid-row:1}
+  .status-cell{grid-column:3 / 5;grid-row:2}
+  .version-cell,.num-cell,.chev-cell{display:none}
+  .detail-inner{grid-template-columns:1fr;gap:22px}
+  footer{flex-direction:column;text-align:center}
+  .discord-hero{grid-template-columns:auto 1fr;padding:16px 18px;gap:16px}
+  .dh-arrow{display:none}
+  .statbar{gap:16px;padding:12px 16px}
+  .stat .n{font-size:1.15rem}
+}
+@media (max-width:520px){
+  .container{padding:20px 16px 60px}
+  .section-head .title{font-size:1.25rem}
+  .kbd{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header class="masthead">
+  <div class="masthead-top">
+    <span id="dateline">—</span>
+    <span>Data via <a href="https://weao.gg" target="_blank" rel="noopener">weao.gg</a></span>
+  </div>
+  <h1 class="masthead-title">What Exps Are <span class="accent">Offline</span></h1>
+  <p class="masthead-tag">The worst roblox executor stat tracker.</p>
+</header>
+
+<a id="discordHero" class="discord-hero" href="#" target="_blank" rel="noopener">
+  <span class="dh-icon"><svg viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg></span>
+  <span class="dh-body">
+    <span class="dh-title">Join our Discord</span>
+    <span class="dh-sub">Updates, support, and the occasional shitpost.</span>
+  </span>
+  <span class="dh-arrow">→</span>
+</a>
+
+<div class="statbar" id="statbar">
+  <div class="stat online"><span class="n" id="statOnline">—</span><span class="lbl">Online</span></div>
+  <span class="stat-divider">·</span>
+  <div class="stat offline"><span class="n" id="statOffline">—</span><span class="lbl">Offline</span></div>
+  <span class="stat-divider">·</span>
+  <div class="stat flagged"><span class="n" id="statFlagged">—</span><span class="lbl">Banwave Risk</span></div>
+  <span class="stat-divider">·</span>
+  <div class="stat saved"><span class="n" id="statSaved">0</span><span class="lbl">Saved</span></div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="searchInput" placeholder="Search executors…">
+    <span class="kbd">/</span>
+  </div>
+  <div class="filters">
+    <button class="fbtn" data-filter="free">Free</button>
+    <button class="fbtn" data-filter="paid">Paid</button>
+    <button class="fbtn" data-filter="updated">Online</button>
+    <button class="fbtn" data-filter="outdated">Offline</button>
+    <button class="fbtn" data-filter="flagged">Banwave Risk</button>
+    <button class="fbtn" data-filter="saved">Saved</button>
+  </div>
+</div>
+
+<div id="errorBox"></div>
+
+<main id="app">
+  <section class="platform">
+    <div class="section-head">
+      <span class="title">Windows</span>
+      <span class="count" id="count-windows">—</span>
+    </div>
+    <div class="col-head">
+      <span></span><span></span>
+      <span class="sortable" data-sort="name">Executor<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="status">Status<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="version">Version<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="sunc">sUNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="unc">UNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="price">Price<span class="arrow">▲</span></span>
+      <span></span>
+    </div>
+    <div id="grid-windows"></div>
+  </section>
+
+  <section class="platform">
+    <div class="section-head">
+      <span class="title">Mac</span>
+      <span class="count" id="count-mac">—</span>
+    </div>
+    <div class="col-head">
+      <span></span><span></span>
+      <span class="sortable" data-sort="name">Executor<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="status">Status<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="version">Version<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="sunc">sUNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="unc">UNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="price">Price<span class="arrow">▲</span></span>
+      <span></span>
+    </div>
+    <div id="grid-mac"></div>
+  </section>
+
+  <section class="platform">
+    <div class="section-head">
+      <span class="title">Android</span>
+      <span class="count" id="count-android">—</span>
+    </div>
+    <div class="col-head">
+      <span></span><span></span>
+      <span class="sortable" data-sort="name">Executor<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="status">Status<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="version">Version<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="sunc">sUNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="unc">UNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="price">Price<span class="arrow">▲</span></span>
+      <span></span>
+    </div>
+    <div id="grid-android"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="credit">Powered by <a href="https://weao.gg" target="_blank" rel="noopener">weao.gg</a></div>
+  <a id="discordFooter" class="discord-footer" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+    Join the Discord
+  </a>
+</footer>
+
+</div>
+
+<script>
+var CONFIG = {
+  endpoint: 'https://weao.xyz/api/status/exploits',
+  discordInvite: 'https://discord.gg/sJuVndjvJY',
+  customProxy: 'https://weao-proxy.hallchristian112.workers.dev/?url='
+};
+
+function proxyUrls(url){
+  var out = [];
+  if (CONFIG.customProxy) out.push(CONFIG.customProxy + encodeURIComponent(url));
+  out.push(url);
+  out.push('https://corsproxy.io/?url=' + encodeURIComponent(url));
+  out.push('https://api.allorigins.win/raw?url=' + encodeURIComponent(url));
+  out.push('https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url));
+  return out;
+}
+
+async function doFetch(url){
+  var list = proxyUrls(url), err;
+  for (var i = 0; i < list.length; i++){
+    try {
+      var r = await fetch(list[i], {headers:{Accept: 'application/json'}});
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var d = await r.json();
+      if (d && (Array.isArray(d) || typeof d === 'object')) return d;
+    } catch(e){ err = e }
+  }
+  throw err || new Error('fetch failed');
+}
+
+const $ = function(id){ return document.getElementById(id) };
+
+function esc(s){
+  if (s == null) s = '';
+  return String(s).replace(/[&<>"']/g, function(c){
+    if (c === '&') return '&amp;';
+    if (c === '<') return '&lt;';
+    if (c === '>') return '&gt;';
+    if (c === '"') return '&quot;';
+    return '&#39;';
+  });
+}
+
+function slugify(s){
+  return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
+function bucketOf(ex){
+  const p = String(ex.platform || '').toLowerCase();
+  const t = String(ex.extype   || '').toLowerCase();
+  if (p === 'ios' || t === 'iexecutor') return;
+  if (t === 'wexternal' || t === 'external') return;
+  if (p === 'android' || t === 'aexecutor') return 'android';
+  if (p === 'mac' || p === 'macos' || t === 'mexecutor') return 'mac';
+  if (p === 'windows' && t === 'wexecutor') return 'windows';
+}
+
+function statusOf(ex){
+  if (ex.possibleBanwave) return {cls:'flagged', label:'Banwave Risk'};
+  if (ex.updateStatus)    return {cls:'online',  label:'Online'};
+  return                         {cls:'offline', label:'Offline'};
+}
+
+function banOf(ex){
+  var reason = ex.detectionReason && ex.detectionReason.trim();
+  if (ex.possibleBanwave) return {text: reason || 'Flagged for possible banwave activity.', flagged: true};
+  if (reason) return {text: reason, flagged: false};
+  if (ex.detected) return {text:'No active bans. Previously seen in a past banwave.', flagged:false};
+  return {text:'No bans on record.', flagged:false};
+}
+
+function rank(ex){
+  if (ex.possibleBanwave) return 2;
+  if (ex.updateStatus) return 0;
+  return 1;
+}
+
+function priceNum(ex){
+  if (ex.free) return 0;
+  var m = String(ex.cost || '').match(/\$?\s*([\d.]+)/);
+  return m ? parseFloat(m[1]) : 999999;
+}
+
+function verNum(v){ return String(v || '0').replace(/^v/i,'').trim() }
+
+function md(s){
+  if (!s) return '';
+  var out = esc(s);
+  out = out.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return out;
+}
+
+var S = {
+  data: [],
+  fav: new Set(loadFav()),
+  filters: new Set(),
+  q: '',
+  sortKey: null,
+  sortDir: 'asc',
+  openSlug: null
+};
+
+function loadFav(){
+  try { return JSON.parse(localStorage.getItem('weao_favorites') || '[]') }
+  catch(e){ return [] }
+}
+function saveFav(){
+  try { localStorage.setItem('weao_favorites', JSON.stringify([...S.fav])) } catch(e){}
+}
+
+var STAR = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+
+function featHTML(ex){
+  var list = [
+    ['Decompiler', ex.decompiler],
+    ['Multi-Inject', ex.multiInject],
+    ['RakNet', ex.raknet],
+    ['Key System', ex.keysystem],
+    ['Client Mod Bypass', ex.clientmods],
+    ['UNC Support', ex.uncStatus],
+    ['Element Certified', ex.elementCertified]
+  ].filter(function(p){ return p[1] === true });
+
+  if (!list.length) return '';
+  var out = '';
+  for (var i = 0; i < list.length; i++) out += '<span class="feat">' + esc(list[i][0]) + '</span>';
+  return '<div class="feats">' + out + '</div>';
+}
+
+function linkHTML(ex){
+  var a = [];
+  if (ex.websitelink)  a.push('<a class="link-item" href="'+esc(ex.websitelink)+'" target="_blank" rel="noopener">Website</a>');
+  if (ex.discordlink)  a.push('<a class="link-item" href="'+esc(ex.discordlink)+'" target="_blank" rel="noopener">Discord</a>');
+  if (ex.purchaselink) a.push('<a class="link-item" href="'+esc(ex.purchaselink)+'" target="_blank" rel="noopener">Purchase</a>');
+  if (!a.length) return '';
+  return '<div class="links">' + a.join('') + '</div>';
+}
+
+function rowHTML(ex){
+  var free    = !!ex.free;
+  var st      = statusOf(ex);
+  var ban     = banOf(ex);
+  var logo    = ex.slug && ex.slug.logo;
+  var initial = String(ex.title || '?').trim().charAt(0).toUpperCase();
+  var owner   = ex.slug && ex.slug.owner;
+  var sunc    = ex.suncPercentage;
+  var unc     = ex.uncPercentage;
+  var slug    = slugify(ex.title);
+  var isFav   = S.fav.has(slug);
+  var isFlag  = st.cls === 'flagged';
+  var isOpen  = S.openSlug === slug;
+
+  var logoCell = logo
+    ? '<div class="logo-cell"><img src="'+esc(logo)+'" alt="" loading="lazy" onerror="this.parentNode.innerHTML=\'<span class=&quot;initial&quot;>'+esc(initial)+'</span>\'"></div>'
+    : '<div class="logo-cell"><span class="initial">'+esc(initial)+'</span></div>';
+
+  var priceHTML = free ? '<span class="free">Free</span>' : esc(ex.cost || '—');
+
+  var rows = '';
+  rows += '<tr><td class="k">Status</td><td class="v '+(st.cls==='online'?'ok':st.cls==='flagged'?'bad':'')+'">'+st.label+'</td></tr>';
+  if (sunc != null) rows += '<tr><td class="k">sUNC</td><td class="v">'+sunc+'%</td></tr>';
+  if (unc  != null) rows += '<tr><td class="k">UNC</td><td class="v">'+unc+'%</td></tr>';
+  rows += '<tr><td class="k">Price</td><td class="v">'+esc(ex.cost || (free ? 'Free' : '—'))+'</td></tr>';
+  if (ex.updatedDate) rows += '<tr><td class="k">Updated</td><td class="v">'+esc(ex.updatedDate)+'</td></tr>';
+  if (ex.rbxversion)  rows += '<tr><td class="k">Build</td><td class="v mono-sm">'+esc(ex.rbxversion)+'</td></tr>';
+  if (owner)          rows += '<tr><td class="k">Dev</td><td class="v">'+esc(owner)+'</td></tr>';
+
+  var cls = 'row';
+  if (isFav) cls += ' pinned';
+  if (isOpen) cls += ' open';
+
+  return '<div class="'+cls+'" data-slug="'+esc(slug)+'" data-free="'+free+'" data-updated="'+(!!ex.updateStatus)+'" data-flagged="'+isFlag+'" data-saved="'+isFav+'" data-name="'+esc(String(ex.title||'').toLowerCase())+'">'
+    + '<div class="row-main">'
+    +   '<span class="star-cell '+(isFav?'on':'')+'" data-star="'+esc(slug)+'">'+STAR+'</span>'
+    +   logoCell
+    +   '<div class="name-cell">'
+    +     '<span class="name">'+esc(ex.title || 'Unknown')+'</span>'
+    +     '<span class="byline">'+(owner ? 'by '+esc(owner) : '&nbsp;')+'</span>'
+    +   '</div>'
+    +   '<span class="status-cell '+st.cls+'"><span class="dot"></span>'+st.label+'</span>'
+    +   '<span class="version-cell">v'+esc(ex.version || '?')+'</span>'
+    +   '<span class="num-cell '+(sunc==null?'muted':'hi')+'">'+(sunc==null?'—':sunc+'%')+'</span>'
+    +   '<span class="num-cell '+(unc==null?'muted':'hi')+'">'+(unc==null?'—':unc+'%')+'</span>'
+    +   '<span class="price-cell">'+priceHTML+'</span>'
+    +   '<span class="chev-cell"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>'
+    + '</div>'
+    + '<div class="row-detail">'
+    +   '<div class="detail-inner">'
+    +     '<div class="detail-left">'
+    +       (ex.slug && ex.slug.fullDescription && ex.slug.fullDescription.trim()
+              ? '<div class="desc">'+md(ex.slug.fullDescription)+'</div>'
+              : '<p class="desc desc-empty">No description yet.</p>')
+    +     '</div>'
+    +     '<div class="detail-right">'
+    +       '<table class="spec-table">'+rows+'</table>'
+    +       '<div class="bans '+(ban.flagged?'flagged':'')+'">'+esc(ban.text)+'</div>'
+    +       featHTML(ex)
+    +     '</div>'
+    +   '</div>'
+    +   linkHTML(ex)
+    + '</div>'
+    + '</div>';
+}
+
+function sorter(a, b){
+  var fa = S.fav.has(slugify(a.title)) ? 0 : 1;
+  var fb = S.fav.has(slugify(b.title)) ? 0 : 1;
+  if (fa !== fb) return fa - fb;
+
+  var d = S.sortDir === 'asc' ? 1 : -1;
+
+  switch (S.sortKey){
+    case 'name':    return d * String(a.title||'').localeCompare(String(b.title||''));
+    case 'status':  return d * (rank(a) - rank(b));
+    case 'version': return d * verNum(a.version).localeCompare(verNum(b.version), undefined, {numeric:true});
+    case 'sunc':    return d * ((a.suncPercentage == null ? -1 : a.suncPercentage) - (b.suncPercentage == null ? -1 : b.suncPercentage));
+    case 'unc':     return d * ((a.uncPercentage  == null ? -1 : a.uncPercentage)  - (b.uncPercentage  == null ? -1 : b.uncPercentage));
+    case 'price':   return d * (priceNum(a) - priceNum(b));
+  }
+
+  var au = a.updateStatus ? 0 : 1;
+  var bu = b.updateStatus ? 0 : 1;
+  if (au !== bu) return au - bu;
+  var ai = typeof a.index === 'number' ? a.index : 999;
+  var bi = typeof b.index === 'number' ? b.index : 999;
+  if (ai !== bi) return ai - bi;
+  return String(a.title||'').localeCompare(String(b.title||''));
+}
+
+function keep(ex){
+  var n = String(ex.title || '').toLowerCase();
+  if (S.q && n.indexOf(S.q) === -1) return false;
+  var free    = !!ex.free;
+  var updated = !!ex.updateStatus;
+  var flagged = !!ex.possibleBanwave;
+  var saved   = S.fav.has(slugify(ex.title));
+
+  var it = S.filters.values(), next;
+  while (!(next = it.next()).done){
+    var f = next.value;
+    if (f === 'free'     && !free)    return false;
+    if (f === 'paid'     && free)     return false;
+    if (f === 'updated'  && !updated) return false;
+    if (f === 'outdated' && updated)  return false;
+    if (f === 'flagged'  && !flagged) return false;
+    if (f === 'saved'    && !saved)   return false;
+  }
+  return true;
+}
+
+function statbar(){
+  var on = 0, off = 0, flag = 0;
+  for (var i = 0; i < S.data.length; i++){
+    var e = S.data[i];
+    if (e.possibleBanwave) flag++;
+    else if (e.updateStatus) on++;
+    else off++;
+  }
+  $('statOnline').textContent  = on;
+  $('statOffline').textContent = off;
+  $('statFlagged').textContent = flag;
+  $('statSaved').textContent   = S.fav.size;
+}
+
+function sortHeaders(){
+  var hs = document.querySelectorAll('.col-head .sortable');
+  for (var i = 0; i < hs.length; i++){
+    var h  = hs[i];
+    var k  = h.getAttribute('data-sort');
+    var on = S.sortKey === k;
+    h.classList.toggle('active', on);
+    var ar = h.querySelector('.arrow');
+    if (!ar) continue;
+    ar.textContent = !on ? '▲' : (S.sortDir === 'asc' ? '▲' : '▼');
+  }
+}
+
+function wireRows(){
+  document.querySelectorAll('.row-main').forEach(function(main){
+    main.addEventListener('click', function(e){
+      if (e.target.closest('.star-cell')) return;
+      var row  = main.closest('.row');
+      var slug = row.getAttribute('data-slug');
+      S.openSlug = S.openSlug === slug ? null : slug;
+      document.querySelectorAll('.row.open').forEach(function(r){ r.classList.remove('open') });
+      if (S.openSlug) row.classList.add('open');
+    });
+  });
+
+  document.querySelectorAll('.star-cell').forEach(function(star){
+    star.addEventListener('click', function(e){
+      e.stopPropagation();
+      var slug = star.getAttribute('data-star');
+      if (S.fav.has(slug)) S.fav.delete(slug);
+      else S.fav.add(slug);
+      saveFav();
+      render();
+    });
+  });
+}
+
+function render(){
+  var w = [], m = [], a = [];
+  for (var i = 0; i < S.data.length; i++){
+    var ex = S.data[i];
+    if (!keep(ex)) continue;
+    var b = bucketOf(ex);
+    if      (b === 'windows') w.push(ex);
+    else if (b === 'mac')     m.push(ex);
+    else if (b === 'android') a.push(ex);
+  }
+
+  w.sort(sorter);
+  m.sort(sorter);
+  a.sort(sorter);
+
+  var pairs = [['windows',w], ['mac',m], ['android',a]];
+  for (var j = 0; j < pairs.length; j++){
+    var id   = pairs[j][0];
+    var list = pairs[j][1];
+    $('count-' + id).textContent = list.length;
+    if (!list.length){
+      $('grid-' + id).innerHTML = '<div class="empty">Nothing here.</div>';
+      continue;
+    }
+    var html = '';
+    for (var k = 0; k < list.length; k++) html += rowHTML(list[k]);
+    $('grid-' + id).innerHTML = html;
+  }
+
+  statbar();
+  sortHeaders();
+  wireRows();
+}
+
+function wireFilters(){
+  document.querySelectorAll('.fbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter');
+      if (S.filters.has(f)){
+        S.filters.delete(f);
+        btn.classList.remove('active');
+      } else {
+        var pairs = {free:'paid', paid:'free', updated:'outdated', outdated:'updated'};
+        if (pairs[f]){
+          S.filters.delete(pairs[f]);
+          var other = document.querySelector('.fbtn[data-filter="'+pairs[f]+'"]');
+          if (other) other.classList.remove('active');
+        }
+        S.filters.add(f);
+        btn.classList.add('active');
+      }
+      render();
+    });
+  });
+
+  $('searchInput').addEventListener('input', function(e){
+    S.q = e.target.value.trim().toLowerCase();
+    render();
+  });
+}
+
+function wireSorts(){
+  document.querySelectorAll('.col-head .sortable').forEach(function(h){
+    h.addEventListener('click', function(){
+      var k = h.getAttribute('data-sort');
+      if (S.sortKey === k){
+        S.sortDir = S.sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        S.sortKey = k;
+        S.sortDir = (k === 'sunc' || k === 'unc') ? 'desc' : 'asc';
+      }
+      render();
+    });
+  });
+}
+
+function wireKeys(){
+  document.addEventListener('keydown', function(e){
+    var tag    = (e.target.tagName || '').toLowerCase();
+    var typing = tag === 'input' || tag === 'textarea' || e.target.isContentEditable;
+    if (e.key === '/' && !typing){
+      e.preventDefault();
+      $('searchInput').focus();
+      $('searchInput').select();
+    }
+    if (e.key === 'Escape' && tag === 'input') $('searchInput').blur();
+  });
+}
+
+(async function(){
+  $('discordHero').href   = CONFIG.discordInvite;
+  $('discordFooter').href = CONFIG.discordInvite;
+
+  var d  = new Date();
+  var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  $('dateline').textContent = mo[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+
+  ['windows','mac','android'].forEach(function(p){
+    var s = '';
+    for (var i = 0; i < 3; i++) s += '<div class="skel"></div>';
+    $('grid-' + p).innerHTML = s;
+    $('count-' + p).textContent = '…';
+  });
+
+  wireFilters();
+  wireSorts();
+  wireKeys();
+
+  try {
+    var raw  = await doFetch(CONFIG.endpoint);
+    var list = Array.isArray(raw) ? raw : (raw.exploits || []);
+    if (!list.length) throw new Error('Empty payload from WEAO');
+    S.data = list;
+    render();
+  } catch(err){
+    console.error(err);
+    $('errorBox').innerHTML = '<div class="error"><span class="lbl">Error</span>Couldn\'t load executor data — '
+      + esc(err.message || String(err))
+      + '. Check <code>CONFIG.customProxy</code>.</div>';
+    ['windows','mac','android'].forEach(function(p){
+      $('grid-' + p).innerHTML = '<div class="empty">Data unavailable.</div>';
+      $('count-' + p).textContent = '0';
+    });
+    $('statOnline').textContent  = '—';
+    $('statOffline').textContent = '—';
+    $('statFlagged').textContent = '—';
+  }
+})();
+</script>
+</body>
+  </html>
