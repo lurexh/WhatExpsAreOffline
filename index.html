@@ -112,6 +112,7 @@ section.platform{margin-bottom:52px}
   gap:16px;padding-bottom:10px;border-bottom:2px solid var(--ink)
 }
 .section-head .title{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.section-head .title .dim{color:var(--ink-4);font-weight:600;font-size:1rem;margin-left:8px;letter-spacing:0}
 .section-head .count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-3);letter-spacing:.06em}
 
 .col-head{
@@ -372,6 +373,24 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 
   <section class="platform">
     <div class="section-head">
+      <span class="title">Windows Externals<span class="dim">external</span></span>
+      <span class="count" id="count-external">—</span>
+    </div>
+    <div class="col-head">
+      <span></span><span></span>
+      <span class="sortable" data-sort="name">Executor<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="status">Status<span class="arrow">▲</span></span>
+      <span class="sortable" data-sort="version">Version<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="sunc">sUNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="unc">UNC<span class="arrow">▲</span></span>
+      <span class="sortable r" data-sort="price">Price<span class="arrow">▲</span></span>
+      <span></span>
+    </div>
+    <div id="grid-external"></div>
+  </section>
+
+  <section class="platform">
+    <div class="section-head">
       <span class="title">Mac</span>
       <span class="count" id="count-mac">—</span>
     </div>
@@ -468,7 +487,7 @@ function bucketOf(ex){
   const p = String(ex.platform || '').toLowerCase();
   const t = String(ex.extype   || '').toLowerCase();
   if (p === 'ios' || t === 'iexecutor') return;
-  if (t === 'wexternal' || t === 'external') return;
+  if (t === 'wexternal' || t === 'external') return 'external';
   if (p === 'android' || t === 'aexecutor') return 'android';
   if (p === 'mac' || p === 'macos' || t === 'mexecutor') return 'mac';
   if (p === 'windows' && t === 'wexecutor') return 'windows';
@@ -720,21 +739,23 @@ function wireRows(){
 }
 
 function render(){
-  var w = [], m = [], a = [];
+  var w = [], x = [], m = [], a = [];
   for (var i = 0; i < S.data.length; i++){
     var ex = S.data[i];
     if (!keep(ex)) continue;
     var b = bucketOf(ex);
-    if      (b === 'windows') w.push(ex);
-    else if (b === 'mac')     m.push(ex);
-    else if (b === 'android') a.push(ex);
+    if      (b === 'windows')  w.push(ex);
+    else if (b === 'external') x.push(ex);
+    else if (b === 'mac')      m.push(ex);
+    else if (b === 'android')  a.push(ex);
   }
 
   w.sort(sorter);
+  x.sort(sorter);
   m.sort(sorter);
   a.sort(sorter);
 
-  var pairs = [['windows',w], ['mac',m], ['android',a]];
+  var pairs = [['windows',w], ['external',x], ['mac',m], ['android',a]];
   for (var j = 0; j < pairs.length; j++){
     var id   = pairs[j][0];
     var list = pairs[j][1];
@@ -816,7 +837,7 @@ function wireKeys(){
   var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   $('dateline').textContent = mo[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 
-  ['windows','mac','android'].forEach(function(p){
+  ['windows','external','mac','android'].forEach(function(p){
     var s = '';
     for (var i = 0; i < 3; i++) s += '<div class="skel"></div>';
     $('grid-' + p).innerHTML = s;
@@ -838,7 +859,7 @@ function wireKeys(){
     $('errorBox').innerHTML = '<div class="error"><span class="lbl">Error</span>Couldn\'t load executor data — '
       + esc(err.message || String(err))
       + '. Check <code>CONFIG.customProxy</code>.</div>';
-    ['windows','mac','android'].forEach(function(p){
+    ['windows','external','mac','android'].forEach(function(p){
       $('grid-' + p).innerHTML = '<div class="empty">Data unavailable.</div>';
       $('count-' + p).textContent = '0';
     });
@@ -849,4 +870,4 @@ function wireKeys(){
 })();
 </script>
 </body>
-  </html>
+</html>
