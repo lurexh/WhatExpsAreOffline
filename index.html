@@ -274,9 +274,10 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 .banwave-banner.safe .bw-dot{background:var(--green)}
 .banwave-banner strong{font-weight:800;letter-spacing:.06em}
 @keyframes bwpulse{0%,100%{opacity:1}50%{opacity:.35}}
-.row.row-disabled{opacity:.55}
+.row.row-disabled{opacity:.55;cursor:not-allowed}
 .row.row-disabled:hover{opacity:.85}
 .row.row-disabled.open{opacity:1}
+.row.row-disabled .row-main{cursor:not-allowed}
 .row.row-disabled .name{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
 .row.row-disabled .logo-cell img{filter:grayscale(1)}
 .disabled-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 6px;margin-left:6px;vertical-align:2px;text-decoration:none}
@@ -1051,6 +1052,7 @@ function wireRows(){
       main.addEventListener('click', function(e){
         if (e.target.closest('.star-cell') || e.target.closest('.copy-cell')) return;
         var row = main.closest('.row');
+        if (row.getAttribute('data-disabled') === 'true') return;
         var slug = row.getAttribute('data-slug');
         var wasOpen = row.classList.contains('open');
         S.cheats.openSlug = wasOpen ? null : slug;
