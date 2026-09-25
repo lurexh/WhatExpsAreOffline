@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <style>
 :root{--paper:#f4efe3;--paper-2:#ebe4d4;--paper-3:#e2d9c4;--ink:#16130d;--ink-2:#3a3428;--ink-3:#6b6455;--ink-4:#9a9080;--rule:#d4cbb5;--rule-hi:#b8ad91;--red:#b8232a;--red-2:#8a1a1f;--green:#2d6e34;--amber:#a56d0f;--gold:#c58a17}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -278,7 +279,7 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 .row.row-disabled.open{opacity:1}
 .row.row-disabled .name{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
 .row.row-disabled .logo-cell img{filter:grayscale(1)}
-.disabled-badge{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 6px;margin-left:6px;vertical-align:2px}
+.disabled-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 6px;margin-left:6px;vertical-align:2px;text-decoration:none}
 .disabled-note{margin:0 0 14px;padding:12px 16px;background:rgba(184,35,42,.08);border-left:3px solid var(--red);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red-2);line-height:1.55}
 .disabled-note strong{letter-spacing:.06em}
 .ann-banner{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:1px solid;margin-bottom:14px;cursor:pointer;transition:background .15s;font-family:'JetBrains Mono',monospace}
@@ -1963,20 +1964,49 @@ function supabaseHeaders(){
   return { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + SUPABASE_ANON, Accept: 'application/json' };
 }
 
-async function loadAdminData(){
+async function loadDisabled(){
   try {
-    var r1 = await fetch(SUPABASE_URL + '/rest/v1/disabled_executors?select=slug,reason,disabled_at', { headers: supabaseHeaders() });
-    if (r1.ok){
-      var rows = await r1.json();
-      for (var i = 0; i < rows.length; i++) ADMIN.disabled[rows[i].slug] = rows[i].reason;
-    }
-
-    var r2 = await fetch(SUPABASE_URL + '/rest/v1/announcements?select=*&active=eq.true&order=created_at.desc', { headers: supabaseHeaders() });
-    if (r2.ok) ADMIN.announcements = await r2.json();
-
-    renderAnnouncements();
+    var r = await fetch(SUPABASE_URL + '/rest/v1/disabled_executors?select=slug,reason,disabled_at', { headers: supabaseHeaders() });
+    if (!r.ok) return;
+    var rows = await r.json();
+    ADMIN.disabled = {};
+    for (var i = 0; i < rows.length; i++) ADMIN.disabled[rows[i].slug] = rows[i].reason;
     if (S.cheats.data.length) renderCheats();
-  } catch(e){ console.warn('[admin]', e) }
+  } catch(e){ console.warn('[disabled]', e) }
+}
+
+async function loadAnnouncements(){
+  try {
+    var r = await fetch(SUPABASE_URL + '/rest/v1/announcements?select=*&active=eq.true&order=created_at.desc', { headers: supabaseHeaders() });
+    if (!r.ok) return;
+    ADMIN.announcements = await r.json();
+    renderAnnouncements();
+    if (S.page === 'news') renderNewsPage();
+  } catch(e){ console.warn('[announcements]', e) }
+}
+
+async function loadAdminData(){
+  await Promise.all([loadDisabled(), loadAnnouncements()]);
+}
+
+var sbLive = null;
+try {
+  if (window.supabase && window.supabase.createClient){
+    sbLive = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+      auth: { persistSession: false, autoRefreshToken: false },
+      realtime: { params: { eventsPerSecond: 5 } }
+    });
+  }
+} catch(e){ console.warn('[realtime init]', e) }
+
+function subscribeRealtime(){
+  if (!sbLive) return;
+  sbLive
+    .channel('whatweao-live')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'disabled_executors' }, function(){ loadDisabled(); })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'announcements' }, function(){ loadAnnouncements(); })
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'snapshots' }, function(){ loadBanwaveState(); })
+    .subscribe();
 }
 
 function renderAnnouncements(){
@@ -2118,6 +2148,7 @@ function renderBanwaveBanner(){
   loadCheats().then(function(){ renderCompareTray() });
   loadBanwaveState();
   loadAdminData();
+  subscribeRealtime();
 })();
 </script>
 </body>
