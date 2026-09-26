@@ -1,11 +1,7 @@
 {
-  "buildCommand": null,
-  "outputDirectory": "public",
   "rewrites": [
-    {
-      "source": "/((?!api/|data/|docs/|.*\\..*).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/api/(.*)", "destination": "/public/api/$1" },
+    { "source": "/((?!api/|data/|public/|.*\\..*).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
