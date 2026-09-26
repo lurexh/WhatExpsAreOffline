@@ -28,6 +28,6 @@ jobs:
         run: |
           git config user.name "weao-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add api/
+          git add public/api/
           git diff --staged --quiet || git commit -m "api refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
