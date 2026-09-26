@@ -13,7 +13,6 @@ const SB_EXECUTORS = 'https://scriptblox.com/api/executor/list';
 const RETENTION_DAYS = 30;
 const SITE_URL = 'https://weaoffline.vercel.app';
 
-// ---------- helpers ----------
 function slugify(s){
   return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -32,7 +31,6 @@ function escapeHtml(s){
   }[c]));
 }
 
-// ---------- fetchers ----------
 async function fetchWeao(){
   for (const url of WEAO_URLS){
     try {
@@ -58,7 +56,6 @@ async function fetchSnapshots(){
   } catch(e){ return []; }
 }
 
-// ---------- normalize + merge (same as before) ----------
 function normalizeWeao(ex){
   return {
     title: ex.title, slug: slugify(ex.title), version: ex.version,
@@ -208,7 +205,6 @@ function applyOverrides(list, overrides){
   return list;
 }
 
-// ---------- public API shape ----------
 function publicShape(ex){
   const status = ex.possibleBanwave ? 'banwave-risk'
                : ex.updateStatus    ? 'online'
@@ -259,7 +255,6 @@ function publicShape(ex){
   };
 }
 
-// ---------- banwave history ----------
 function collectFlagged(data){
   if (!Array.isArray(data)) return [];
   const out = [];
@@ -304,8 +299,7 @@ function computeBanwaves(snapshots){
     current.durationMs = Date.now() - new Date(current.startedAt).getTime();
     sessions.push(current);
   }
-
-  // newest first
+  
   return sessions.reverse();
 }
 
@@ -326,7 +320,6 @@ function buildStatus(list){
   };
 }
 
-// ---------- OG shell for Discord previews ----------
 function writeOgShell(ex, dirPath){
   const statusLabel = ex.status === 'online' ? 'Online'
                     : ex.status === 'banwave-risk' ? 'Banwave Risk'
@@ -375,7 +368,6 @@ function writeOgShell(ex, dirPath){
   fs.writeFileSync(path.join(dirPath, 'index.html'), html);
 }
 
-// ---------- main ----------
 async function main(){
   if (!SUPA || !KEY) throw new Error('missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
 
@@ -409,7 +401,6 @@ async function main(){
 
   const publicList = merged.map(publicShape);
 
-  // ---- executors.json ----
   const bundle = {
     updatedAt: new Date().toISOString(),
     version: 1,
@@ -419,22 +410,18 @@ async function main(){
   };
   fs.writeFileSync(path.join(apiDir, 'executors.json'), JSON.stringify(bundle, null, 2));
 
-  // ---- per-executor files ----
   for (const ex of publicList){
     fs.writeFileSync(path.join(execDir, ex.slug + '.json'), JSON.stringify(ex, null, 2));
   }
 
-  // ---- meta.json ----
   fs.writeFileSync(path.join(apiDir, 'meta.json'), JSON.stringify({
     updatedAt: bundle.updatedAt,
     count: publicList.length,
     version: 1
   }, null, 2));
 
-  // ---- status.json ----
   fs.writeFileSync(path.join(apiDir, 'status.json'), JSON.stringify(buildStatus(publicList), null, 2));
 
-  // ---- banwaves.json ----
   const snapshots = await fetchSnapshots();
   const banwaves = computeBanwaves(snapshots);
   fs.writeFileSync(path.join(apiDir, 'banwaves.json'), JSON.stringify({
@@ -445,7 +432,6 @@ async function main(){
 
   console.log(`api: executors.json + ${publicList.length} per-executor + meta + status + ${banwaves.length} banwaves`);
 
-  // ---- OG shells ----
   let ogCount = 0;
   for (const ex of publicList){
     writeOgShell(ex, path.join(process.cwd(), 'public', ex.slug));
@@ -453,7 +439,6 @@ async function main(){
   }
   console.log(`og: wrote ${ogCount} shells`);
 
-  // ---- snapshot insert ----
   const flagged = merged.filter(e => e.possibleBanwave);
   const snapshot = {
     banwave_active: flagged.length > 0,
@@ -474,7 +459,6 @@ async function main(){
   if (!ins.ok) throw new Error('snapshot insert failed: ' + ins.status);
   console.log(`snapshot: ${merged.length} execs, ${flagged.length} flagged`);
 
-  // ---- prune ----
   const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400 * 1000).toISOString();
   const del = await fetch(SUPA + '/rest/v1/snapshots?taken_at=lt.' + encodeURIComponent(cutoff), {
     method: 'DELETE',
