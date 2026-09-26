@@ -188,8 +188,7 @@ function applyOverrides(list, overrides){
   return list;
 }
 
-// re-shape a merged executor into something a consumer API would want.
-// flatter, cleaner field names than what weao/scriptblox send.
+// re-shape into clean field names for public consumption
 function publicShape(ex){
   const status = ex.possibleBanwave ? 'banwave-risk'
                : ex.updateStatus    ? 'online'
@@ -243,7 +242,7 @@ function publicShape(ex){
 async function main(){
   if (!SUPA || !KEY) throw new Error('missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
 
-  // 1. load overrides
+  // load overrides
   let overrides = {};
   const overridePath = path.join(process.cwd(), 'data', 'overrides.json');
   if (fs.existsSync(overridePath)){
@@ -251,7 +250,7 @@ async function main(){
     catch(e){ console.warn('overrides.json parse failed, ignoring:', e.message); }
   }
 
-  // 2. fetch both sources
+  // fetch sources
   const [weaoList, sbRaw] = await Promise.all([
     fetchWeao(),
     fetch(SB_EXECUTORS).then(r => r.ok ? r.json() : null).catch(() => null)
@@ -264,12 +263,12 @@ async function main(){
 
   console.log(`sources: weao=${weaoList.length} scriptblox=${sbList.length}`);
 
-  // 3. merge + apply overrides
+  // merge + apply overrides
   const merged = applyOverrides(mergeExecutors(weaoList, sbList), overrides);
   console.log(`merged: ${merged.length} executors`);
 
-  // 4. public API — write one bundle + one file per executor
-  const apiDir = path.join(process.cwd(), 'api');
+  // public API — everything goes in public/api/ so vercel serves it as static
+  const apiDir = path.join(process.cwd(), 'public', 'api');
   const execDir = path.join(apiDir, 'executors');
 
   fs.mkdirSync(execDir, { recursive: true });
@@ -296,7 +295,6 @@ async function main(){
     );
   }
 
-  // small meta file for consumers to check for freshness cheaply
   fs.writeFileSync(
     path.join(apiDir, 'meta.json'),
     JSON.stringify({
@@ -306,9 +304,9 @@ async function main(){
     }, null, 2)
   );
 
-  console.log(`api: wrote api/executors.json + ${publicList.length} per-executor files + meta.json`);
+  console.log(`api: wrote public/api/executors.json + ${publicList.length} per-executor files + meta.json`);
 
-  // 5. also insert a snapshot row for history tracking
+  // snapshot row for history
   const flagged = merged.filter(e => e.possibleBanwave);
   const snapshot = {
     banwave_active: flagged.length > 0,
@@ -330,7 +328,7 @@ async function main(){
   if (!ins.ok) throw new Error('snapshot insert failed: ' + ins.status);
   console.log(`snapshot: ${merged.length} execs, ${flagged.length} flagged`);
 
-  // 6. prune old snapshots
+  // prune
   const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400 * 1000).toISOString();
   const del = await fetch(SUPA + '/rest/v1/snapshots?taken_at=lt.' + encodeURIComponent(cutoff), {
     method: 'DELETE',
