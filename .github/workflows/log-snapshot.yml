@@ -3,6 +3,10 @@ name: Refresh API
 on:
   schedule:
     - cron: '0 */6 * * *'
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/api/**'
   workflow_dispatch:
 
 permissions:
