@@ -11,7 +11,9 @@ const WEAO_URLS = [
 ];
 const SB_EXECUTORS = 'https://scriptblox.com/api/executor/list';
 const RETENTION_DAYS = 30;
+const SITE_URL = 'https://weaoffline.vercel.app';
 
+// ---------- helpers ----------
 function slugify(s){
   return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -23,6 +25,14 @@ function absUrl(u){
   return u;
 }
 
+function escapeHtml(s){
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+// ---------- fetchers ----------
 async function fetchWeao(){
   for (const url of WEAO_URLS){
     try {
@@ -38,13 +48,23 @@ async function fetchWeao(){
   return [];
 }
 
+async function fetchSnapshots(){
+  try {
+    const r = await fetch(SUPA + '/rest/v1/snapshots?select=taken_at,banwave_active,flagged_count,executor_count,data&order=taken_at.asc&limit=500', {
+      headers: { apikey: KEY, Authorization: 'Bearer ' + KEY }
+    });
+    if (!r.ok) return [];
+    return r.json();
+  } catch(e){ return []; }
+}
+
+// ---------- normalize + merge (same as before) ----------
 function normalizeWeao(ex){
   return {
     title: ex.title, slug: slugify(ex.title), version: ex.version,
     updatedDate: ex.updatedDate, updateStatus: !!ex.updateStatus,
     possibleBanwave: !!ex.possibleBanwave, detected: !!ex.detected,
-    detectionReason: ex.detectionReason || '',
-    hasIssues: !!ex.hasIssues,
+    detectionReason: ex.detectionReason || '', hasIssues: !!ex.hasIssues,
     free: !!ex.free, cost: ex.cost || '',
     uncPercentage: ex.uncPercentage, suncPercentage: ex.suncPercentage,
     platform: ex.platform, extype: ex.extype, rbxversion: ex.rbxversion,
@@ -188,7 +208,7 @@ function applyOverrides(list, overrides){
   return list;
 }
 
-// re-shape into clean field names for public consumption
+// ---------- public API shape ----------
 function publicShape(ex){
   const status = ex.possibleBanwave ? 'banwave-risk'
                : ex.updateStatus    ? 'online'
@@ -239,10 +259,127 @@ function publicShape(ex){
   };
 }
 
+// ---------- banwave history ----------
+function collectFlagged(data){
+  if (!Array.isArray(data)) return [];
+  const out = [];
+  for (const ex of data){
+    if (ex.possibleBanwave) out.push(ex.title || ex.slug || 'unknown');
+  }
+  return out;
+}
+
+function computeBanwaves(snapshots){
+  const sessions = [];
+  let current = null;
+
+  for (const snap of snapshots){
+    const active = !!snap.banwave_active;
+
+    if (active && !current){
+      current = {
+        startedAt: snap.taken_at,
+        endedAt: null,
+        peakFlagged: snap.flagged_count || 0,
+        flagged: collectFlagged(snap.data),
+        durationMs: null
+      };
+    } else if (active && current){
+      if ((snap.flagged_count || 0) > current.peakFlagged){
+        current.peakFlagged = snap.flagged_count;
+      }
+      const names = collectFlagged(snap.data);
+      for (const n of names){
+        if (current.flagged.indexOf(n) === -1) current.flagged.push(n);
+      }
+    } else if (!active && current){
+      current.endedAt = snap.taken_at;
+      current.durationMs = new Date(snap.taken_at).getTime() - new Date(current.startedAt).getTime();
+      sessions.push(current);
+      current = null;
+    }
+  }
+
+  if (current){
+    current.durationMs = Date.now() - new Date(current.startedAt).getTime();
+    sessions.push(current);
+  }
+
+  // newest first
+  return sessions.reverse();
+}
+
+function buildStatus(list){
+  let online = 0, offline = 0, banwaveRisk = 0;
+  for (const ex of list){
+    if (ex.banwaveRisk) banwaveRisk++;
+    else if (ex.status === 'online') online++;
+    else offline++;
+  }
+  return {
+    updatedAt: new Date().toISOString(),
+    banwaveActive: banwaveRisk > 0,
+    banwaveRiskCount: banwaveRisk,
+    onlineCount: online,
+    offlineCount: offline,
+    totalCount: list.length
+  };
+}
+
+// ---------- OG shell for Discord previews ----------
+function writeOgShell(ex, dirPath){
+  const statusLabel = ex.status === 'online' ? 'Online'
+                    : ex.status === 'banwave-risk' ? 'Banwave Risk'
+                    : 'Offline';
+
+  const titleBits = [`${ex.title} v${ex.version}`, statusLabel];
+  if (ex.sunc != null) titleBits.push(`${ex.sunc}% sUNC`);
+  const title = titleBits.join(' — ');
+
+  let desc = ex.description || '';
+  if (!desc){
+    const bits = [];
+    if (ex.creator) bits.push(`by ${ex.creator}`);
+    if (ex.pricing.free) bits.push('Free');
+    else if (ex.pricing.cost) bits.push(ex.pricing.cost);
+    if (ex.type === 'external') bits.push('External');
+    desc = bits.join(' · ') || 'Roblox executor status';
+  }
+  desc = desc.replace(/\s+/g, ' ').trim().slice(0, 200);
+
+  const img = ex.logo || `${SITE_URL}/og-default.png`;
+  const url = `${SITE_URL}/${ex.slug}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>${escapeHtml(title)} — WhatExpsAreOffline</title>
+<meta name="description" content="${escapeHtml(desc)}">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(desc)}">
+<meta property="og:image" content="${escapeHtml(img)}">
+<meta property="og:url" content="${escapeHtml(url)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WhatExpsAreOffline">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${escapeHtml(title)}">
+<meta name="twitter:description" content="${escapeHtml(desc)}">
+<meta name="twitter:image" content="${escapeHtml(img)}">
+<script>location.replace('/#${escapeHtml(ex.slug)}');</script>
+</head>
+<body></body>
+</html>`;
+
+  fs.mkdirSync(dirPath, { recursive: true });
+  fs.writeFileSync(path.join(dirPath, 'index.html'), html);
+}
+
+// ---------- main ----------
 async function main(){
   if (!SUPA || !KEY) throw new Error('missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
 
-  // load overrides
+  // overrides
   let overrides = {};
   const overridePath = path.join(process.cwd(), 'data', 'overrides.json');
   if (fs.existsSync(overridePath)){
@@ -250,7 +387,7 @@ async function main(){
     catch(e){ console.warn('overrides.json parse failed, ignoring:', e.message); }
   }
 
-  // fetch sources
+  // sources
   const [weaoList, sbRaw] = await Promise.all([
     fetchWeao(),
     fetch(SB_EXECUTORS).then(r => r.ok ? r.json() : null).catch(() => null)
@@ -263,18 +400,16 @@ async function main(){
 
   console.log(`sources: weao=${weaoList.length} scriptblox=${sbList.length}`);
 
-  // merge + apply overrides
   const merged = applyOverrides(mergeExecutors(weaoList, sbList), overrides);
   console.log(`merged: ${merged.length} executors`);
 
-  // public API — everything goes in public/api/ so vercel serves it as static
   const apiDir = path.join(process.cwd(), 'public', 'api');
   const execDir = path.join(apiDir, 'executors');
-
   fs.mkdirSync(execDir, { recursive: true });
 
   const publicList = merged.map(publicShape);
 
+  // ---- executors.json ----
   const bundle = {
     updatedAt: new Date().toISOString(),
     version: 1,
@@ -282,31 +417,43 @@ async function main(){
     count: publicList.length,
     executors: publicList
   };
+  fs.writeFileSync(path.join(apiDir, 'executors.json'), JSON.stringify(bundle, null, 2));
 
-  fs.writeFileSync(
-    path.join(apiDir, 'executors.json'),
-    JSON.stringify(bundle, null, 2)
-  );
-
+  // ---- per-executor files ----
   for (const ex of publicList){
-    fs.writeFileSync(
-      path.join(execDir, ex.slug + '.json'),
-      JSON.stringify(ex, null, 2)
-    );
+    fs.writeFileSync(path.join(execDir, ex.slug + '.json'), JSON.stringify(ex, null, 2));
   }
 
-  fs.writeFileSync(
-    path.join(apiDir, 'meta.json'),
-    JSON.stringify({
-      updatedAt: bundle.updatedAt,
-      count: publicList.length,
-      version: 1
-    }, null, 2)
-  );
+  // ---- meta.json ----
+  fs.writeFileSync(path.join(apiDir, 'meta.json'), JSON.stringify({
+    updatedAt: bundle.updatedAt,
+    count: publicList.length,
+    version: 1
+  }, null, 2));
 
-  console.log(`api: wrote public/api/executors.json + ${publicList.length} per-executor files + meta.json`);
+  // ---- status.json ----
+  fs.writeFileSync(path.join(apiDir, 'status.json'), JSON.stringify(buildStatus(publicList), null, 2));
 
-  // snapshot row for history
+  // ---- banwaves.json ----
+  const snapshots = await fetchSnapshots();
+  const banwaves = computeBanwaves(snapshots);
+  fs.writeFileSync(path.join(apiDir, 'banwaves.json'), JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    count: banwaves.length,
+    sessions: banwaves
+  }, null, 2));
+
+  console.log(`api: executors.json + ${publicList.length} per-executor + meta + status + ${banwaves.length} banwaves`);
+
+  // ---- OG shells ----
+  let ogCount = 0;
+  for (const ex of publicList){
+    writeOgShell(ex, path.join(process.cwd(), 'public', ex.slug));
+    ogCount++;
+  }
+  console.log(`og: wrote ${ogCount} shells`);
+
+  // ---- snapshot insert ----
   const flagged = merged.filter(e => e.possibleBanwave);
   const snapshot = {
     banwave_active: flagged.length > 0,
@@ -314,7 +461,6 @@ async function main(){
     executor_count: merged.length,
     data: merged
   };
-
   const ins = await fetch(SUPA + '/rest/v1/snapshots', {
     method: 'POST',
     headers: {
@@ -328,7 +474,7 @@ async function main(){
   if (!ins.ok) throw new Error('snapshot insert failed: ' + ins.status);
   console.log(`snapshot: ${merged.length} execs, ${flagged.length} flagged`);
 
-  // prune
+  // ---- prune ----
   const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400 * 1000).toISOString();
   const del = await fetch(SUPA + '/rest/v1/snapshots?taken_at=lt.' + encodeURIComponent(cutoff), {
     method: 'DELETE',
