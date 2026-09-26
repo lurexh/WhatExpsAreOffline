@@ -73,10 +73,8 @@ section.platform{margin-bottom:52px}
 .col-head .r{justify-content:flex-end}
 .row{border-bottom:1px solid var(--rule);transition:background .12s}
 .row:hover{background:var(--paper-2)}
-.row.open{background:var(--paper-2);border-bottom-color:var(--ink)}
 .row.pinned{background:rgba(197,138,23,.05)}
 .row.pinned:hover{background:rgba(197,138,23,.09)}
-.row.pinned.open{background:rgba(197,138,23,.09);border-bottom-color:var(--ink)}
 .row-main{display:grid;grid-template-columns:26px 40px 1fr 110px 110px 70px 70px 70px 130px 20px 24px;gap:14px;align-items:center;padding:12px 4px;cursor:pointer;user-select:none}
 .star-cell{display:flex;align-items:center;justify-content:center;width:26px;height:26px;cursor:pointer;transition:transform .12s,color .12s;color:var(--rule-hi)}
 .star-cell svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;transition:fill .15s,stroke .15s}
@@ -107,35 +105,7 @@ section.platform{margin-bottom:52px}
 .copy-cell:hover{color:var(--ink);transform:scale(1.1)}
 .copy-cell.copied{color:var(--green)}
 .chev-cell{display:flex;justify-content:center;align-items:center;color:var(--ink-3);transition:transform .2s}
-.row.open .chev-cell{transform:rotate(180deg);color:var(--ink)}
 .version-cell{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row-detail{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.row.open .row-detail{max-height:2400px}
-.detail-inner{padding:6px 4px 24px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
-.detail-left,.detail-right{min-width:0}
-.desc{font-size:.88rem;line-height:1.7;color:var(--ink-2);max-height:300px;overflow-y:auto;padding-right:10px;white-space:pre-wrap}
-.desc strong{color:var(--ink);font-weight:600}
-.desc a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
-.desc-empty{color:var(--ink-4);font-style:italic}
-.spec-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.spec-table tr{border-bottom:1px solid var(--rule)}
-.spec-table tr:last-child{border-bottom:none}
-.spec-table td{padding:9px 0;vertical-align:top}
-.spec-table td.k{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;width:130px;padding-right:12px}
-.spec-table td.v{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink);word-break:break-word;text-align:right}
-.spec-table td.v.ok{color:var(--green);font-weight:600}
-.spec-table td.v.bad{color:var(--red);font-weight:600}
-.spec-table td.v.mono-sm{font-size:11px;color:var(--ink-2)}
-.bans{margin-top:14px;padding:11px 14px;border-left:3px solid var(--green);background:rgba(45,110,52,.06);font-size:.83rem;color:var(--ink-2);line-height:1.5}
-.bans.flagged{border-left-color:var(--red);background:rgba(184,35,42,.06)}
-.feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.feat{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:var(--ink-2);padding:3px 9px;background:var(--paper);border:1px solid var(--rule-hi);text-transform:uppercase}
-.links{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
-.link-item{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding-bottom:2px;border-bottom:1px solid var(--ink);transition:color .12s,border-color .12s}
-.link-item:hover{color:var(--red);border-color:var(--red)}
-.compare-btn{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--rule-hi);background:transparent;color:var(--ink-2);transition:all .12s}
-.compare-btn:hover{border-color:var(--ink);color:var(--ink)}
-.compare-btn.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .scripts-progress{display:none;padding:14px 18px;background:var(--paper-2);border:1px solid var(--rule-hi);margin-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:12px}
 .scripts-progress.on{display:block}
 .progress-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
@@ -188,26 +158,6 @@ section.platform{margin-bottom:52px}
 .breadcrumbs a:hover{color:var(--red);border-color:var(--red)}
 .breadcrumbs .sep{color:var(--rule-hi)}
 .breadcrumbs .current{color:var(--ink);font-weight:600}
-.compare-tray{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:12px 24px;display:flex;align-items:center;gap:16px;z-index:900;transform:translateY(100%);transition:transform .25s ease;flex-wrap:wrap;justify-content:center}
-.compare-tray.on{transform:translateY(0)}
-.compare-tray .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9080}
-.compare-tray .chips{display:flex;gap:6px;flex-wrap:wrap}
-.compare-chip{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;padding:4px 10px;background:rgba(244,239,227,.1);border:1px solid rgba(244,239,227,.24);color:var(--paper);display:inline-flex;align-items:center;gap:8px}
-.compare-chip .x{cursor:pointer;opacity:.7;font-weight:700}
-.compare-chip .x:hover{opacity:1;color:#ff8899}
-.compare-go{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;background:var(--green);color:#fff;border:none;font-weight:700;transition:background .12s}
-.compare-go:hover{background:#1f5a26}
-.compare-clear{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;background:transparent;color:var(--paper);border:1px solid rgba(244,239,227,.28);transition:all .12s}
-.compare-clear:hover{border-color:#ff8899;color:#ff8899}
-.compare-view{background:var(--paper-2);border:1px solid var(--rule-hi);padding:0;overflow-x:auto}
-.compare-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
-.compare-table th,.compare-table td{padding:12px 16px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
-.compare-table th{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600;background:var(--paper);position:sticky;top:0}
-.compare-table td.k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);width:180px;background:var(--paper)}
-.compare-table td.v{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink);word-break:break-word}
-.compare-table td.v.good{color:var(--green);font-weight:600}
-.compare-table td.v.bad{color:var(--red);font-weight:600}
-.compare-table td.v.muted{color:var(--ink-4)}
 .script-detail{background:var(--paper-2);border:1px solid var(--rule-hi);padding:24px 28px}
 .script-detail-head{display:grid;grid-template-columns:1fr 200px;gap:28px;align-items:start}
 .script-detail h2{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.2;margin-bottom:8px}
@@ -276,14 +226,11 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 @keyframes bwpulse{0%,100%{opacity:1}50%{opacity:.35}}
 .row.row-disabled{opacity:.55;cursor:not-allowed}
 .row.row-disabled:hover{opacity:.85}
-.row.row-disabled.open{opacity:1}
 .row.row-disabled .row-main{cursor:not-allowed}
 .row.row-disabled .name{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
 .row.row-disabled .logo-cell img{filter:grayscale(1)}
 .disabled-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 6px;margin-left:6px;vertical-align:2px;text-decoration:none}
 .disabled-reason{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--red-2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
-.disabled-note{margin:0 0 14px;padding:12px 16px;background:rgba(184,35,42,.08);border-left:3px solid var(--red);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red-2);line-height:1.55}
-.disabled-note strong{letter-spacing:.06em}
 .ann-banner{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:1px solid;margin-bottom:14px;cursor:pointer;transition:background .15s;font-family:'JetBrains Mono',monospace}
 .ann-banner:hover{filter:brightness(.97)}
 .ann-banner.info{background:rgba(31,92,110,.07);border-color:#1f5c6e;color:#1f5c6e}
@@ -308,6 +255,55 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 .ann-card .body{font-size:.88rem;color:var(--ink-2);line-height:1.65;white-space:pre-wrap}
 .ann-card .date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-4);margin-top:10px;letter-spacing:.06em;text-transform:uppercase}
 .ann-card .lvl{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;background:var(--ink);color:var(--paper);margin-right:8px;vertical-align:1px}
+
+.exec-page{max-width:760px;margin:0 auto;padding:8px 0 40px}
+.exec-back{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px dotted var(--rule-hi);padding-bottom:1px;margin-bottom:22px;display:inline-block}
+.exec-back:hover{color:var(--red);border-color:var(--red)}
+.exec-hero{display:flex;gap:16px;align-items:flex-start;padding-bottom:20px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+.exec-hero-logo{width:56px;height:56px;background:var(--paper-3);border:1px solid var(--rule-hi);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.exec-hero-logo img{width:100%;height:100%;object-fit:contain}
+.exec-hero-logo .initial{font-size:1.3rem;font-weight:800;color:#fff;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.exec-hero-info{flex:1;min-width:0}
+.exec-hero h1{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:4px}
+.exec-hero-meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.03em}
+.exec-hero-badges{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.exec-badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--rule-hi);background:var(--paper-2);color:var(--ink-2)}
+.exec-badge.online{border-color:var(--green);color:var(--green);background:rgba(45,110,52,.06)}
+.exec-badge.offline{border-color:var(--rule-hi);color:var(--ink-3)}
+.exec-badge.flagged{border-color:var(--red);color:var(--red-2);background:rgba(184,35,42,.06)}
+.exec-badge.free{border-color:var(--green);color:var(--green);background:rgba(45,110,52,.06)}
+.exec-badge.paid{border-color:var(--amber);color:var(--amber);background:rgba(165,109,15,.07)}
+.exec-section{margin-bottom:22px}
+.exec-section-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);padding-bottom:6px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+.exec-desc{font-size:.9rem;line-height:1.65;color:var(--ink-2);white-space:pre-wrap}
+.exec-desc strong{color:var(--ink)}
+.exec-desc a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+.exec-facts{display:flex;flex-direction:column}
+.exec-fact{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.exec-fact:last-child{border-bottom:none}
+.exec-fact .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);flex-shrink:0}
+.exec-fact .v{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink);text-align:right;word-break:break-word;font-weight:600}
+.exec-fact .v.mono-sm{font-size:11px;color:var(--ink-2);font-weight:500}
+.exec-fact .v.ok{color:var(--green)}
+.exec-fact .v.bad{color:var(--red-2)}
+.exec-fact .v.muted{color:var(--ink-4);font-weight:400}
+.exec-feats{display:flex;flex-wrap:wrap;gap:5px}
+.exec-feat{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--ink-2);padding:4px 10px;background:var(--paper-2);border:1px solid var(--rule-hi);text-transform:uppercase}
+.notes-list{display:flex;flex-direction:column;gap:8px}
+.note{padding:10px 14px;border-left:3px solid;font-size:.85rem;line-height:1.55}
+.note.info{background:rgba(31,92,110,.06);border-color:#1f5c6e;color:var(--ink-2)}
+.note.warn{background:rgba(165,109,15,.08);border-color:var(--amber);color:var(--ink-2)}
+.note.danger{background:rgba(184,35,42,.08);border-color:var(--red);color:var(--ink-2)}
+.note-meta{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-top:6px}
+.exec-links{display:flex;flex-wrap:wrap;gap:18px}
+.exec-link{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);padding-bottom:2px;border-bottom:1px solid var(--ink);transition:color .12s,border-color .12s}
+.exec-link:hover{color:var(--red);border-color:var(--red)}
+.exec-actions{display:flex;gap:8px;flex-wrap:wrap}
+.exec-sbtn{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border:1px solid var(--rule-hi);background:var(--paper-2);color:var(--ink-2);transition:all .12s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.exec-sbtn:hover{border-color:var(--ink);color:var(--ink);background:var(--paper-3)}
+.exec-sbtn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.exec-sbtn.primary:hover{background:var(--red);border-color:var(--red)}
+
 @media (max-width:900px){
   .col-head{display:none}
   .row-main{grid-template-columns:26px 40px 1fr auto;row-gap:6px;padding:14px 4px}
@@ -318,7 +314,6 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   .status-cell{grid-column:3 / 5;grid-row:2}
   .version-cell,.num-cell,.chev-cell{display:none}
   .copy-cell{grid-column:4;grid-row:2;justify-content:flex-end}
-  .detail-inner{grid-template-columns:1fr;gap:22px}
   .script-detail-head{grid-template-columns:1fr}
   footer{flex-direction:column;text-align:center}
   .discord-hero{grid-template-columns:auto 1fr;padding:14px 18px;gap:14px}
@@ -327,9 +322,12 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   .stat .n{font-size:1.1rem}
   .scripts-grid{grid-template-columns:1fr}
   .tabs{justify-content:center}
-  .compare-table{min-width:0}
-  .compare-table th,.compare-table td{padding:8px 10px;font-size:.78rem}
-  .compare-table td.k{width:auto}
+}
+@media (max-width:600px){
+  .exec-hero{flex-direction:column;gap:12px}
+  .exec-hero-logo{width:48px;height:48px}
+  .exec-fact{flex-direction:column;align-items:flex-start;gap:3px}
+  .exec-fact .v{text-align:left}
 }
 @media (max-width:520px){
   .container{padding:20px 16px 60px}
@@ -469,6 +467,8 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   </main>
 </div>
 
+<div id="pageExecDetail" style="display:none"></div>
+
 <div id="pageScripts" style="display:none">
   <div class="controls" id="scriptsControls">
     <div class="search-wrap">
@@ -528,13 +528,6 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   </div>
 </div>
 
-<div class="compare-tray" id="compareTray">
-  <span class="label">Compare:</span>
-  <div class="chips" id="compareChips"></div>
-  <button class="compare-go" id="compareGo">Compare</button>
-  <button class="compare-clear" id="compareClear">Clear</button>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <footer>
@@ -548,11 +541,7 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 
 <script>
 var CONFIG = {
-  weaoEndpoints: [
-    'https://weao.xyz/api/status/exploits',
-    'https://weao.gg/api/status/exploits',
-    'https://whatexpsare.online/api/status/exploits'
-  ],
+  weaoEndpoints: ['https://weao.xyz/api/status/exploits','https://weao.gg/api/status/exploits','https://whatexpsare.online/api/status/exploits'],
   sbExecutorEndpoint: 'https://scriptblox.com/api/executor/list',
   sbScriptFetch: 'https://scriptblox.com/api/script/fetch',
   sbScriptSearch: 'https://scriptblox.com/api/script/search?q=',
@@ -570,8 +559,9 @@ var FETCH_TIMEOUT_MS = 15000;
 var SUPABASE_URL  = 'https://asxaocghenthlxisifgq.supabase.co';
 var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzeGFvY2doZW50aGx4aXNpZmdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyOTk2MjcsImV4cCI6MjEwNTg3NTYyN30.pN9uiK3Dok4z7VposUy8zq7a7vmwGrJ03AV1IUVZfus';
 
-var BANWAVE = { active: false, flagged: [], lastChecked: null, history: [] };
-var ADMIN = { disabled: {}, announcements: [] };
+var BANWAVE = { active: false, flagged: [], lastChecked: null };
+var ADMIN = { disabled: {}, announcements: [], notes: {} };
+var OVERRIDES = {};
 
 function proxyUrls(url){
   var out = [];
@@ -820,22 +810,18 @@ function mergeExecutors(weaoList, sbList){
 
 var S = {
   page: 'cheats',
-  view: 'list',
-  cheats: { data: [], fav: new Set(loadFav()), filters: new Set(), q: '', sortKey: null, sortDir: 'asc', openSlug: null },
+  cheats: { data: [], fav: new Set(loadFav()), filters: new Set(), q: '', sortKey: null, sortDir: 'asc' },
   scripts: {
     data: [], page: 1, loading: false, hasMore: true, q: '',
     filterVerified: false, filterHub: false, filterUniversal: false, filterKeyless: false,
     searchMode: false, searchToken: 0, seenIds: new Set(),
     progress: { current: 0, total: SEARCH_MAX_PAGES }, renderCap: RENDER_CAP,
     defaultLoaded: false, detail: null, game: null, gameScripts: null
-  },
-  compare: []
+  }
 };
 
 function loadFav(){ try { return JSON.parse(localStorage.getItem('weao_favorites') || '[]') } catch(e){ return [] } }
 function saveFav(){ try { localStorage.setItem('weao_favorites', JSON.stringify(Array.from(S.cheats.fav))) } catch(e){} }
-function loadCompare(){ try { return JSON.parse(localStorage.getItem('weao_compare') || '[]') } catch(e){ return [] } }
-function saveCompare(){ try { localStorage.setItem('weao_compare', JSON.stringify(S.compare)) } catch(e){} }
 
 var STAR = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
 var LINK_ICON = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
@@ -860,19 +846,20 @@ function copyText(txt, okMsg){
   return Promise.resolve(true);
 }
 
-function shortUrl(slug){
-  return location.origin + location.pathname + '#' + slug;
+function basePath(){
+  // handle Vercel, local, codespaces — strip trailing index.html
+  var p = location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -'index.html'.length);
+  return p;
 }
 
-function detectShortLink(){
-  var hash = (location.hash || '').replace(/^#/, '');
-  if (!hash) return null;
-  if (hash.indexOf('/') !== -1) return null;
-  if (hash.indexOf('?') !== -1) return null;
-  if (hash.indexOf('=') !== -1) return null;
-  var known = ['cheats', 'scripts', 'news'];
-  if (known.indexOf(hash) !== -1) return null;
-  return '#cheats/' + hash;
+function shortUrl(slug){
+  return location.origin + basePath() + slug;
+}
+
+function navigate(path){
+  try { history.pushState(null, '', path); } catch(e){}
+  route();
 }
 
 function logoHTML(ex){
@@ -897,58 +884,19 @@ window.logoErr = function(img){
   img.parentNode.innerHTML = '<span class="initial" style="background:'+bg+'">'+initial+'</span>';
 };
 
-function featHTML(ex){
-  var list = [
-    ['Decompiler', ex.decompiler],['Multi-Inject', ex.multiInject],['RakNet', ex.raknet],
-    ['Key System', ex.keysystem],['Client Mod Bypass', ex.clientmods],
-    ['UNC Support', ex.uncStatus],['Element Certified', ex.elementCertified]
-  ].filter(function(p){ return p[1] === true });
-  if (!list.length) return '';
-  var out = '';
-  for (var i = 0; i < list.length; i++) out += '<span class="feat">' + esc(list[i][0]) + '</span>';
-  return '<div class="feats">' + out + '</div>';
-}
-
-function linkHTML(ex){
-  var a = [];
-  if (ex.websitelink) a.push('<a class="link-item" href="'+esc(ex.websitelink)+'" target="_blank" rel="noopener">Website</a>');
-  if (ex.discordlink) a.push('<a class="link-item" href="'+esc(ex.discordlink)+'" target="_blank" rel="noopener">Discord</a>');
-  if (ex.purchaselink) a.push('<a class="link-item" href="'+esc(ex.purchaselink)+'" target="_blank" rel="noopener">Purchase</a>');
-  if (ex.store && ex.store !== ex.purchaselink) a.push('<a class="link-item" href="'+esc(ex.store)+'" target="_blank" rel="noopener">Store</a>');
-  if (ex.showcase) a.push('<a class="link-item" href="'+esc(ex.showcase)+'" target="_blank" rel="noopener">Showcase</a>');
-  if (!a.length) return '';
-  return '<div class="links">' + a.join('') + '</div>';
-}
-
 function rowHTML(ex){
-  var free = !!ex.free, st = statusOf(ex), ban = banOf(ex);
+  var free = !!ex.free, st = statusOf(ex);
   var owner = ex.owner, sunc = ex.suncPercentage, unc = ex.uncPercentage;
   var slug = ex.slug, isFav = S.cheats.fav.has(slug);
-  var isFlag = st.cls === 'flagged', isOpen = S.cheats.openSlug === slug;
-  var inCompare = S.compare.indexOf(slug) !== -1;
   var views = ex.views, unverified = !!ex.unverified;
 
   var disabledReason = ADMIN.disabled[slug];
   var isDisabled = !!disabledReason;
 
   var priceHTML = free ? '<span class="free">Free</span>' : esc(ex.cost || '—');
-  var rows = '';
-  rows += '<tr><td class="k">Status</td><td class="v '+(st.cls==='online'?'ok':st.cls==='flagged'?'bad':'')+'">'+st.label+'</td></tr>';
-  if (sunc != null) rows += '<tr><td class="k">sUNC</td><td class="v">'+sunc+'%</td></tr>';
-  if (unc != null) rows += '<tr><td class="k">UNC</td><td class="v">'+unc+'%</td></tr>';
-  rows += '<tr><td class="k">Price</td><td class="v">'+esc(ex.cost || (free ? 'Free' : '—'))+'</td></tr>';
-  if (ex.updatedDate) rows += '<tr><td class="k">Updated</td><td class="v">'+esc(ex.updatedDate)+'</td></tr>';
-  if (ex.rbxversion) rows += '<tr><td class="k">Build</td><td class="v mono-sm">'+esc(ex.rbxversion)+'</td></tr>';
-  if (owner) rows += '<tr><td class="k">Dev</td><td class="v">'+esc(owner)+'</td></tr>';
-  if (views) rows += '<tr><td class="k">Views</td><td class="v">'+views.toLocaleString()+'</td></tr>';
-  if (ex._sources) rows += '<tr><td class="k">Source</td><td class="v mono-sm">'+esc(ex._sources.join(' + '))+'</td></tr>';
-
-  var desc = ex.description || ex.sbDescription || ex.excerpt || '';
-  var descHTML = desc && desc.trim() ? '<div class="desc">'+md(desc)+'</div>' : '<p class="desc desc-empty">No description yet.</p>';
 
   var cls = 'row';
   if (isFav) cls += ' pinned';
-  if (isOpen) cls += ' open';
   if (isDisabled) cls += ' row-disabled';
 
   var nameHTML = esc(ex.title || 'Unknown');
@@ -957,7 +905,7 @@ function rowHTML(ex){
 
   var reasonLine = isDisabled ? '<span class="disabled-reason">⚠ '+esc(disabledReason)+'</span>' : '';
 
-  return '<div class="'+cls+'" data-slug="'+esc(slug)+'" data-free="'+free+'" data-updated="'+ex.updateStatus+'" data-flagged="'+isFlag+'" data-saved="'+isFav+'" data-disabled="'+isDisabled+'" data-name="'+esc(String(ex.title||'').toLowerCase())+'">'
+  return '<div class="'+cls+'" data-slug="'+esc(slug)+'" data-free="'+free+'" data-updated="'+ex.updateStatus+'" data-flagged="'+st.cls+'" data-saved="'+isFav+'" data-disabled="'+isDisabled+'" data-name="'+esc(String(ex.title||'').toLowerCase())+'">'
     + '<div class="row-main">'
     + '<span class="star-cell '+(isFav?'on':'')+'" data-star="'+esc(slug)+'">'+STAR+'</span>'
     + logoHTML(ex)
@@ -971,18 +919,7 @@ function rowHTML(ex){
     + '<span class="copy-cell" data-copy-link="'+esc(slug)+'" title="Copy short link">'+LINK_ICON+'</span>'
     + '<span class="chev-cell"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>'
     + '</div>'
-    + '<div class="row-detail"><div class="detail-inner">'
-    + '<div class="detail-left">'
-    + (isDisabled ? '<div class="disabled-note"><strong>⚠ DISABLED BY STAFF</strong><br>'+esc(disabledReason)+'</div>' : '')
-    + descHTML+'</div>'
-    + '<div class="detail-right">'
-    + '<table class="spec-table">'+rows+'</table>'
-    + '<div class="bans '+(ban.flagged?'flagged':'')+'">'+esc(ban.text)+'</div>'
-    + featHTML(ex)
-    + '<button class="compare-btn '+(inCompare?'on':'')+'" data-compare="'+esc(slug)+'">'+(inCompare ? '✓ In comparison' : '+ Add to comparison')+'</button>'
-    + '</div></div>'
-    + linkHTML(ex)
-    + '</div></div>';
+    + '</div>';
 }
 
 function sorter(a, b){
@@ -1057,12 +994,7 @@ function wireRows(){
         var row = main.closest('.row');
         if (row.getAttribute('data-disabled') === 'true') return;
         var slug = row.getAttribute('data-slug');
-        var wasOpen = row.classList.contains('open');
-        S.cheats.openSlug = wasOpen ? null : slug;
-        var opens = document.querySelectorAll('.row.open');
-        for (var j = 0; j < opens.length; j++) opens[j].classList.remove('open');
-        if (S.cheats.openSlug){ row.classList.add('open'); updateHash(S.cheats.openSlug); }
-        else { updateHash(null) }
+        navigate(basePath() + slug);
       });
     })(mains[i]);
   }
@@ -1089,41 +1021,6 @@ function wireRows(){
         setTimeout(function(){ c.classList.remove('copied') }, 900);
       });
     })(copys[m]);
-  }
-  var cmps = document.querySelectorAll('.compare-btn');
-  for (var n = 0; n < cmps.length; n++){
-    (function(b){
-      b.addEventListener('click', function(e){
-        e.stopPropagation();
-        toggleCompare(b.getAttribute('data-compare'));
-      });
-    })(cmps[n]);
-  }
-}
-
-function toggleCompare(slug){
-  var idx = S.compare.indexOf(slug);
-  if (idx === -1){
-    if (S.compare.length >= 4){ showToast('Max 4 to compare', false); return }
-    S.compare.push(slug);
-  } else { S.compare.splice(idx, 1); }
-  saveCompare(); renderCompareTray(); renderCheats();
-}
-
-function renderCompareTray(){
-  var tray = $('compareTray'), chips = $('compareChips');
-  if (!S.compare.length){ tray.classList.remove('on'); return }
-  tray.classList.add('on');
-  var html = '';
-  for (var i = 0; i < S.compare.length; i++){
-    var s = S.compare[i], ex = null;
-    for (var j = 0; j < S.cheats.data.length; j++){ if (S.cheats.data[j].slug === s){ ex = S.cheats.data[j]; break } }
-    html += '<span class="compare-chip">'+esc(ex ? ex.title : s)+' <span class="x" data-rm="'+esc(s)+'">✕</span></span>';
-  }
-  chips.innerHTML = html;
-  var rms = chips.querySelectorAll('.x');
-  for (var k = 0; k < rms.length; k++){
-    (function(x){ x.addEventListener('click', function(){ toggleCompare(x.getAttribute('data-rm')) }) })(rms[k]);
   }
 }
 
@@ -1152,58 +1049,6 @@ function renderCheats(){
   statbarCheats(); sortHeaders(); wireRows();
 }
 
-function renderCompareView(){
-  var ids = S.compare, execs = [];
-  for (var i = 0; i < ids.length; i++){
-    for (var j = 0; j < S.cheats.data.length; j++){
-      if (S.cheats.data[j].slug === ids[i]){ execs.push(S.cheats.data[j]); break }
-    }
-  }
-  if (!execs.length){ showToast('Nothing to compare', false); goCheats(); return }
-
-  var table = '<div class="compare-view"><table class="compare-table"><thead><tr><th>Field</th>';
-  for (var i = 0; i < execs.length; i++) table += '<th>'+esc(execs[i].title)+'</th>';
-  table += '</tr></thead><tbody>';
-
-  function row(label, fn){
-    table += '<tr><td class="k">'+esc(label)+'</td>';
-    for (var i = 0; i < execs.length; i++){
-      var r = fn(execs[i]);
-      table += '<td class="v '+(r.cls||'')+'">'+(r.html || esc(r.text != null ? r.text : '—'))+'</td>';
-    }
-    table += '</tr>';
-  }
-
-  row('Status', function(ex){ var s = statusOf(ex); return {text: s.label, cls: s.cls === 'online' ? 'good' : s.cls === 'flagged' ? 'bad' : 'muted'} });
-  row('Version', function(ex){ return {text: ex.version || '—'} });
-  row('sUNC', function(ex){ return {text: ex.suncPercentage == null ? '—' : ex.suncPercentage+'%', cls: ex.suncPercentage === 100 ? 'good' : ex.suncPercentage == null ? 'muted' : ''} });
-  row('UNC', function(ex){ return {text: ex.uncPercentage == null ? '—' : ex.uncPercentage+'%', cls: ex.uncPercentage === 100 ? 'good' : ex.uncPercentage == null ? 'muted' : ''} });
-  row('Price', function(ex){ return {text: ex.cost || (ex.free ? 'Free' : '—'), cls: ex.free ? 'good' : ''} });
-  row('Updated', function(ex){ return {text: ex.updatedDate || '—'} });
-  row('Views', function(ex){ return {text: ex.views ? ex.views.toLocaleString() : '—', cls: ex.views ? '' : 'muted'} });
-  row('Developer', function(ex){ return {text: ex.owner || '—'} });
-  row('Ban history', function(ex){ var b = banOf(ex); return {text: b.text, cls: b.flagged ? 'bad' : 'good'} });
-  row('Decompiler', function(ex){ return {text: ex.decompiler ? 'Yes' : 'No', cls: ex.decompiler ? 'good' : 'muted'} });
-  row('Multi-Inject', function(ex){ return {text: ex.multiInject ? 'Yes' : 'No', cls: ex.multiInject ? 'good' : 'muted'} });
-  row('RakNet', function(ex){ return {text: ex.raknet ? 'Yes' : 'No', cls: ex.raknet ? 'good' : 'muted'} });
-  row('Key System', function(ex){ return {text: ex.keysystem ? 'Yes' : 'No', cls: ex.keysystem ? 'bad' : 'good'} });
-  row('Element Certified', function(ex){ return {text: ex.elementCertified ? 'Yes' : 'No', cls: ex.elementCertified ? 'good' : 'muted'} });
-  row('Source', function(ex){ return {text: (ex._sources||[]).join(' + ') || '—'} });
-  row('Links', function(ex){
-    var a = [];
-    if (ex.websitelink) a.push('<a href="'+esc(ex.websitelink)+'" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px dotted">site</a>');
-    if (ex.discordlink) a.push('<a href="'+esc(ex.discordlink)+'" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px dotted">discord</a>');
-    if (ex.purchaselink) a.push('<a href="'+esc(ex.purchaselink)+'" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px dotted">buy</a>');
-    return {html: a.join(' · ') || '—'};
-  });
-
-  table += '</tbody></table></div>';
-  $('pageCheats').innerHTML = table + '<div style="margin-top:24px"><button class="sbtn" id="backFromCompare">← Back to list</button></div>';
-  $('backFromCompare').addEventListener('click', goCheats);
-}
-
-function goCheats(){ window.location.hash = '#cheats' }
-
 function renderBreadcrumbs(parts){
   var el = $('breadcrumbs');
   if (!parts || !parts.length){ el.style.display = 'none'; return }
@@ -1218,6 +1063,134 @@ function renderBreadcrumbs(parts){
   el.style.display = 'flex';
 }
 
+/* ===== EXECUTOR DETAIL PAGE ===== */
+function applyOverrides(ex){
+  var o = OVERRIDES[ex.slug];
+  if (!o) return ex;
+  for (var k in o){
+    if (k === '_comment') continue;
+    if (o[k] !== null && o[k] !== undefined) ex[k] = o[k];
+  }
+  return ex;
+}
+
+async function renderExecutorDetailPage(slug){
+  var mount = $('pageExecDetail');
+  mount.innerHTML = '<div class="empty">Loading…</div>';
+
+  if (!S.cheats.data.length){
+    await loadCheats();
+  }
+
+  var ex = null;
+  for (var i = 0; i < S.cheats.data.length; i++){
+    if (S.cheats.data[i].slug === slug){ ex = S.cheats.data[i]; break }
+  }
+
+  if (!ex){
+    mount.innerHTML = '<div class="exec-page"><a class="exec-back" href="'+basePath()+'">← Back to list</a><div class="empty">Executor not found: ' + esc(slug) + '</div></div>';
+    return;
+  }
+
+  ex = applyOverrides(ex);
+
+  var st = statusOf(ex);
+  var ban = banOf(ex);
+  var sunc = ex.suncPercentage;
+  var unc = ex.uncPercentage;
+  var logoUrl = (ex.logos && ex.logos.length) ? ex.logos[0] : (ex.logo || ex.thumbnail || '');
+  var initial = String(ex.title || '?').charAt(0).toUpperCase();
+
+  var logoHTML2 = logoUrl
+    ? '<img src="' + esc(logoUrl) + '" onerror="this.parentNode.innerHTML=\'<span class=&quot;initial&quot; style=&quot;background:' + hashColor(ex.title) + '&quot;>' + esc(initial) + '</span>\'">'
+    : '<span class="initial" style="background:' + hashColor(ex.title) + '">' + esc(initial) + '</span>';
+
+  var badges = '';
+  badges += '<span class="exec-badge ' + st.cls + '">' + esc(st.label) + '</span>';
+  badges += '<span class="exec-badge ' + (ex.free ? 'free' : 'paid') + '">' + (ex.free ? 'Free' : 'Paid') + '</span>';
+  if (ex.elementCertified) badges += '<span class="exec-badge">Element Certified</span>';
+
+  var facts = '';
+  if (ex.owner) facts += '<div class="exec-fact"><span class="k">Made by</span><span class="v">' + esc(ex.owner) + '</span></div>';
+  facts += '<div class="exec-fact"><span class="k">sUNC</span><span class="v ' + (sunc === 100 ? 'ok' : (sunc == null ? 'muted' : '')) + '">' + (sunc == null ? '—' : sunc + '%') + '</span></div>';
+  facts += '<div class="exec-fact"><span class="k">UNC</span><span class="v ' + (unc === 100 ? 'ok' : (unc == null ? 'muted' : '')) + '">' + (unc == null ? '—' : unc + '%') + '</span></div>';
+  facts += '<div class="exec-fact"><span class="k">Price</span><span class="v">' + esc(ex.cost || (ex.free ? 'Free' : '—')) + '</span></div>';
+  if (ex.platform) facts += '<div class="exec-fact"><span class="k">Platform</span><span class="v">' + esc(ex.platform) + '</span></div>';
+  if (ex.updatedDate) facts += '<div class="exec-fact"><span class="k">Last updated</span><span class="v mono-sm">' + esc(ex.updatedDate) + '</span></div>';
+  if (ex.rbxversion) facts += '<div class="exec-fact"><span class="k">RBX build</span><span class="v mono-sm">' + esc(ex.rbxversion) + '</span></div>';
+  if (ex.views) facts += '<div class="exec-fact"><span class="k">Views</span><span class="v">' + ex.views.toLocaleString() + '</span></div>';
+
+  var feats = [
+    ['Decompiler', ex.decompiler],['Multi-Inject', ex.multiInject],['RakNet', ex.raknet],
+    ['Key System', ex.keysystem],['Client Mod Bypass', ex.clientmods],
+    ['UNC Support', ex.uncStatus],['Element Certified', ex.elementCertified]
+  ].filter(function(p){ return p[1] === true });
+  var featsHTML = feats.length
+    ? '<div class="exec-section"><div class="exec-section-title">Features</div><div class="exec-feats">' + feats.map(function(p){ return '<span class="exec-feat">' + esc(p[0]) + '</span>' }).join('') + '</div></div>'
+    : '';
+
+  var desc = ex.description || ex.sbDescription || ex.excerpt || '';
+  var descHTML = desc
+    ? '<div class="exec-section"><div class="exec-section-title">Description</div><div class="exec-desc">' + md(desc) + '</div></div>'
+    : '';
+
+  var notes = ADMIN.notes[slug] || [];
+  var notesHTML = '';
+  if (notes.length){
+    notesHTML = '<div class="exec-section"><div class="exec-section-title">Staff notes</div><div class="notes-list">';
+    for (var n = 0; n < notes.length; n++){
+      var note = notes[n];
+      var sev = note.severity || 'info';
+      notesHTML += '<div class="note ' + sev + '"><div>' + esc(note.body) + '</div><div class="note-meta">' + esc((note.added_at || '').slice(0, 10)) + '</div></div>';
+    }
+    notesHTML += '</div></div>';
+  }
+
+  var detectionHTML = '';
+  if (ban.text){
+    detectionHTML = '<div class="exec-section"><div class="exec-section-title">Ban history</div><div class="bans ' + (ban.flagged ? 'flagged' : '') + '">' + esc(ban.text) + '</div></div>';
+  }
+
+  var links = '';
+  if (ex.websitelink) links += '<a class="exec-link" href="' + esc(ex.websitelink) + '" target="_blank" rel="noopener">Website</a>';
+  if (ex.discordlink) links += '<a class="exec-link" href="' + esc(ex.discordlink) + '" target="_blank" rel="noopener">Discord</a>';
+  if (ex.purchaselink) links += '<a class="exec-link" href="' + esc(ex.purchaselink) + '" target="_blank" rel="noopener">Purchase</a>';
+  if (ex.store && ex.store !== ex.purchaselink) links += '<a class="exec-link" href="' + esc(ex.store) + '" target="_blank" rel="noopener">Store</a>';
+  if (ex.showcase) links += '<a class="exec-link" href="' + esc(ex.showcase) + '" target="_blank" rel="noopener">Showcase</a>';
+  var linksHTML = links ? '<div class="exec-section"><div class="exec-section-title">Links</div><div class="exec-links">' + links + '</div></div>' : '';
+
+  var issueUrl = 'https://github.com/lurexh/WhatExpsAreOffline/issues/new?template=executor-correction.yml&title=' + encodeURIComponent('[Correction] ' + ex.title);
+  var actionsHTML = '<div class="exec-section"><div class="exec-section-title">Actions</div><div class="exec-actions">';
+  actionsHTML += '<button class="exec-sbtn primary" id="execCopyLink">Copy link</button>';
+  actionsHTML += '<a class="exec-sbtn" href="' + issueUrl + '" target="_blank" rel="noopener">Suggest an edit ↗</a>';
+  actionsHTML += '</div></div>';
+
+  var html = '<div class="exec-page">'
+    + '<a class="exec-back" href="'+basePath()+'">← Back to list</a>'
+    + '<div class="exec-hero">'
+    + '<div class="exec-hero-logo">' + logoHTML2 + '</div>'
+    + '<div class="exec-hero-info">'
+    + '<h1>' + esc(ex.title || 'Unknown') + '</h1>'
+    + '<div class="exec-hero-meta">v' + esc(ex.version || '?') + ' · ' + esc(ex.platform || '—') + ' · ' + esc(ex.free ? 'Free' : (ex.cost || '—')) + '</div>'
+    + '<div class="exec-hero-badges">' + badges + '</div>'
+    + '</div>'
+    + '</div>'
+    + descHTML
+    + '<div class="exec-section"><div class="exec-section-title">Details</div><div class="exec-facts">' + facts + '</div></div>'
+    + featsHTML
+    + notesHTML
+    + detectionHTML
+    + linksHTML
+    + actionsHTML
+    + '</div>';
+
+  mount.innerHTML = html;
+
+  var copyBtn = $('execCopyLink');
+  if (copyBtn) copyBtn.addEventListener('click', function(){ copyText(shortUrl(slug), 'Link copied') });
+}
+
+/* ===== SCRIPTS ===== */
 function renderScriptCard(sc){
   var img = absUrl(sc.image || (sc.game && sc.game.imageUrl) || '');
   var gameName = (sc.game && sc.game.name) || 'Unknown';
@@ -1289,7 +1262,7 @@ function renderScripts(){
       card.addEventListener('click', function(e){
         if (e.target.closest('.sbtn')) return;
         var id = card.getAttribute('data-scid');
-        window.location.hash = '#scripts/' + id;
+        navigate(basePath() + 'scripts/' + id);
       });
     })(cards[c]);
   }
@@ -1352,7 +1325,7 @@ function renderScriptDetail(){
     : '';
 
   var gameLink = gameId
-    ? '<a class="game-link" href="#games/'+esc(gameId)+'">▶ '+esc(gameName)+'</a>'
+    ? '<a class="game-link" href="'+basePath()+'games/'+esc(gameId)+'">▶ '+esc(gameName)+'</a>'
     : '<span class="game-link">▶ '+esc(gameName)+'</span>';
 
   var tagHTML = tags.length
@@ -1394,7 +1367,7 @@ function renderScriptDetail(){
     html += '<div class="related"><h3>Related scripts · '+esc(gameName)+'</h3><div class="related-grid">';
     for (var i = 0; i < related.length; i++){
       var r = related[i];
-      html += '<a class="related-item" href="#scripts/'+esc(r._id)+'">'
+      html += '<a class="related-item" href="'+basePath()+'scripts/'+esc(r._id)+'">'
         + '<div style="min-width:0;flex:1"><div class="rt">'+esc(r.title)+'</div><div class="rm">'+((r.views||0).toLocaleString())+' views</div></div>'
         + '</a>';
     }
@@ -1409,7 +1382,7 @@ function renderScriptDetail(){
     $('modalCode').textContent = sc.script || '(no code)';
     $('codeModal').classList.add('open');
   });
-  $('detailShare').addEventListener('click', function(){ copyText(siteUrl('#scripts/' + sc._id), 'Link copied') });
+  $('detailShare').addEventListener('click', function(){ copyText(location.origin + basePath() + 'scripts/' + sc._id, 'Link copied') });
 }
 
 function findRelated(sc){
@@ -1453,7 +1426,7 @@ function renderGameView(){
     (function(card){
       card.addEventListener('click', function(e){
         if (e.target.closest('.sbtn')) return;
-        window.location.hash = '#scripts/' + card.getAttribute('data-scid');
+        navigate(basePath() + 'scripts/' + card.getAttribute('data-scid'));
       });
     })(cards[c]);
   }
@@ -1658,7 +1631,7 @@ function wireCheatFilters(){
           }
           S.cheats.filters.add(f); btn.classList.add('active');
         }
-        renderCheats(); updateHash(null);
+        renderCheats();
       });
     })(btns[i]);
   }
@@ -1696,13 +1669,11 @@ async function loadCheats(){
     if (Array.isArray(sbRaw)) sbList = sbRaw;
     else if (sbRaw && Array.isArray(sbRaw.executors)) sbList = sbRaw.executors;
     else if (sbRaw && Array.isArray(sbRaw.data)) sbList = sbRaw.data;
-    console.log('[sources] weao:', weaoList.length, '| scriptblox:', sbList.length);
     if (!weaoList.length && !sbList.length) throw new Error('both sources returned no data');
     if (!weaoList.length) $('errorBox').innerHTML = '<div class="error warn"><span class="lbl">Degraded</span>WEAO unreachable — showing ScriptBlox data only.</div>';
     else if (!sbList.length) $('errorBox').innerHTML = '<div class="error warn"><span class="lbl">Degraded</span>ScriptBlox unreachable — showing WEAO data only.</div>';
     else $('errorBox').innerHTML = '';
     S.cheats.data = mergeExecutors(weaoList, sbList);
-    console.log('[merge] total:', S.cheats.data.length);
     renderCheats();
   } catch(err){
     console.error('[loadCheats]', err);
@@ -1714,114 +1685,85 @@ async function loadCheats(){
   }
 }
 
-function updateHash(sub){
-  var base = '#cheats', parts = [];
-  if (S.cheats.filters.size){
-    var arr = []; S.cheats.filters.forEach(function(f){ arr.push(f) });
-    parts.push(arr.join(','));
-  }
-  if (S.cheats.sortKey) parts.push('sort=' + S.cheats.sortKey + '-' + S.cheats.sortDir);
-  var h = base;
-  if (sub) h += '/' + sub;
-  if (parts.length) h += '?' + parts.join('&');
-  try { history.replaceState(null, '', h) } catch(e){}
-}
-
-function parseHash(){
-  var h = (location.hash || '').replace(/^#/, '');
-  if (!h) return { page: 'cheats', sub: null, params: {} };
-  var qIdx = h.indexOf('?');
-  var path = qIdx >= 0 ? h.slice(0, qIdx) : h;
-  var query = qIdx >= 0 ? h.slice(qIdx + 1) : '';
-  var segments = path.split('/').filter(Boolean);
+function parsePath(){
+  // strip base path, split into segments
+  var p = location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -'index.html'.length);
+  var segments = p.split('/').filter(Boolean);
   var page = segments[0] || 'cheats';
   var sub = segments[1] || null;
-  var params = {};
-  if (query){
-    var kv = query.split('&');
-    for (var i = 0; i < kv.length; i++){
-      var eq = kv[i].indexOf('=');
-      if (eq >= 0) params[kv[i].slice(0, eq)] = kv[i].slice(eq + 1);
-      else params[kv[i]] = true;
-    }
-  }
-  return { page: page, sub: sub, params: params };
-}
 
-function applyFiltersFromParams(params){
-  S.cheats.filters = new Set();
-  var chips = document.querySelectorAll('#pageCheats .fbtn');
-  for (var i = 0; i < chips.length; i++) chips[i].classList.remove('active');
-  if (params.free) { S.cheats.filters.add('free'); var b = document.querySelector('#pageCheats .fbtn[data-filter="free"]'); if (b) b.classList.add('active') }
-  if (params.paid) { S.cheats.filters.add('paid'); var b = document.querySelector('#pageCheats .fbtn[data-filter="paid"]'); if (b) b.classList.add('active') }
-  if (params.updated) { S.cheats.filters.add('updated'); var b = document.querySelector('#pageCheats .fbtn[data-filter="updated"]'); if (b) b.classList.add('active') }
-  if (params.outdated) { S.cheats.filters.add('outdated'); var b = document.querySelector('#pageCheats .fbtn[data-filter="outdated"]'); if (b) b.classList.add('active') }
-  if (params.flagged) { S.cheats.filters.add('flagged'); var b = document.querySelector('#pageCheats .fbtn[data-filter="flagged"]'); if (b) b.classList.add('active') }
-  if (params.saved) { S.cheats.filters.add('saved'); var b = document.querySelector('#pageCheats .fbtn[data-filter="saved"]'); if (b) b.classList.add('active') }
-  if (params.sort){
-    var parts = params.sort.split('-');
-    if (parts.length >= 2){ S.cheats.sortKey = parts[0]; S.cheats.sortDir = parts[parts.length - 1] }
+  // treat known pages
+  if (page === 'scripts') return { page: 'scripts', sub: sub, params: {} };
+  if (page === 'news') return { page: 'news', sub: null, params: {} };
+  if (page === 'games') return { page: 'games', sub: sub, params: {} };
+  if (page === 'cheats') return { page: 'cheats', sub: sub, params: {} };
+  if (page === 'index' || page === '') return { page: 'cheats', sub: null, params: {} };
+  // unknown single segment → treat as executor slug
+  if (!sub && segments.length === 1){
+    return { page: 'cheats', sub: page, params: {} };
   }
+  return { page: 'cheats', sub: null, params: {} };
 }
 
 function route(){
-  var r = parseHash();
+  var r = parsePath();
+  $('pageNews').style.display = 'none';
   if (r.page === 'news'){
     switchTab('cheats', true);
     $('pageCheats').style.display = 'none';
     $('pageScripts').style.display = 'none';
+    $('pageExecDetail').style.display = 'none';
     $('pageNews').style.display = '';
     renderNewsPage();
-    renderBreadcrumbs([{label:'Home', href:'#cheats'}, {label:'News'}]);
-    return;
-  }
-  $('pageNews').style.display = 'none';
-  if (r.page === 'compare'){
-    S.page = 'cheats'; S.view = 'compare';
-    switchTab('cheats', true); renderCompareView();
-    renderBreadcrumbs([{ label: 'Cheats', href: '#cheats' }, { label: 'Comparison' }]);
+    renderBreadcrumbs([{label:'Home', href: basePath()}, {label:'News'}]);
     return;
   }
   if (r.page === 'games' && r.sub){
-    S.page = 'scripts'; S.view = 'game';
+    S.page = 'scripts';
     switchTab('scripts', true);
-    renderBreadcrumbs([{ label: 'Scripts', href: '#scripts' }, { label: 'Game' }]);
+    $('pageExecDetail').style.display = 'none';
+    renderBreadcrumbs([{ label: 'Scripts', href: basePath() + 'scripts' }, { label: 'Game' }]);
     loadGameById(decodeURIComponent(r.sub));
     return;
   }
   if (r.page === 'scripts' && r.sub){
-    S.page = 'scripts'; S.view = 'script';
-    switchTab('scripts', true); loadScriptById(r.sub);
-    renderBreadcrumbs([{ label: 'Scripts', href: '#scripts' }, { label: 'Script' }]);
+    S.page = 'scripts';
+    switchTab('scripts', true);
+    $('pageExecDetail').style.display = 'none';
+    loadScriptById(r.sub);
+    renderBreadcrumbs([{ label: 'Scripts', href: basePath() + 'scripts' }, { label: 'Script' }]);
     return;
   }
   if (r.page === 'scripts'){
-    S.page = 'scripts'; S.view = 'list';
+    S.page = 'scripts';
     S.scripts.detail = null; S.scripts.game = null;
     switchTab('scripts', true);
+    $('pageExecDetail').style.display = 'none';
     if (!S.scripts.defaultLoaded){ S.scripts.defaultLoaded = true; loadScriptsPage(true) }
     else renderScripts();
     renderBreadcrumbs(null);
     return;
   }
-  S.page = 'cheats'; S.view = 'list';
-  applyFiltersFromParams(r.params);
-  switchTab('cheats', true);
+  S.page = 'cheats';
   if (r.sub){
-    S.cheats.openSlug = r.sub;
-    renderCheats();
-    setTimeout(function(){
-      var row = document.querySelector('.row[data-slug="'+r.sub+'"]');
-      if (row && row.getAttribute('data-disabled') !== 'true'){ row.classList.add('open'); row.scrollIntoView({behavior:'smooth', block:'center'}) }
-    }, 300);
-  } else {
-    S.cheats.openSlug = null; renderCheats();
+    switchTab('cheats', true);
+    $('pageCheats').style.display = 'none';
+    $('pageExecDetail').style.display = '';
+    renderExecutorDetailPage(r.sub);
+    renderBreadcrumbs([{label:'Cheats', href: basePath()}, {label: r.sub}]);
+    return;
   }
+  switchTab('cheats', true);
+  $('pageExecDetail').style.display = 'none';
+  $('pageCheats').style.display = '';
+  renderCheats();
   renderBreadcrumbs(null);
 }
 
 function switchTab(name, silent){
   S.page = name;
+  $('pageExecDetail').style.display = 'none';
   var tabs = document.querySelectorAll('.tab');
   for (var i = 0; i < tabs.length; i++) tabs[i].classList.toggle('active', tabs[i].getAttribute('data-tab') === name);
   if (name === 'cheats'){
@@ -1847,14 +1789,17 @@ function switchTab(name, silent){
     $('sourceLine').innerHTML = '';
     $('credit').innerHTML = '';
   }
-  if (!silent){ try { history.replaceState(null, '', '#' + name) } catch(e){} }
 }
 
 function wireTabs(){
   var tabs = document.querySelectorAll('.tab');
   for (var i = 0; i < tabs.length; i++){
     (function(t){
-      t.addEventListener('click', function(){ window.location.hash = '#' + t.getAttribute('data-tab') });
+      t.addEventListener('click', function(){
+        var name = t.getAttribute('data-tab');
+        if (name === 'cheats') navigate(basePath());
+        else navigate(basePath() + name);
+      });
     })(tabs[i]);
   }
 }
@@ -1864,12 +1809,12 @@ function buildCmdIndex(){
   cmdItems = [];
   for (var i = 0; i < S.cheats.data.length; i++){
     var ex = S.cheats.data[i];
-    cmdItems.push({ kind: 'executor', title: ex.title, sub: (bucketOf(ex) || 'executor') + ' · ' + (ex.version || ''), hash: '#cheats/' + ex.slug, color: hashColor(ex.title), initial: String(ex.title||'?').charAt(0).toUpperCase() });
+    cmdItems.push({ kind: 'executor', title: ex.title, sub: (bucketOf(ex) || 'executor') + ' · ' + (ex.version || ''), path: basePath() + ex.slug, color: hashColor(ex.title), initial: String(ex.title||'?').charAt(0).toUpperCase() });
   }
   for (var j = 0; j < S.scripts.data.length; j++){
     var sc = S.scripts.data[j];
     if (cmdItems.length > 4000) break;
-    cmdItems.push({ kind: 'script', title: sc.title || 'Untitled', sub: (sc.game && sc.game.name) || '', hash: '#scripts/' + sc._id, color: hashColor(sc.title || '?'), initial: String(sc.title||'?').charAt(0).toUpperCase() });
+    cmdItems.push({ kind: 'script', title: sc.title || 'Untitled', sub: (sc.game && sc.game.name) || '', path: basePath() + 'scripts/' + sc._id, color: hashColor(sc.title || '?'), initial: String(sc.title||'?').charAt(0).toUpperCase() });
   }
 }
 
@@ -1909,7 +1854,7 @@ function renderCmdResults(q){
         var idx = parseInt(el.getAttribute('data-idx'), 10);
         var item = cmdItems._filtered[idx];
         if (!item) return;
-        closeCmd(); window.location.hash = item.hash;
+        closeCmd(); navigate(item.path);
       });
     })(els[k]);
   }
@@ -1931,21 +1876,13 @@ function wireCmd(){
     if (e.key === 'Enter'){
       e.preventDefault();
       var item = cmdItems._filtered && cmdItems._filtered[cmdSel];
-      if (item){ closeCmd(); window.location.hash = item.hash }
+      if (item){ closeCmd(); navigate(item.path) }
     }
   });
 }
 
 function wireShare(){
   $('shareBtn').addEventListener('click', function(){ copyText(location.href, 'Link copied') });
-}
-
-function wireCompareTray(){
-  $('compareGo').addEventListener('click', function(){
-    if (S.compare.length < 2){ showToast('Add at least 2 executors', false); return }
-    window.location.hash = '#compare/' + S.compare.join(',');
-  });
-  $('compareClear').addEventListener('click', function(){ S.compare = []; saveCompare(); renderCompareTray(); renderCheats() });
 }
 
 function wireKeys(){
@@ -1990,8 +1927,32 @@ async function loadAnnouncements(){
   } catch(e){ console.warn('[announcements]', e) }
 }
 
+async function loadNotes(){
+  try {
+    var r = await fetch(SUPABASE_URL + '/rest/v1/notes?select=*&order=added_at.desc', { headers: supabaseHeaders() });
+    if (!r.ok) return;
+    var rows = await r.json();
+    ADMIN.notes = {};
+    for (var i = 0; i < rows.length; i++){
+      var n = rows[i];
+      if (!ADMIN.notes[n.executor_slug]) ADMIN.notes[n.executor_slug] = [];
+      ADMIN.notes[n.executor_slug].push(n);
+    }
+    var r2 = parsePath();
+    if (r2.page === 'cheats' && r2.sub) renderExecutorDetailPage(r2.sub);
+  } catch(e){ console.warn('[notes]', e) }
+}
+
+async function loadOverrides(){
+  try {
+    var r = await fetch('data/overrides.json');
+    if (!r.ok) return;
+    OVERRIDES = await r.json();
+  } catch(e){ console.warn('[overrides]', e) }
+}
+
 async function loadAdminData(){
-  await Promise.all([loadDisabled(), loadAnnouncements()]);
+  await Promise.all([loadDisabled(), loadAnnouncements(), loadNotes()]);
 }
 
 var sbLive = null;
@@ -2010,6 +1971,7 @@ function subscribeRealtime(){
     .channel('whatweao-live')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'disabled_executors' }, function(){ loadDisabled(); })
     .on('postgres_changes', { event: '*', schema: 'public', table: 'announcements' }, function(){ loadAnnouncements(); })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'notes' }, function(){ loadNotes(); })
     .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'snapshots' }, function(){ loadBanwaveState(); })
     .subscribe();
 }
@@ -2087,7 +2049,7 @@ function renderNewsPage(){
 
 async function loadBanwaveState(){
   try {
-    var r = await fetch(SUPABASE_URL + '/rest/v1/snapshots?select=taken_at,banwave_active,flagged_count,data&order=taken_at.desc&limit=200', { headers: supabaseHeaders() });
+    var r = await fetch(SUPABASE_URL + '/rest/v1/snapshots?select=taken_at,banwave_active,flagged_count,data&order=taken_at.desc&limit=1', { headers: supabaseHeaders() });
     if (!r.ok) return;
     var rows = await r.json();
     if (!rows.length) return;
@@ -2097,15 +2059,6 @@ async function loadBanwaveState(){
     BANWAVE.flagged = [];
     if (Array.isArray(latest.data)){
       for (var i = 0; i < latest.data.length; i++) if (latest.data[i].possibleBanwave) BANWAVE.flagged.push(latest.data[i].title);
-    }
-    BANWAVE.history = [];
-    var prev = null;
-    for (var j = rows.length - 1; j >= 0; j--){
-      var cur = rows[j];
-      if (prev === null || cur.banwave_active !== prev){
-        BANWAVE.history.push({ at: cur.taken_at, active: cur.banwave_active, count: cur.flagged_count });
-        prev = cur.banwave_active;
-      }
     }
     renderBanwaveBanner();
   } catch(e){ console.warn('[banwave]', e) }
@@ -2122,17 +2075,8 @@ function renderBanwaveBanner(){
     mount.className = 'banwave-banner warn';
     mount.innerHTML = '<span class="bw-dot"></span><strong>BANWAVE ACTIVE</strong> — Flagged: ' + names + more + '. Do not inject right now.';
   } else {
-    var lastActive = null;
-    for (var i = 0; i < BANWAVE.history.length; i++){
-      if (BANWAVE.history[i].active){ lastActive = BANWAVE.history[i]; break }
-    }
-    var days = '—';
-    if (lastActive){
-      var diff = Date.now() - new Date(lastActive.at).getTime();
-      days = Math.floor(diff / 86400000);
-    }
     mount.className = 'banwave-banner safe';
-    mount.innerHTML = '<span class="bw-dot"></span><strong>No banwave</strong> — last one was ' + (lastActive ? days + ' days ago' : 'never since tracking began') + '.';
+    mount.innerHTML = '<span class="bw-dot"></span><strong>No banwave</strong> — system clear.';
   }
 }
 
@@ -2142,19 +2086,16 @@ function renderBanwaveBanner(){
   var d = new Date();
   var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   $('dateline').textContent = mo[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-  S.compare = loadCompare();
   wireTabs(); wireCheatFilters(); wireCheatSorts(); wireScriptsControls();
-  wireCmd(); wireShare(); wireCompareTray(); wireKeys();
-  window.addEventListener('hashchange', route);
-  renderCompareTray();
-  var shortLink = detectShortLink();
-  if (shortLink){ try { history.replaceState(null, '', shortLink) } catch(e){} }
+  wireCmd(); wireShare(); wireKeys();
+  window.addEventListener('popstate', route);
+  loadOverrides();
   route();
-  loadCheats().then(function(){ renderCompareTray() });
+  loadCheats();
   loadBanwaveState();
   loadAdminData();
   subscribeRealtime();
 })();
 </script>
 </body>
-  </html>
+</html>
