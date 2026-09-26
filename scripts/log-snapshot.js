@@ -1,49 +1,345 @@
+const fs = require('fs');
+const path = require('path');
+
 const SUPA = process.env.SUPABASE_URL;
 const KEY  = process.env.SUPABASE_SERVICE_KEY;
-const WEAO = 'https://weao.xyz/api/status/exploits';
+
+const WEAO_URLS = [
+  'https://weao.xyz/api/status/exploits',
+  'https://weao.gg/api/status/exploits',
+  'https://whatexpsare.online/api/status/exploits'
+];
+const SB_EXECUTORS = 'https://scriptblox.com/api/executor/list';
 const RETENTION_DAYS = 30;
+
+function slugify(s){
+  return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function absUrl(u){
+  if (!u) return '';
+  if (u.indexOf('http') === 0) return u;
+  if (u.charAt(0) === '/') return 'https://scriptblox.com' + u;
+  return u;
+}
+
+async function fetchWeao(){
+  for (const url of WEAO_URLS){
+    try {
+      const r = await fetch(url, {
+        headers: { 'User-Agent': 'WEAO-3PService', 'Accept': 'application/json' }
+      });
+      if (!r.ok) continue;
+      const d = await r.json();
+      if (Array.isArray(d) && d.length) return d;
+      if (d && Array.isArray(d.exploits) && d.exploits.length) return d.exploits;
+    } catch(e){ /* try next */ }
+  }
+  return [];
+}
+
+function normalizeWeao(ex){
+  return {
+    title: ex.title, slug: slugify(ex.title), version: ex.version,
+    updatedDate: ex.updatedDate, updateStatus: !!ex.updateStatus,
+    possibleBanwave: !!ex.possibleBanwave, detected: !!ex.detected,
+    detectionReason: ex.detectionReason || '',
+    hasIssues: !!ex.hasIssues,
+    free: !!ex.free, cost: ex.cost || '',
+    uncPercentage: ex.uncPercentage, suncPercentage: ex.suncPercentage,
+    platform: ex.platform, extype: ex.extype, rbxversion: ex.rbxversion,
+    index: typeof ex.index === 'number' ? ex.index : 999,
+    websitelink: ex.websitelink || '', discordlink: ex.discordlink || '',
+    purchaselink: ex.purchaselink || '',
+    decompiler: !!ex.decompiler, multiInject: !!ex.multiInject,
+    raknet: !!ex.raknet, keysystem: !!ex.keysystem,
+    clientmods: !!ex.clientmods, uncStatus: !!ex.uncStatus,
+    elementCertified: !!ex.elementCertified,
+    logo: (ex.slug && ex.slug.logo) || '',
+    owner: (ex.slug && ex.slug.owner) || '',
+    description: (ex.slug && ex.slug.fullDescription) || '',
+    screenshots: (ex.slug && ex.slug.screenshots) || [],
+    logos: [], store: '', showcase: '',
+    views: null, excerpt: '', thumbnail: '',
+    unverified: false, _sources: ['weao']
+  };
+}
+
+function buildFromSb(sb){
+  return {
+    title: sb.name || sb.slug, slug: slugify(sb.name || sb.slug),
+    version: sb.version, updatedDate: sb.versionDate || sb.updatedAt,
+    updateStatus: !!sb.updated, possibleBanwave: !!sb.possibleBanwave,
+    detected: !!sb.detected, detectionReason: sb.detectionReason || '',
+    hasIssues: !!sb.hasIssues,
+    free: !!sb.free || sb.type === 'Free',
+    cost: (sb.price && sb.price.note) || '',
+    uncPercentage: null, suncPercentage: sb.sunc,
+    platform: sb.platform,
+    extype: sb.kind === 'external' ? 'wexternal'
+         : sb.platformKey === 'macos' ? 'mexecutor'
+         : sb.platformKey === 'android' ? 'aexecutor'
+         : sb.platformKey === 'ios' ? 'iexecutor'
+         : 'wexecutor',
+    rbxversion: sb.rbxVersion, index: 999,
+    websitelink: sb.website || '', discordlink: sb.discord || '',
+    purchaselink: sb.store || '',
+    decompiler: !!sb.decompiler, multiInject: !!sb.multiInject,
+    raknet: !!sb.raknet, keysystem: !!sb.keySystem,
+    clientmods: !!sb.clientMods, uncStatus: false,
+    elementCertified: !!sb.elementCertified,
+    logo: absUrl(sb.logo), owner: sb.owners || sb.developers || '',
+    description: sb.description || sb.weaoDescription || '',
+    screenshots: (sb.screenshots || []).map(absUrl),
+    logos: (sb.logos || []).map(absUrl),
+    thumbnail: absUrl(sb.thumbnail),
+    store: sb.store || '', showcase: sb.showcase || '',
+    views: sb.views || null, excerpt: sb.excerpt || '',
+    unverified: !sb.weaoId, _sources: ['scriptblox']
+  };
+}
+
+function mergeSbInto(m, sb){
+  if (sb.logos && sb.logos.length){
+    const nl = sb.logos.map(absUrl);
+    for (const l of nl) if (m.logos.indexOf(l) === -1) m.logos.push(l);
+  }
+  if (sb.thumbnail) m.thumbnail = absUrl(sb.thumbnail);
+  if (sb.store) m.store = sb.store;
+  if (sb.showcase) m.showcase = sb.showcase;
+  if (sb.views) m.views = sb.views;
+  if (sb.excerpt) m.excerpt = sb.excerpt;
+  if (sb.description) m.sbDescription = sb.description;
+  if (sb.weaoDescription && !m.description) m.description = sb.weaoDescription;
+  if (sb.price && sb.price.note && !m.cost) m.cost = sb.price.note;
+  if (sb.website && !m.websitelink) m.websitelink = sb.website;
+  if (sb.discord && !m.discordlink) m.discordlink = sb.discord;
+  if (sb.store && !m.purchaselink) m.purchaselink = sb.store;
+  if (sb.sunc != null && m.suncPercentage == null) m.suncPercentage = sb.sunc;
+  if (sb.owners && !m.owner) m.owner = sb.owners;
+  if (sb.images && sb.images.length && !m.screenshots.length) m.screenshots = sb.images.map(absUrl);
+
+  if (sb.features && sb.features.length){
+    for (const ft of sb.features){
+      if (ft === 'decompiler') m.decompiler = true;
+      else if (ft === 'multi-inject') m.multiInject = true;
+      else if (ft === 'raknet') m.raknet = true;
+      else if (ft === 'key-system') m.keysystem = true;
+      else if (ft === 'client-mods') m.clientmods = true;
+    }
+  }
+
+  if (m._sources.indexOf('scriptblox') === -1) m._sources.push('scriptblox');
+  if (sb.weaoId) m.unverified = false;
+  return m;
+}
+
+function mergeExecutors(weaoList, sbList){
+  const byId = {};
+  const bySlug = {};
+  for (const ex of weaoList){
+    if (ex._id) byId[ex._id] = ex;
+    const k = slugify(ex.title);
+    if (k && !bySlug[k]) bySlug[k] = ex;
+  }
+
+  const merged = [];
+  const consumed = {};
+
+  for (const sb of sbList){
+    let match = null;
+    if (sb.weaoId && byId[sb.weaoId]){
+      match = byId[sb.weaoId];
+      consumed[sb.weaoId] = true;
+    } else {
+      const k = slugify(sb.name || sb.slug);
+      if (k && bySlug[k]){
+        match = bySlug[k];
+        if (match._id) consumed[match._id] = true;
+      }
+    }
+    merged.push(match ? mergeSbInto(normalizeWeao(match), sb) : buildFromSb(sb));
+  }
+
+  const haveSlug = {};
+  for (const m of merged) haveSlug[m.slug] = true;
+
+  for (const w of weaoList){
+    if (w._id && consumed[w._id]) continue;
+    const k = slugify(w.title);
+    if (k && haveSlug[k]) continue;
+    if (k) haveSlug[k] = true;
+    merged.push(normalizeWeao(w));
+  }
+
+  return merged;
+}
+
+function applyOverrides(list, overrides){
+  for (const ex of list){
+    const o = overrides[ex.slug];
+    if (!o) continue;
+    for (const key of Object.keys(o)){
+      if (key === '_comment') continue;
+      if (o[key] !== null && o[key] !== undefined) ex[key] = o[key];
+    }
+    ex.hasOverrides = true;
+  }
+  return list;
+}
+
+// re-shape a merged executor into something a consumer API would want.
+// flatter, cleaner field names than what weao/scriptblox send.
+function publicShape(ex){
+  const status = ex.possibleBanwave ? 'banwave-risk'
+               : ex.updateStatus    ? 'online'
+               :                      'offline';
+
+  return {
+    slug: ex.slug,
+    title: ex.title,
+    version: ex.version,
+    updatedDate: ex.updatedDate || null,
+    platform: ex.platform || null,
+    type: ex.extype === 'wexternal' ? 'external'
+        : ex.extype === 'mexecutor' ? 'mac'
+        : ex.extype === 'aexecutor' ? 'android'
+        : 'executor',
+    status: status,
+    banwaveRisk: !!ex.possibleBanwave,
+    detected: !!ex.detected,
+    detectionReason: ex.detectionReason || null,
+    sunc: ex.suncPercentage ?? null,
+    unc: ex.uncPercentage ?? null,
+    pricing: {
+      free: !!ex.free,
+      cost: ex.cost || null
+    },
+    creator: ex.owner || null,
+    description: ex.description || ex.sbDescription || ex.excerpt || null,
+    features: [
+      ex.decompiler  && 'decompiler',
+      ex.multiInject && 'multi-inject',
+      ex.raknet      && 'raknet',
+      ex.keysystem   && 'key-system',
+      ex.clientmods  && 'client-mods',
+      ex.uncStatus   && 'unc',
+      ex.elementCertified && 'element-certified'
+    ].filter(Boolean),
+    links: {
+      website: ex.websitelink || null,
+      discord: ex.discordlink || null,
+      purchase: ex.purchaselink || null,
+      store: ex.store || null,
+      showcase: ex.showcase || null
+    },
+    logo: (ex.logos && ex.logos[0]) || ex.logo || ex.thumbnail || null,
+    views: ex.views || null,
+    sources: ex._sources || [],
+    overrides: !!ex.hasOverrides
+  };
+}
 
 async function main(){
   if (!SUPA || !KEY) throw new Error('missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
 
-  const res = await fetch(WEAO, {
-    headers: { 'User-Agent': 'WEAO-3PService', 'Accept': 'application/json' }
-  });
-  if (!res.ok) throw new Error('WEAO ' + res.status);
-  const list = await res.json();
+  // 1. load overrides
+  let overrides = {};
+  const overridePath = path.join(process.cwd(), 'data', 'overrides.json');
+  if (fs.existsSync(overridePath)){
+    try { overrides = JSON.parse(fs.readFileSync(overridePath, 'utf8')); }
+    catch(e){ console.warn('overrides.json parse failed, ignoring:', e.message); }
+  }
 
-  const flagged = list.filter(e => e.possibleBanwave);
+  // 2. fetch both sources
+  const [weaoList, sbRaw] = await Promise.all([
+    fetchWeao(),
+    fetch(SB_EXECUTORS).then(r => r.ok ? r.json() : null).catch(() => null)
+  ]);
+
+  let sbList = [];
+  if (Array.isArray(sbRaw)) sbList = sbRaw;
+  else if (sbRaw && Array.isArray(sbRaw.executors)) sbList = sbRaw.executors;
+  else if (sbRaw && Array.isArray(sbRaw.data)) sbList = sbRaw.data;
+
+  console.log(`sources: weao=${weaoList.length} scriptblox=${sbList.length}`);
+
+  // 3. merge + apply overrides
+  const merged = applyOverrides(mergeExecutors(weaoList, sbList), overrides);
+  console.log(`merged: ${merged.length} executors`);
+
+  // 4. public API — write one bundle + one file per executor
+  const apiDir = path.join(process.cwd(), 'api');
+  const execDir = path.join(apiDir, 'executors');
+
+  fs.mkdirSync(execDir, { recursive: true });
+
+  const publicList = merged.map(publicShape);
+
+  const bundle = {
+    updatedAt: new Date().toISOString(),
+    version: 1,
+    sources: ['weao.gg', 'scriptblox.com'],
+    count: publicList.length,
+    executors: publicList
+  };
+
+  fs.writeFileSync(
+    path.join(apiDir, 'executors.json'),
+    JSON.stringify(bundle, null, 2)
+  );
+
+  for (const ex of publicList){
+    fs.writeFileSync(
+      path.join(execDir, ex.slug + '.json'),
+      JSON.stringify(ex, null, 2)
+    );
+  }
+
+  // small meta file for consumers to check for freshness cheaply
+  fs.writeFileSync(
+    path.join(apiDir, 'meta.json'),
+    JSON.stringify({
+      updatedAt: bundle.updatedAt,
+      count: publicList.length,
+      version: 1
+    }, null, 2)
+  );
+
+  console.log(`api: wrote api/executors.json + ${publicList.length} per-executor files + meta.json`);
+
+  // 5. also insert a snapshot row for history tracking
+  const flagged = merged.filter(e => e.possibleBanwave);
   const snapshot = {
     banwave_active: flagged.length > 0,
     flagged_count: flagged.length,
-    executor_count: list.length,
-    data: list
+    executor_count: merged.length,
+    data: merged
   };
 
   const ins = await fetch(SUPA + '/rest/v1/snapshots', {
     method: 'POST',
     headers: {
-      'apikey': KEY,
-      'Authorization': 'Bearer ' + KEY,
+      apikey: KEY,
+      Authorization: 'Bearer ' + KEY,
       'Content-Type': 'application/json',
-      'Prefer': 'return=minimal'
+      Prefer: 'return=minimal'
     },
     body: JSON.stringify(snapshot)
   });
-  if (!ins.ok) throw new Error('insert failed: ' + ins.status + ' ' + await ins.text());
-  console.log('Logged snapshot: ' + list.length + ' executors, ' + flagged.length + ' flagged');
+  if (!ins.ok) throw new Error('snapshot insert failed: ' + ins.status);
+  console.log(`snapshot: ${merged.length} execs, ${flagged.length} flagged`);
 
-  const cutoff = new Date(Date.now() - RETENTION_DAYS * 24 * 60 * 60 * 1000).toISOString();
+  // 6. prune old snapshots
+  const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400 * 1000).toISOString();
   const del = await fetch(SUPA + '/rest/v1/snapshots?taken_at=lt.' + encodeURIComponent(cutoff), {
     method: 'DELETE',
-    headers: {
-      'apikey': KEY,
-      'Authorization': 'Bearer ' + KEY,
-      'Prefer': 'return=minimal'
-    }
+    headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, Prefer: 'return=minimal' }
   });
-  if (del.ok) console.log('Pruned snapshots older than ' + cutoff);
-  else console.warn('prune failed: ' + del.status);
+  if (del.ok) console.log(`pruned snapshots older than ${cutoff}`);
 }
 
-main().catch(e => { console.error(e); process.exit(1) });
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+});
