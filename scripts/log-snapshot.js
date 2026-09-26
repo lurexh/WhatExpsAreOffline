@@ -41,7 +41,7 @@ async function fetchWeao(){
       const d = await r.json();
       if (Array.isArray(d) && d.length) return d;
       if (d && Array.isArray(d.exploits) && d.exploits.length) return d.exploits;
-    } catch(e){ /* try next */ }
+    } catch(e){}
   }
   return [];
 }
@@ -299,7 +299,7 @@ function computeBanwaves(snapshots){
     current.durationMs = Date.now() - new Date(current.startedAt).getTime();
     sessions.push(current);
   }
-  
+
   return sessions.reverse();
 }
 
@@ -371,15 +371,13 @@ function writeOgShell(ex, dirPath){
 async function main(){
   if (!SUPA || !KEY) throw new Error('missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
 
-  // overrides
   let overrides = {};
-  const overridePath = path.join(process.cwd(), 'data', 'overrides.json');
+  const overridePath = path.join(process.cwd(), 'public', 'data', 'overrides.json');
   if (fs.existsSync(overridePath)){
     try { overrides = JSON.parse(fs.readFileSync(overridePath, 'utf8')); }
     catch(e){ console.warn('overrides.json parse failed, ignoring:', e.message); }
   }
 
-  // sources
   const [weaoList, sbRaw] = await Promise.all([
     fetchWeao(),
     fetch(SB_EXECUTORS).then(r => r.ok ? r.json() : null).catch(() => null)
