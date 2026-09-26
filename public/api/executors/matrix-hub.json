@@ -1,0 +1,35 @@
+{
+  "slug": "matrix-hub",
+  "title": "Matrix Hub",
+  "version": "v3",
+  "updatedDate": "09/22/2026 at 4:34 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$4.99 Lifetime"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [],
+  "links": {
+    "website": "https://matrixhubs.shop/",
+    "discord": "https://matrixhub.xyz/discord.html",
+    "purchase": "https://rsware.store/products/matrix-hub-roblox-external-win-10--11?ref=weao",
+    "store": "https://rsware.store/products/matrix-hub-roblox-external-win-10--11?ref=weao",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/matrix-hub.webp",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

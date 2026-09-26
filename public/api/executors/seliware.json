@@ -1,0 +1,42 @@
+{
+  "slug": "seliware",
+  "title": "Seliware",
+  "version": "2.4.9",
+  "updatedDate": "05/23/2026 at 8:21 AM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": "We have observed no bans after a weeks worth of testing.",
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$3.99 Weekly"
+  },
+  "creator": "Dx",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://seliware.com",
+    "discord": "https://discord.com/invite/nzEggEE9vx",
+    "purchase": "https://robloxcheatz.com/product?id=51c9587f-4794-46ef-b6bf-2bd9f13c17d2&ref=weao",
+    "store": "https://wyv.gg/product/seliware-executor/",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/seliware/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

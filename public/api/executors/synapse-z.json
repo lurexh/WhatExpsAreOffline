@@ -1,0 +1,42 @@
+{
+  "slug": "synapse-z",
+  "title": "Synapse Z",
+  "version": "1.0.3.6",
+  "updatedDate": "09/06/2026 at 7:17 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 98,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$3.99 Weekly"
+  },
+  "creator": "GRH",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://z.synapse.do",
+    "discord": "https://discord.gg/synz",
+    "purchase": "https://robloxcheatz.com/product?id=synapsez&ref=weao",
+    "store": "https://rcheatz.com/product?id=synapsez&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/synapsez/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

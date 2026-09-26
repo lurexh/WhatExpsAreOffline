@@ -1,0 +1,42 @@
+{
+  "slug": "macsploit",
+  "title": "MacSploit",
+  "version": "739.2b",
+  "updatedDate": "09/23/2026 at 7:30 AM UTC",
+  "platform": "Mac",
+  "type": "mac",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$9.99 Lifetime"
+  },
+  "creator": "Nexus42",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://www.raptor.fun/",
+    "discord": "https://discord.gg/macsploit",
+    "purchase": "https://bloxproducts.com/?affiliate_key=weao#MacSploit",
+    "store": "https://www.raptor.fun/payments/products/lifetime",
+    "showcase": "https://www.youtube.com/watch?v=EzaBtDKABT8"
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/MacSploit.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

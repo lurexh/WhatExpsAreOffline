@@ -1,0 +1,37 @@
+{
+  "slug": "dx9ware-v2",
+  "title": "DX9WARE V2",
+  "version": "1.1.220",
+  "updatedDate": "09/22/2026 at 4:32 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$15 Lifetime"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://cultofintellect.com/",
+    "discord": "https://discord.gg/coi",
+    "purchase": "https://cultofintellect.com/dx9ware#pricing",
+    "store": "https://cultofintellect.com/dx9ware#pricing",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/dx9ware-v2.webp",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

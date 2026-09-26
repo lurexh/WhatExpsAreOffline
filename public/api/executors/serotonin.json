@@ -1,0 +1,37 @@
+{
+  "slug": "serotonin",
+  "title": "Serotonin",
+  "version": "v2",
+  "updatedDate": "09/22/2026 at 4:00 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$9.49 Monthly"
+  },
+  "creator": "fope, Auti",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://www.serotonin.win/",
+    "discord": "https://discord.com/invite/serotonin",
+    "purchase": "https://bloxproducts.com/r/weao#Serotonin",
+    "store": "https://rcheatz.com/product?id=serotonin&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/serotonin/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

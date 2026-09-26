@@ -1,0 +1,41 @@
+{
+  "slug": "solara",
+  "title": "Solara",
+  "version": "0.1.7a",
+  "updatedDate": "09/25/2026 at 2:07 AM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 59,
+  "unc": 66,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "Quivings",
+  "description": "Solara is a free external Windows script executor, featuring: \n\n* No key system, only advertisements to download the bootstrapper/portable download\n* 46% sUNC \n* Often, one of the first exploits to update under normal Roblox update conditions\n* Comes with [Konstant Decompiler](https://discord.com/invite/konstant-tm-tm-lykooking-tm-krack-tm-tm-tm-tm-1277806964356939837) and supports Multi-Instance\n* Easy-to-use interface for new exploiters\n\nSolara has built a great reputation since its release as one of the first external Roblox executors to hit the market, and has been steadily receiving updates for over a year!\n\n! Things to keep in mind: \n\n! Due to the nature of being an **external executor** (Doesn’t inject internally), Solara lacks exploit functions that many scripts use. If you are looking to develop scripts or use scripts with more advanced features, you’ll need to use another executor. But overall, for basic use, Solara serves its purpose very well.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://getsolara.dev",
+    "discord": "https://getsolara.dev/discord",
+    "purchase": null,
+    "store": null,
+    "showcase": "https://www.youtube.com/watch?v=vHG5bHPXA2A"
+  },
+  "logo": "https://cdn.weao.gg/slug/solara/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "photon",
+  "title": "Photon",
+  "version": "7.0",
+  "updatedDate": "09/22/2026 at 5:26 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$20 Lifetime"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://photons.solutions/",
+    "discord": "https://discord.gg/vro",
+    "purchase": "https://photons.solutions/buy/photon-external/",
+    "store": "https://photons.solutions/buy/photon-external/",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/photon.webp",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

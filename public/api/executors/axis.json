@@ -1,0 +1,35 @@
+{
+  "slug": "axis",
+  "title": "Axis",
+  "version": "0.4.6-e7f981e93518b158",
+  "updatedDate": "09/22/2026 at 4:00 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$8.99 Monthly"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [],
+  "links": {
+    "website": "https://useaxis.cc/",
+    "discord": "https://discord.com/invite/universal",
+    "purchase": "https://useaxis.cc/plans?affiliate=bc8a41b77e6ef775800d31b39a362a3a",
+    "store": "https://rcheatz.com/product?id=axis&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": null,
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

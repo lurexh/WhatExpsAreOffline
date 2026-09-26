@@ -1,0 +1,42 @@
+{
+  "slug": "sirhurt",
+  "title": "SirHurt",
+  "version": "V5.470",
+  "updatedDate": "09/22/2026 at 4:01 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$2.80 Weekly"
+  },
+  "creator": "spook",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://sirhurt.net",
+    "discord": "https://discord.gg/CPKvWTgFdV",
+    "purchase": "https://sirhurt.net/#purchase",
+    "store": "https://sirhurt.net/#purchase",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/sirhurt/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

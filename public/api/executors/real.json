@@ -1,0 +1,42 @@
+{
+  "slug": "real",
+  "title": "Real",
+  "version": "2.7.1",
+  "updatedDate": "09/25/2026 at 10:22 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "Bytecode, marko, 0x108",
+  "description": "No description available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "key-system",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://realest.gg",
+    "discord": "https://discord.gg/projectreal",
+    "purchase": "https://rcheatz.com/product?id=real&ref=weao",
+    "store": "https://rcheatz.com/product?id=real&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/real/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

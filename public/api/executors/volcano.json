@@ -1,0 +1,39 @@
+{
+  "slug": "volcano",
+  "title": "Volcano",
+  "version": "v3.2.5.1",
+  "updatedDate": "03/01/2026 at 8:42 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 96,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$5.97 Weekly"
+  },
+  "creator": "(Co)",
+  "description": "Volcano is a premium Windows script executor developed by Co, costing $5.97 weekly, featuring: \n\n* Clean executor interface\n* SysGuard (Cheatbuddy’s sandboxing solution)\n* 96% sUNC\n* Decent update speed under normal Roblox update conditions\n* Comes with a decompiler built in and supports Multi-Instance\n\nVolcano originally operated as a Freemium exploit, but after SysGuard was implemented, it turned to a subscription-based model. \n\n! Things to keep in mind: \n\n! Previously, Volcano operated under the name **Electron** (the same one from **Pre-Hyperion/UWP**) until releasing multiple times Post-Hyperion and facing banwaves. Existing Electron customers were compensated with a Lifetime Volcano key, and since then, no banwaves have occurred due to client-modification detections being implemented in Roblox after the Hunt event.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://volcano.wtf",
+    "discord": "https://volcano.wtf/discord.html",
+    "purchase": "https://gckeys.cc/product?slug=volcano-executor&ref=weao",
+    "store": null,
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/volcano/logo.png",
+  "views": null,
+  "sources": [
+    "weao"
+  ],
+  "overrides": false
+}

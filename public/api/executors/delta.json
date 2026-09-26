@@ -1,0 +1,41 @@
+{
+  "slug": "delta",
+  "title": "Delta",
+  "version": "2.729.838",
+  "updatedDate": "06/17/2026 at 3:29 PM UTC",
+  "platform": "iOS",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 98,
+  "unc": 99,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "lxnny, mlemix",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "raknet",
+    "key-system",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://deltaexploits.gg/",
+    "discord": "https://discord.gg/deltax",
+    "purchase": "https://rcheatz.com/product?id=delta&ref=weao",
+    "store": "https://rcheatz.com/product?id=delta&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/delta/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

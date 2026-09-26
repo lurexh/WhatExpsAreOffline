@@ -1,0 +1,40 @@
+{
+  "slug": "cosmic",
+  "title": "Cosmic",
+  "version": "1.733",
+  "updatedDate": "08/08/2026 at 9:41 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$14.99 Lifetime"
+  },
+  "creator": "savage",
+  "description": "Cosmic is a budget-friendly premium Windows script executor priced at $14.99 lifetime, featuring:\n\n* Working Multi-Instance\n* Decompiler\n* 100% sUNC\n* Custom UI Support\n* Fast updates under normal Roblox update conditions\n\n! Things to keep in mind:\n\n! Cosmic has quickly gained attention in the exploiting community, with some users claiming it performs better than Potassium while being about $8 cheaper, making it an obvious great choice for newer exploiters on a budget and experienced script developers, thanks to its good environment. However, it is still a relatively new executor, so its long-term reliability and lifespan are not yet fully proven.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://cosmic.best",
+    "discord": null,
+    "purchase": null,
+    "store": null,
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/cosmic/cosmic-transparent.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

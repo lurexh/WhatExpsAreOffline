@@ -1,0 +1,35 @@
+{
+  "slug": "lumen",
+  "title": "Lumen",
+  "version": "1.0.9",
+  "updatedDate": "09/23/2026 at 8:31 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$9.99 Lifetime"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [],
+  "links": {
+    "website": "https://getlumen.net/",
+    "discord": "https://discord.gg/U6RKvuEBDv",
+    "purchase": "https://bloxproducts.com/r/weao#Lumen",
+    "store": "https://bloxproducts.com/r/weao#Lumen",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/lumen.webp",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

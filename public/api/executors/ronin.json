@@ -1,0 +1,37 @@
+{
+  "slug": "ronin",
+  "title": "Ronin",
+  "version": "Version-4.1.9",
+  "updatedDate": "08/18/2026 at 5:33 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$9.59 Lifetime"
+  },
+  "creator": "Reaper",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://getronin.xyz/",
+    "discord": "https://discord.gg/HJ7zmrjhUG",
+    "purchase": "https://bloxproducts.com/r/weao#Ronin",
+    "store": "https://rcheatz.com/product?id=ronin&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/ronin/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

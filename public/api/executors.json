@@ -1,0 +1,1266 @@
+{
+  "updatedAt": "2026-09-26T05:22:27.772Z",
+  "version": 1,
+  "sources": [
+    "weao.gg",
+    "scriptblox.com"
+  ],
+  "count": 32,
+  "executors": [
+    {
+      "slug": "serotonin",
+      "title": "Serotonin",
+      "version": "v2",
+      "updatedDate": "09/22/2026 at 4:00 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.49 Monthly"
+      },
+      "creator": "fope, Auti",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://www.serotonin.win/",
+        "discord": "https://discord.com/invite/serotonin",
+        "purchase": "https://bloxproducts.com/r/weao#Serotonin",
+        "store": "https://rcheatz.com/product?id=serotonin&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/serotonin/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "volt",
+      "title": "Volt",
+      "version": "1.3.14.1",
+      "updatedDate": "09/23/2026 at 3:27 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "Last banwave: March 6-18th",
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$5.99 Weekly"
+      },
+      "creator": "Volt Team",
+      "description": "Volt (previously AWP.GG) is a premium Windows script executor costing $5.99 weekly, featuring: \n\n* Working Hyperion Emulation\n* VSCode IDE Style UI\n* 100% sUNC\n* Optimized Multi-Instance (Be sure to check out Volt’s tiers or consider purchasing the farmer package directly on [VOLTBZ.NET](https://voltbz.net), as they have an instance cap on their normal tiers!)\n* Fast updates under normal Roblox update conditions\n* Comes with a Account Manager built in\n* Comes with a Decompiler built in\n\n! Things to keep in mind: \n\n! While under the AWP.GG name, this exploit had a **long downtime period**, but after rebranding (And possibly switching developers), all existing users were compensated, and it has been reliably updating ever since. ",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://voltbz.net/",
+        "discord": "https://discord.com/invite/voltbz",
+        "purchase": "https://rcheatz.com/product?id=volt&ref=weao",
+        "store": "https://rcheatz.com/product?id=volt&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/volt/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "matcha",
+      "title": "Matcha",
+      "version": "v2",
+      "updatedDate": "09/22/2026 at 4:03 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.99 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://matcha-latte.win/",
+        "discord": "https://discord.gg/VbJXKZmEw5",
+        "purchase": "https://bloxproducts.com/r/weao#Matcha",
+        "store": "https://rcheatz.com/product?id=matcha&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/matcha.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "potassium",
+      "title": "Potassium",
+      "version": "2.5.0",
+      "updatedDate": "09/23/2026 at 8:42 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "Last banwave: June 1st",
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$22.99 Lifetime"
+      },
+      "creator": "perm, v03",
+      "description": "Potassium is a lifetime premium Windows script executor costing $22.99, featuring: \n\n* Simple, clean executor interface/internal executor\n* 100% sUNC\n* Fast updates under normal Roblox update conditions\n* Comes with a Decompiler built in and supports Multi-Instance\n\n! Things to keep in mind: \n\n! This exploit uses **kernel-level injection**, meaning that after using it, you will need to restart your PC to play games with kernel-level anticheats. This could also cause rare issues you wouldn’t normally see on a user-mode executor (BSODs, weird memory errors, etc.).\n\n! This exploit has been **detected** in the past due to certain exploit functions, but those functions have been fixed. You should still keep this in mind when testing sUNC scores.\n\nOtherwise, this exploit is a very good deal compared to other subscription-based exploits. A good exploit environment for developers on a budget. Offers decent stability for most users, but for the best experience, we recommend using [Windows 11](https://www.microsoft.com/en-us/software-download/windows11).",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://www.potassium.pro/",
+        "discord": "https://discord.com/invite/potassium",
+        "purchase": "https://bloxproducts.com/r/weao#Potassium",
+        "store": "https://rcheatz.com/product?id=potassium&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/potassium/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "severe",
+      "title": "Severe",
+      "version": "v2",
+      "updatedDate": "09/22/2026 at 5:45 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.99 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://discord.gg/QaheZpKzsX",
+        "discord": "https://discord.gg/QaheZpKzsX",
+        "purchase": "https://bloxproducts.com/r/weao#Severe",
+        "store": "https://bloxproducts.com/r/weao#Severe",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/severe.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "wave",
+      "title": "Wave",
+      "version": "NEW-1.5.4",
+      "updatedDate": "09/24/2026 at 11:58 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "Last banwave: May 26",
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$4.99 Weekly"
+      },
+      "creator": "Wave Team",
+      "description": "Wave is a premium Windows script executor, costing $5.99 weekly, featuring: \n\n* Nice executor interface \n* 100% sUNC, Decompiler, Multi-Instance support\n* Decent reputation\n\nWave is one of the oldest premium exploits still available on the market (dating back to KRAMPUS.GG), although a different team now develops Wave.\n\n! Things to keep in mind: \n\n! The experience of using this executor is not as great due to the **new developers** working on it (not the same developers from 2025), but they have at least proven they are able to keep updating\n\n! The executor interface is the same as [Fusion](https://www.youtube.com/live/6yLGExPnRHY), though it is said that it was **sold** to them\n\n! **For the price, there are other options that might perform better**",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getwave.gg",
+        "discord": "https://discord.gg/rARhPpN7fY",
+        "purchase": "https://bloxproducts.com/?affiliate_key=weao#Wave",
+        "store": "https://rcheatz.com/product?id=wave&ref=ScriptBlox",
+        "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
+      },
+      "logo": "https://cdn.weao.gg/slug/wave/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "lumen",
+      "title": "Lumen",
+      "version": "1.0.9",
+      "updatedDate": "09/23/2026 at 8:31 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.99 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [],
+      "links": {
+        "website": "https://getlumen.net/",
+        "discord": "https://discord.gg/U6RKvuEBDv",
+        "purchase": "https://bloxproducts.com/r/weao#Lumen",
+        "store": "https://bloxproducts.com/r/weao#Lumen",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/lumen.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "synapse-z",
+      "title": "Synapse Z",
+      "version": "1.0.3.6",
+      "updatedDate": "09/06/2026 at 7:17 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 98,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$3.99 Weekly"
+      },
+      "creator": "GRH",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://z.synapse.do",
+        "discord": "https://discord.gg/synz",
+        "purchase": "https://robloxcheatz.com/product?id=synapsez&ref=weao",
+        "store": "https://rcheatz.com/product?id=synapsez&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/synapsez/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "madium",
+      "title": "Madium",
+      "version": "2.3.2",
+      "updatedDate": "09/25/2026 at 8:12 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "Last banwave: May 26",
+      "sunc": 100,
+      "unc": 98,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Olemad",
+      "description": "Free Windows script executor by Olemad, key system.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getmadium.net/",
+        "discord": "https://discord.com/invite/olemad",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/madium/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "madius",
+      "title": "Madius",
+      "version": "1.11.2a-beta",
+      "updatedDate": "09/22/2026 at 7:46 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "key-system",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://madius.dev/",
+        "discord": "https://discord.com/invite/olemad",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": null,
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "matrix-hub",
+      "title": "Matrix Hub",
+      "version": "v3",
+      "updatedDate": "09/22/2026 at 4:34 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$4.99 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [],
+      "links": {
+        "website": "https://matrixhubs.shop/",
+        "discord": "https://matrixhub.xyz/discord.html",
+        "purchase": "https://rsware.store/products/matrix-hub-roblox-external-win-10--11?ref=weao",
+        "store": "https://rsware.store/products/matrix-hub-roblox-external-win-10--11?ref=weao",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/matrix-hub.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "seliware",
+      "title": "Seliware",
+      "version": "2.4.9",
+      "updatedDate": "05/23/2026 at 8:21 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "We have observed no bans after a weeks worth of testing.",
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$3.99 Weekly"
+      },
+      "creator": "Dx",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://seliware.com",
+        "discord": "https://discord.com/invite/nzEggEE9vx",
+        "purchase": "https://robloxcheatz.com/product?id=51c9587f-4794-46ef-b6bf-2bd9f13c17d2&ref=weao",
+        "store": "https://wyv.gg/product/seliware-executor/",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/seliware/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "axis",
+      "title": "Axis",
+      "version": "0.4.6-e7f981e93518b158",
+      "updatedDate": "09/22/2026 at 4:00 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$8.99 Monthly"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [],
+      "links": {
+        "website": "https://useaxis.cc/",
+        "discord": "https://discord.com/invite/universal",
+        "purchase": "https://useaxis.cc/plans?affiliate=bc8a41b77e6ef775800d31b39a362a3a",
+        "store": "https://rcheatz.com/product?id=axis&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": null,
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "real",
+      "title": "Real",
+      "version": "2.7.1",
+      "updatedDate": "09/25/2026 at 10:22 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Bytecode, marko, 0x108",
+      "description": "No description available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://realest.gg",
+        "discord": "https://discord.gg/projectreal",
+        "purchase": "https://rcheatz.com/product?id=real&ref=weao",
+        "store": "https://rcheatz.com/product?id=real&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/real/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "isaeva",
+      "title": "Isaeva",
+      "version": "2.3.4",
+      "updatedDate": "09/24/2026 at 6:21 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$3.99 Weekly"
+      },
+      "creator": "Immune, vac",
+      "description": "Paid Windows script executor by Immune, vac, $3.99 Weekly.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://isaeva.xyz/",
+        "discord": "https://discord.gg/6xFWKd4Qcr",
+        "purchase": "https://cheapkeyz.store/products/isaeva?r=weao",
+        "store": "https://cheapkeyz.store/products/isaeva?r=weao",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/isaeva/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "photon",
+      "title": "Photon",
+      "version": "7.0",
+      "updatedDate": "09/22/2026 at 5:26 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$20 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://photons.solutions/",
+        "discord": "https://discord.gg/vro",
+        "purchase": "https://photons.solutions/buy/photon-external/",
+        "store": "https://photons.solutions/buy/photon-external/",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/photon.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "cosmic",
+      "title": "Cosmic",
+      "version": "1.733",
+      "updatedDate": "08/08/2026 at 9:41 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$14.99 Lifetime"
+      },
+      "creator": "savage",
+      "description": "Cosmic is a budget-friendly premium Windows script executor priced at $14.99 lifetime, featuring:\n\n* Working Multi-Instance\n* Decompiler\n* 100% sUNC\n* Custom UI Support\n* Fast updates under normal Roblox update conditions\n\n! Things to keep in mind:\n\n! Cosmic has quickly gained attention in the exploiting community, with some users claiming it performs better than Potassium while being about $8 cheaper, making it an obvious great choice for newer exploiters on a budget and experienced script developers, thanks to its good environment. However, it is still a relatively new executor, so its long-term reliability and lifespan are not yet fully proven.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://cosmic.best",
+        "discord": null,
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/cosmic/cosmic-transparent.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "ronin",
+      "title": "Ronin",
+      "version": "Version-4.1.9",
+      "updatedDate": "08/18/2026 at 5:33 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.59 Lifetime"
+      },
+      "creator": "Reaper",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://getronin.xyz/",
+        "discord": "https://discord.gg/HJ7zmrjhUG",
+        "purchase": "https://bloxproducts.com/r/weao#Ronin",
+        "store": "https://rcheatz.com/product?id=ronin&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/ronin/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "dx9ware-v2",
+      "title": "DX9WARE V2",
+      "version": "1.1.220",
+      "updatedDate": "09/22/2026 at 4:32 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$15 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://cultofintellect.com/",
+        "discord": "https://discord.gg/coi",
+        "purchase": "https://cultofintellect.com/dx9ware#pricing",
+        "store": "https://cultofintellect.com/dx9ware#pricing",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/dx9ware-v2.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "velocity",
+      "title": "Velocity",
+      "version": "1.3.9",
+      "updatedDate": "09/14/2026 at 7:30 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "CG",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "key-system",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://realvelocity.xyz/",
+        "discord": "https://discord.com/invite/velocityide",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/velocity/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "sirhurt",
+      "title": "SirHurt",
+      "version": "V5.470",
+      "updatedDate": "09/22/2026 at 4:01 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$2.80 Weekly"
+      },
+      "creator": "spook",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://sirhurt.net",
+        "discord": "https://discord.gg/CPKvWTgFdV",
+        "purchase": "https://sirhurt.net/#purchase",
+        "store": "https://sirhurt.net/#purchase",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/sirhurt/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "solara",
+      "title": "Solara",
+      "version": "0.1.7a",
+      "updatedDate": "09/25/2026 at 2:07 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 59,
+      "unc": 66,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Quivings",
+      "description": "Solara is a free external Windows script executor, featuring: \n\n* No key system, only advertisements to download the bootstrapper/portable download\n* 46% sUNC \n* Often, one of the first exploits to update under normal Roblox update conditions\n* Comes with [Konstant Decompiler](https://discord.com/invite/konstant-tm-tm-lykooking-tm-krack-tm-tm-tm-tm-1277806964356939837) and supports Multi-Instance\n* Easy-to-use interface for new exploiters\n\nSolara has built a great reputation since its release as one of the first external Roblox executors to hit the market, and has been steadily receiving updates for over a year!\n\n! Things to keep in mind: \n\n! Due to the nature of being an **external executor** (Doesn’t inject internally), Solara lacks exploit functions that many scripts use. If you are looking to develop scripts or use scripts with more advanced features, you’ll need to use another executor. But overall, for basic use, Solara serves its purpose very well.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://getsolara.dev",
+        "discord": "https://getsolara.dev/discord",
+        "purchase": null,
+        "store": null,
+        "showcase": "https://www.youtube.com/watch?v=vHG5bHPXA2A"
+      },
+      "logo": "https://cdn.weao.gg/slug/solara/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "xeno",
+      "title": "Xeno",
+      "version": "1.3.60",
+      "updatedDate": "09/22/2026 at 4:00 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 40,
+      "unc": 84,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Rizve",
+      "description": "Xeno is a free external Windows script executor, featuring: \n\n* No key system, only advertisements to download\n* 32% sUNC \n* Often, the **first** exploit to update under normal Roblox update conditions.\n* Comes with [Konstant Decompiler](https://discord.com/invite/konstant-tm-tm-lykooking-tm-krack-tm-tm-tm-tm-1277806964356939837) and supports Multi-Instance\n* Easy-to-use interface for new exploiters\n\nXeno has built a solid reputation, mostly blowing up for new exploit users. It does receive frequent updates, with new functions always being added, but, similarly to Solara, you’ll be limited in what you can use Xeno for.\n\n! Things to keep in mind: \n\n! Due to the nature of being an **external executor** (Doesn’t inject internally), Xeno lacks exploit functions that many scripts use. If you are looking to develop scripts or use scripts with more advanced features, you’ll need to use another executor. But overall, for basic use, Xeno serves its purpose very well.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://www.xeno.now/",
+        "discord": "https://discord.gg/xe-no",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/xeno/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "macsploit",
+      "title": "MacSploit",
+      "version": "739.2b",
+      "updatedDate": "09/23/2026 at 7:30 AM UTC",
+      "platform": "Mac",
+      "type": "mac",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$9.99 Lifetime"
+      },
+      "creator": "Nexus42",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://www.raptor.fun/",
+        "discord": "https://discord.gg/macsploit",
+        "purchase": "https://bloxproducts.com/?affiliate_key=weao#MacSploit",
+        "store": "https://www.raptor.fun/payments/products/lifetime",
+        "showcase": "https://www.youtube.com/watch?v=EzaBtDKABT8"
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/MacSploit.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "opiumware",
+      "title": "Opiumware",
+      "version": "v2.5.1-a",
+      "updatedDate": "09/05/2026 at 4:15 AM UTC",
+      "platform": "Mac",
+      "type": "mac",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "norby",
+      "description": "Free macOS script executor by norby.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "unc"
+      ],
+      "links": {
+        "website": "https://use.opiumware.today/",
+        "discord": "https://discord.gg/opiumware",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/opiumware/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "delta",
+      "title": "Delta",
+      "version": "2.729.840",
+      "updatedDate": "06/08/2026 at 7:11 PM UTC",
+      "platform": "Android",
+      "type": "android",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "lxnny, mlemix",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "raknet",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://deltaexploits.gg/",
+        "discord": "https://discord.gg/deltax",
+        "purchase": "https://rcheatz.com/product?id=delta&ref=weao",
+        "store": "https://rcheatz.com/product?id=delta&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/delta/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "vega-x",
+      "title": "Vega X",
+      "version": "2.734.917",
+      "updatedDate": "08/22/2026 at 4:53 PM UTC",
+      "platform": "Android",
+      "type": "android",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 98,
+      "unc": 98,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://www.vegax.gg",
+        "discord": "https://www.vegax.gg/discord.html",
+        "purchase": "https://www.vegax.gg/sellix.html",
+        "store": "https://www.vegax.gg/sellix.html",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/vega-x.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "codex",
+      "title": "Codex",
+      "version": "2.731.944",
+      "updatedDate": "08/10/2026 at 9:14 PM UTC",
+      "platform": "Android",
+      "type": "android",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 96,
+      "unc": 98,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Furky",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://codex.lol",
+        "discord": "https://discord.gg/codexlol",
+        "purchase": "https://rcheatz.com/affiliate/weao",
+        "store": "https://rocheats.com",
+        "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
+      },
+      "logo": "https://cdn.weao.gg/slug/codex/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "cryptic",
+      "title": "Cryptic",
+      "version": "2.693.960",
+      "updatedDate": "2025-10-15T21:08:00.735Z",
+      "platform": "Android",
+      "type": "android",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Reaper",
+      "description": "Cryptic is the apex of executors, packing the most features, a short key system and the cheapest premium on the market.",
+      "features": [],
+      "links": {
+        "website": "https://getcryptic.net",
+        "discord": "https://discord.gg/getcryptic",
+        "purchase": "https://reapstore.mysellauth.com/",
+        "store": "https://reapstore.mysellauth.com/",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/Cryptic.png",
+      "views": null,
+      "sources": [
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "delta",
+      "title": "Delta",
+      "version": "2.729.838",
+      "updatedDate": "06/17/2026 at 3:29 PM UTC",
+      "platform": "iOS",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 98,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "lxnny, mlemix",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "raknet",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://deltaexploits.gg/",
+        "discord": "https://discord.gg/deltax",
+        "purchase": "https://rcheatz.com/product?id=delta&ref=weao",
+        "store": "https://rcheatz.com/product?id=delta&ref=ScriptBlox",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/delta/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "melatonin",
+      "title": "Melatonin",
+      "version": "1.4.4l",
+      "updatedDate": "12/09/2025 at 12:05 AM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$9.99 Monthly (Private)"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://melatonin.win/",
+        "discord": "https://discord.gg/rcTdg9wbVa",
+        "purchase": "https://melatonin.win/index.php?account/upgrades",
+        "store": null,
+        "showcase": null
+      },
+      "logo": null,
+      "views": null,
+      "sources": [
+        "weao"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "volcano",
+      "title": "Volcano",
+      "version": "v3.2.5.1",
+      "updatedDate": "03/01/2026 at 8:42 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 96,
+      "unc": 99,
+      "pricing": {
+        "free": false,
+        "cost": "$5.97 Weekly"
+      },
+      "creator": "(Co)",
+      "description": "Volcano is a premium Windows script executor developed by Co, costing $5.97 weekly, featuring: \n\n* Clean executor interface\n* SysGuard (Cheatbuddy’s sandboxing solution)\n* 96% sUNC\n* Decent update speed under normal Roblox update conditions\n* Comes with a decompiler built in and supports Multi-Instance\n\nVolcano originally operated as a Freemium exploit, but after SysGuard was implemented, it turned to a subscription-based model. \n\n! Things to keep in mind: \n\n! Previously, Volcano operated under the name **Electron** (the same one from **Pre-Hyperion/UWP**) until releasing multiple times Post-Hyperion and facing banwaves. Existing Electron customers were compensated with a Lifetime Volcano key, and since then, no banwaves have occurred due to client-modification detections being implemented in Roblox after the Hunt event.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://volcano.wtf",
+        "discord": "https://volcano.wtf/discord.html",
+        "purchase": "https://gckeys.cc/product?slug=volcano-executor&ref=weao",
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/volcano/logo.png",
+      "views": null,
+      "sources": [
+        "weao"
+      ],
+      "overrides": false
+    }
+  ]
+}

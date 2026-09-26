@@ -1,0 +1,40 @@
+{
+  "slug": "opiumware",
+  "title": "Opiumware",
+  "version": "v2.5.1-a",
+  "updatedDate": "09/05/2026 at 4:15 AM UTC",
+  "platform": "Mac",
+  "type": "mac",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "norby",
+  "description": "Free macOS script executor by norby.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "unc"
+  ],
+  "links": {
+    "website": "https://use.opiumware.today/",
+    "discord": "https://discord.gg/opiumware",
+    "purchase": null,
+    "store": null,
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/opiumware/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

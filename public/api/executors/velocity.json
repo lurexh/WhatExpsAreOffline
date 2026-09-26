@@ -1,0 +1,42 @@
+{
+  "slug": "velocity",
+  "title": "Velocity",
+  "version": "1.3.9",
+  "updatedDate": "09/14/2026 at 7:30 AM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "CG",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "key-system",
+    "client-mods",
+    "unc",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://realvelocity.xyz/",
+    "discord": "https://discord.com/invite/velocityide",
+    "purchase": null,
+    "store": null,
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/velocity/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

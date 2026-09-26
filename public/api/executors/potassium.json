@@ -1,0 +1,41 @@
+{
+  "slug": "potassium",
+  "title": "Potassium",
+  "version": "2.5.0",
+  "updatedDate": "09/23/2026 at 8:42 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": "Last banwave: June 1st",
+  "sunc": 100,
+  "unc": 99,
+  "pricing": {
+    "free": false,
+    "cost": "$22.99 Lifetime"
+  },
+  "creator": "perm, v03",
+  "description": "Potassium is a lifetime premium Windows script executor costing $22.99, featuring: \n\n* Simple, clean executor interface/internal executor\n* 100% sUNC\n* Fast updates under normal Roblox update conditions\n* Comes with a Decompiler built in and supports Multi-Instance\n\n! Things to keep in mind: \n\n! This exploit uses **kernel-level injection**, meaning that after using it, you will need to restart your PC to play games with kernel-level anticheats. This could also cause rare issues you wouldn’t normally see on a user-mode executor (BSODs, weird memory errors, etc.).\n\n! This exploit has been **detected** in the past due to certain exploit functions, but those functions have been fixed. You should still keep this in mind when testing sUNC scores.\n\nOtherwise, this exploit is a very good deal compared to other subscription-based exploits. A good exploit environment for developers on a budget. Offers decent stability for most users, but for the best experience, we recommend using [Windows 11](https://www.microsoft.com/en-us/software-download/windows11).",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://www.potassium.pro/",
+    "discord": "https://discord.com/invite/potassium",
+    "purchase": "https://bloxproducts.com/r/weao#Potassium",
+    "store": "https://rcheatz.com/product?id=potassium&ref=ScriptBlox",
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/potassium/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

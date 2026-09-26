@@ -1,0 +1,40 @@
+{
+  "slug": "vega-x",
+  "title": "Vega X",
+  "version": "2.734.917",
+  "updatedDate": "08/22/2026 at 4:53 PM UTC",
+  "platform": "Android",
+  "type": "android",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 98,
+  "unc": 98,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "key-system",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://www.vegax.gg",
+    "discord": "https://www.vegax.gg/discord.html",
+    "purchase": "https://www.vegax.gg/sellix.html",
+    "store": "https://www.vegax.gg/sellix.html",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/vega-x.webp",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

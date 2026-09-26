@@ -1,0 +1,34 @@
+{
+  "slug": "cryptic",
+  "title": "Cryptic",
+  "version": "2.693.960",
+  "updatedDate": "2025-10-15T21:08:00.735Z",
+  "platform": "Android",
+  "type": "android",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "Reaper",
+  "description": "Cryptic is the apex of executors, packing the most features, a short key system and the cheapest premium on the market.",
+  "features": [],
+  "links": {
+    "website": "https://getcryptic.net",
+    "discord": "https://discord.gg/getcryptic",
+    "purchase": "https://reapstore.mysellauth.com/",
+    "store": "https://reapstore.mysellauth.com/",
+    "showcase": null
+  },
+  "logo": "https://scriptblox.com/images/exec/thumbs/Cryptic.png",
+  "views": null,
+  "sources": [
+    "scriptblox"
+  ],
+  "overrides": false
+}

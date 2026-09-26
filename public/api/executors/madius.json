@@ -1,0 +1,38 @@
+{
+  "slug": "madius",
+  "title": "Madius",
+  "version": "1.11.2a-beta",
+  "updatedDate": "09/22/2026 at 7:46 PM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "key-system",
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://madius.dev/",
+    "discord": "https://discord.com/invite/olemad",
+    "purchase": null,
+    "store": null,
+    "showcase": null
+  },
+  "logo": null,
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "melatonin",
+  "title": "Melatonin",
+  "version": "1.4.4l",
+  "updatedDate": "12/09/2025 at 12:05 AM UTC",
+  "platform": "Windows",
+  "type": "external",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": false,
+  "detectionReason": null,
+  "sunc": null,
+  "unc": null,
+  "pricing": {
+    "free": false,
+    "cost": "$9.99 Monthly (Private)"
+  },
+  "creator": null,
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "element-certified"
+  ],
+  "links": {
+    "website": "https://melatonin.win/",
+    "discord": "https://discord.gg/rcTdg9wbVa",
+    "purchase": "https://melatonin.win/index.php?account/upgrades",
+    "store": null,
+    "showcase": null
+  },
+  "logo": null,
+  "views": null,
+  "sources": [
+    "weao"
+  ],
+  "overrides": false
+}

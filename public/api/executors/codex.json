@@ -1,0 +1,40 @@
+{
+  "slug": "codex",
+  "title": "Codex",
+  "version": "2.731.944",
+  "updatedDate": "08/10/2026 at 9:14 PM UTC",
+  "platform": "Android",
+  "type": "android",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 96,
+  "unc": 98,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "Furky",
+  "description": "No description currently available. Check back soon!",
+  "features": [
+    "decompiler",
+    "key-system",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://codex.lol",
+    "discord": "https://discord.gg/codexlol",
+    "purchase": "https://rcheatz.com/affiliate/weao",
+    "store": "https://rocheats.com",
+    "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
+  },
+  "logo": "https://cdn.weao.gg/slug/codex/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}

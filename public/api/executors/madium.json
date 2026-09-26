@@ -1,0 +1,42 @@
+{
+  "slug": "madium",
+  "title": "Madium",
+  "version": "2.3.2",
+  "updatedDate": "09/25/2026 at 8:12 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "online",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": "Last banwave: May 26",
+  "sunc": 100,
+  "unc": 98,
+  "pricing": {
+    "free": true,
+    "cost": null
+  },
+  "creator": "Olemad",
+  "description": "Free Windows script executor by Olemad, key system.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "key-system",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://getmadium.net/",
+    "discord": "https://discord.com/invite/olemad",
+    "purchase": null,
+    "store": null,
+    "showcase": null
+  },
+  "logo": "https://cdn.weao.gg/slug/madium/logo.png",
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}
