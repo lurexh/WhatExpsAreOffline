@@ -28,6 +28,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .tab{padding:10px 22px;font-weight:700;font-size:.95rem;color:var(--ink-3);border:1px solid transparent;border-bottom:none;transition:color .12s,background .12s;letter-spacing:-.01em;position:relative;top:2px}
 .tab:hover{color:var(--ink)}
 .tab.active{color:var(--ink);background:var(--paper);border-color:var(--ink);border-bottom:2px solid var(--paper)}
+a.tab{text-decoration:none}
 header.masthead{padding:20px 0 32px;margin-bottom:0}
 .masthead-top{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--rule);gap:16px;flex-wrap:wrap;text-transform:uppercase}
 .masthead-top a{color:var(--red)}
@@ -155,6 +156,7 @@ section.platform{margin-bottom:52px}
 .show-more-inline{grid-column:1/-1;padding:14px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;border:1px dashed var(--rule-hi);color:var(--ink-3);background:transparent;transition:all .12s}
 .show-more-inline:hover{border-color:var(--ink);color:var(--ink);background:var(--paper-2)}
 .empty{padding:28px;text-align:center;color:var(--ink-3);font-size:.95rem;border:1px dashed var(--rule-hi);background:var(--paper-2);margin-top:12px}
+.empty a{color:var(--red);border-bottom:1px solid currentColor}
 .error{padding:18px 22px;background:rgba(184,35,42,.06);border:1px solid var(--red);border-left:4px solid var(--red);margin-bottom:28px;font-size:.9rem;color:var(--ink)}
 .error.warn{background:rgba(165,109,15,.08);border-color:var(--amber);border-left-color:var(--amber)}
 .error .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:6px;font-weight:600}
@@ -312,6 +314,24 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 .exec-sbtn:hover{border-color:var(--ink);color:var(--ink);background:var(--paper-3)}
 .exec-sbtn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .exec-sbtn.primary:hover{background:var(--red);border-color:var(--red)}
+.bw-page{border-top:2px solid var(--ink);padding-top:20px}
+.bw-stats{display:flex;flex-wrap:wrap;gap:22px;padding:12px 22px;background:var(--paper-2);border:1px solid var(--rule-hi);margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.03em;align-items:center}
+.bw-stat{display:flex;align-items:baseline;gap:8px}
+.bw-stat .n{font-size:1.25rem;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.bw-stat .lbl{color:var(--ink-3);text-transform:uppercase;font-size:10px;letter-spacing:.12em}
+.bw-stat.danger .n{color:var(--red)}
+.bw-session{background:var(--paper-2);border:1px solid var(--rule-hi);border-left:4px solid var(--ink-3);padding:16px 20px;margin-bottom:12px}
+.bw-session.active{border-left-color:var(--red);background:rgba(184,35,42,.04)}
+.bw-session-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:10px;flex-wrap:wrap}
+.bw-session-title{font-weight:800;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.bw-session-title .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);animation:bwpulse 1.8s infinite;flex-shrink:0}
+.bw-session-title .end{width:8px;height:8px;border-radius:50%;background:var(--ink-4);flex-shrink:0}
+.bw-badge{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;background:var(--ink);color:var(--paper)}
+.bw-badge.active{background:var(--red)}
+.bw-session-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-3);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:14px}
+.bw-session-meta strong{color:var(--ink);font-weight:600}
+.bw-flagged{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.bw-flag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.03em;padding:3px 9px;background:var(--paper);border:1px solid var(--rule-hi);color:var(--ink-2)}
 @media (max-width:900px){
   .col-head{display:none}
   .row-main{grid-template-columns:26px 40px 1fr auto;row-gap:6px;padding:14px 4px}
@@ -329,7 +349,7 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   .statbar{gap:16px;padding:12px 16px}
   .stat .n{font-size:1.1rem}
   .scripts-grid{grid-template-columns:1fr}
-  .tabs{justify-content:center}
+  .tabs{justify-content:center;flex-wrap:wrap}
 }
 @media (max-width:600px){
   .exec-hero{flex-direction:column;gap:12px}
@@ -364,7 +384,9 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
 <div class="tabs">
   <button class="tab active" data-tab="cheats">Cheats</button>
   <button class="tab" data-tab="scripts">Scripts</button>
+  <button class="tab" data-tab="banwaves">Banwaves</button>
   <button class="tab" data-tab="news" id="newsTab" style="display:none">News</button>
+  <a class="tab" href="/docs">API</a>
 </div>
 
 <a id="discordHero" class="discord-hero" href="#" target="_blank" rel="noopener">
@@ -511,6 +533,8 @@ footer .discord-footer svg{width:14px;height:14px;flex-shrink:0}
   </div>
 </div>
 
+<div id="pageBanwaves" style="display:none"></div>
+
 <div class="modal" id="codeModal">
   <div class="modal-box">
     <div class="modal-head">
@@ -568,6 +592,7 @@ var SUPABASE_URL  = 'https://asxaocghenthlxisifgq.supabase.co';
 var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzeGFvY2doZW50aGx4aXNpZmdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyOTk2MjcsImV4cCI6MjEwNTg3NTYyN30.pN9uiK3Dok4z7VposUy8zq7a7vmwGrJ03AV1IUVZfus';
 
 var BANWAVE = { active: false, flagged: [], lastChecked: null };
+var BANWAVES = { sessions: [], loaded: false };
 var ADMIN = { disabled: {}, announcements: [], notes: {} };
 var OVERRIDES = {};
 
@@ -1717,6 +1742,21 @@ async function loadScriptById(id){
 }
 
 async function loadGameById(gid){
+  $('scriptsGrid').innerHTML = '<div class="skel-card"></div>';
+
+  if (!S.scripts.data.length){
+    if (!S.scripts.defaultLoaded){
+      S.scripts.defaultLoaded = true;
+      await loadScriptsPage(true);
+    } else if (S.scripts.loading){
+      var waited = 0;
+      while (S.scripts.loading && waited < 8000){
+        await new Promise(function(r){ setTimeout(r, 200) });
+        waited += 200;
+      }
+    }
+  }
+
   var game = null;
   var list = [];
   for (var i = 0; i < S.scripts.data.length; i++){
@@ -1726,14 +1766,21 @@ async function loadGameById(gid){
       list.push(sc);
     }
   }
+
   if (!game){
-    $('scriptsGrid').innerHTML = '<div class="empty">Game not found in loaded scripts.</div>';
+    $('scriptsGrid').innerHTML = '<div class="empty">Game not found. Only recent scripts are loaded — <a href="' + basePath() + 'scripts">browse all scripts</a> to see more.</div>';
     return;
   }
+
   list.sort(function(a, b){ return (b.views || 0) - (a.views || 0) });
   S.scripts.game = game;
   S.scripts.gameScripts = list;
   renderGameView();
+
+  renderBreadcrumbs([
+    { label: 'Scripts', href: basePath() + 'scripts' },
+    { label: game.name || 'Game' }
+  ]);
 }
 
 var scriptSearchTimer = null;
@@ -1898,7 +1945,7 @@ async function loadCheats(){
 function parsePath(){
   var h = (location.hash || '').replace(/^#/, '').split('?')[0];
   if (h && h.indexOf('/') === -1 && h.indexOf('=') === -1){
-    var known = ['cheats', 'scripts', 'news'];
+    var known = ['cheats', 'scripts', 'news', 'banwaves'];
     if (known.indexOf(h) === -1){
       return { page: 'cheats', sub: h };
     }
@@ -1913,6 +1960,7 @@ function parsePath(){
 
   if (first === 'scripts') return { page: 'scripts', sub: second };
   if (first === 'news')    return { page: 'news',    sub: null };
+  if (first === 'banwaves') return { page: 'banwaves', sub: null };
   if (first === 'games')   return { page: 'games',   sub: second };
   if (first === 'cheats')  return { page: 'cheats',  sub: second };
   if (first === '' || first === 'index') return { page: 'cheats', sub: null };
@@ -1926,6 +1974,13 @@ function route(){
   var r = parsePath();
 
   $('pageNews').style.display = 'none';
+  $('pageBanwaves').style.display = 'none';
+
+  if (r.page === 'banwaves'){
+    switchTab('banwaves', true);
+    renderBreadcrumbs([{ label: 'Home', href: basePath() }, { label: 'Banwaves' }]);
+    return;
+  }
 
   if (r.page === 'news'){
     switchTab('news', true);
@@ -1937,7 +1992,10 @@ function route(){
     S.page = 'scripts';
     switchTab('scripts', true);
     $('pageExecDetail').style.display = 'none';
-    renderBreadcrumbs([{ label: 'Scripts', href: basePath() + 'scripts' }, { label: 'Game' }]);
+    renderBreadcrumbs([
+      { label: 'Scripts', href: basePath() + 'scripts' },
+      { label: 'Loading…' }
+    ]);
     loadGameById(decodeURIComponent(r.sub));
     return;
   }
@@ -1987,7 +2045,11 @@ function route(){
 
 function switchTab(name, silent){
   S.page = name;
-  $('pageExecDetail').style.display = 'none';
+
+  ['pageCheats','pageScripts','pageNews','pageBanwaves','pageExecDetail'].forEach(function(id){
+    var el = $(id);
+    if (el) el.style.display = 'none';
+  });
 
   var tabs = document.querySelectorAll('.tab');
   for (var i = 0; i < tabs.length; i++){
@@ -1996,25 +2058,24 @@ function switchTab(name, silent){
 
   if (name === 'cheats'){
     $('pageCheats').style.display = '';
-    $('pageScripts').style.display = 'none';
-    $('pageNews').style.display = 'none';
     $('tagline').textContent = 'The worst roblox executor stat tracker.';
     $('sourceLine').innerHTML = 'Data via <a href="https://weao.gg" target="_blank" rel="noopener">weao.gg</a> &amp; <a href="https://scriptblox.com" target="_blank" rel="noopener">scriptblox.com</a>';
     $('credit').innerHTML = 'Data powered by <a href="https://weao.gg" target="_blank" rel="noopener">weao</a> &amp; <a href="https://scriptblox.com" target="_blank" rel="noopener">scriptblox</a>';
   } else if (name === 'scripts'){
-    $('pageCheats').style.display = 'none';
     $('pageScripts').style.display = '';
-    $('pageNews').style.display = 'none';
     $('tagline').textContent = 'The worst roblox script catalogue.';
     $('sourceLine').innerHTML = 'Data via <a href="https://scriptblox.com" target="_blank" rel="noopener">scriptblox.com</a>';
     $('credit').innerHTML = 'Powered by <a href="https://scriptblox.com" target="_blank" rel="noopener">scriptblox</a>';
   } else if (name === 'news'){
-    $('pageCheats').style.display = 'none';
-    $('pageScripts').style.display = 'none';
-    $('pageExecDetail').style.display = 'none';
     $('pageNews').style.display = '';
     renderNewsPage();
     $('tagline').textContent = 'Site announcements.';
+    $('sourceLine').innerHTML = '';
+    $('credit').innerHTML = '';
+  } else if (name === 'banwaves'){
+    $('pageBanwaves').style.display = '';
+    renderBanwavePage();
+    $('tagline').textContent = 'Every recorded banwave session.';
     $('sourceLine').innerHTML = '';
     $('credit').innerHTML = '';
   }
@@ -2024,6 +2085,7 @@ function wireTabs(){
   var tabs = document.querySelectorAll('.tab');
   for (var i = 0; i < tabs.length; i++){
     (function(t){
+      if (t.tagName === 'A') return;
       t.addEventListener('click', function(){
         var name = t.getAttribute('data-tab');
         if (name === 'cheats') go(basePath());
@@ -2268,6 +2330,126 @@ async function loadOverrides(){
   } catch(e){}
 }
 
+async function loadBanwaves(){
+  if (BANWAVES.loaded) return;
+  try {
+    var r = await fetch('/api/banwaves.json');
+    if (!r.ok) return;
+    var d = await r.json();
+    BANWAVES.sessions = (d && d.sessions) || [];
+    BANWAVES.loaded = true;
+    if (S.page === 'banwaves') renderBanwavePage();
+  } catch(e){}
+}
+
+function fmtDuration(ms){
+  if (!ms || ms <= 0) return '—';
+  var s = Math.floor(ms / 1000);
+  var d = Math.floor(s / 86400); s -= d * 86400;
+  var h = Math.floor(s / 3600);  s -= h * 3600;
+  var m = Math.floor(s / 60);
+  if (d > 0) return d + 'd ' + h + 'h';
+  if (h > 0) return h + 'h ' + m + 'm';
+  return m + 'm';
+}
+
+function fmtBwDate(iso){
+  if (!iso) return '—';
+  try {
+    var d = new Date(iso);
+    var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return mo[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear();
+  } catch(e){ return iso; }
+}
+
+function fmtBwDateTime(iso){
+  if (!iso) return '—';
+  try {
+    var d = new Date(iso);
+    var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var h = d.getUTCHours(); var ampm = h < 12 ? 'am' : 'pm'; var h12 = h % 12 || 12;
+    var mm = String(d.getUTCMinutes()).padStart(2, '0');
+    return mo[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + h12 + ':' + mm + ampm + ' UTC';
+  } catch(e){ return iso; }
+}
+
+function renderBanwavePage(){
+  var mount = $('pageBanwaves');
+  if (!mount) return;
+
+  if (!BANWAVES.loaded){
+    mount.innerHTML = '<div class="bw-page"><div class="empty">Loading banwave history…</div></div>';
+    loadBanwaves();
+    return;
+  }
+
+  var sessions = BANWAVES.sessions;
+  if (!sessions.length){
+    mount.innerHTML = '<div class="bw-page"><div class="empty">No banwaves recorded yet. We log a snapshot every 6 hours — check back in a few days.</div></div>';
+    return;
+  }
+
+  var total = sessions.length;
+  var totalMs = 0;
+  var worstFlagged = 0;
+  var last30 = 0;
+  var cutoff = Date.now() - 30 * 86400 * 1000;
+  for (var i = 0; i < sessions.length; i++){
+    var s0 = sessions[i];
+    totalMs += s0.durationMs || 0;
+    if ((s0.peakFlagged || 0) > worstFlagged) worstFlagged = s0.peakFlagged;
+    if (new Date(s0.startedAt).getTime() > cutoff) last30++;
+  }
+  var avgMs = totalMs / total;
+
+  var statsHTML = '<div class="bw-stats">'
+    + '<div class="bw-stat"><span class="n">' + total + '</span><span class="lbl">Total</span></div>'
+    + '<span style="color:var(--rule-hi)">·</span>'
+    + '<div class="bw-stat"><span class="n">' + last30 + '</span><span class="lbl">Last 30d</span></div>'
+    + '<span style="color:var(--rule-hi)">·</span>'
+    + '<div class="bw-stat"><span class="n">' + fmtDuration(avgMs) + '</span><span class="lbl">Avg duration</span></div>'
+    + '<span style="color:var(--rule-hi)">·</span>'
+    + '<div class="bw-stat danger"><span class="n">' + worstFlagged + '</span><span class="lbl">Peak flagged</span></div>'
+    + '</div>';
+
+  var html = '<div class="bw-page">' + statsHTML;
+
+  for (var j = 0; j < sessions.length; j++){
+    var s = sessions[j];
+    var active = !s.endedAt;
+    var duration = s.durationMs || (active ? Date.now() - new Date(s.startedAt).getTime() : 0);
+    var flags = s.flagged || [];
+
+    html += '<div class="bw-session ' + (active ? 'active' : '') + '">'
+      + '<div class="bw-session-head">'
+      +   '<div class="bw-session-title">'
+      +     '<span class="' + (active ? 'pulse' : 'end') + '"></span>'
+      +     'Banwave · ' + esc(fmtBwDate(s.startedAt))
+      +   '</div>'
+      +   '<span class="bw-badge ' + (active ? 'active' : '') + '">' + (active ? 'ACTIVE' : 'ENDED') + '</span>'
+      + '</div>'
+      + '<div class="bw-session-meta">'
+      +   '<span>Started <strong>' + esc(fmtBwDateTime(s.startedAt)) + '</strong></span>'
+      +   (s.endedAt ? '<span>Ended <strong>' + esc(fmtBwDateTime(s.endedAt)) + '</strong></span>' : '<span>Still ongoing</span>')
+      +   '<span>Duration <strong>' + esc(fmtDuration(duration)) + '</strong></span>'
+      +   '<span>Peak <strong>' + (s.peakFlagged || 0) + ' flagged</strong></span>'
+      + '</div>';
+
+    if (flags.length){
+      html += '<div class="bw-flagged">';
+      for (var k = 0; k < flags.length; k++){
+        html += '<span class="bw-flag">' + esc(flags[k]) + '</span>';
+      }
+      html += '</div>';
+    }
+
+    html += '</div>';
+  }
+
+  html += '</div>';
+  mount.innerHTML = html;
+}
+
 async function loadAdminData(){
   await Promise.all([loadDisabled(), loadAnnouncements(), loadNotes()]);
 }
@@ -2432,7 +2614,7 @@ function renderBanwave(){
   (function fixHashRedirect(){
     var h = (location.hash || '').replace(/^#/, '');
     if (!h || h.indexOf('/') !== -1 || h.indexOf('=') !== -1) return;
-    var known = ['cheats', 'scripts', 'news'];
+    var known = ['cheats', 'scripts', 'news', 'banwaves'];
     if (known.indexOf(h) !== -1) return;
     try { history.replaceState(null, '', '/' + h); } catch(e){}
   })();
