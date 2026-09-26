@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>API — WhatExpsAreOffline</title>
+<meta name="description" content="Free, public, auto-updating JSON API for Roblox executor status. Updated every 6 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe3;--paper-2:#ebe4d4;--paper-3:#e2d9c4;--ink:#16130d;--ink-2:#3a3428;--ink-3:#6b6455;--ink-4:#9a9080;--rule:#d4cbb5;--rule-hi:#b8ad91;--red:#b8232a;--red-2:#8a1a1f;--green:#2d6e34;--amber:#a56d0f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+code,pre{font-family:'JetBrains Mono',monospace}
+.container{max-width:900px;margin:0 auto;padding:32px 28px 120px}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--rule);text-transform:uppercase;flex-wrap:wrap;gap:12px}
+.top a{color:var(--red)}
+.top a:hover{text-decoration:underline}
+h1{font-weight:900;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.04em;line-height:1;padding:32px 0 12px}
+h1 .accent{color:var(--red)}
+.lede{font-size:1.05rem;color:var(--ink-2);padding-bottom:28px;border-bottom:2px solid var(--ink);margin-bottom:36px}
+h2{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;padding:36px 0 12px;color:var(--ink)}
+h3{font-weight:700;font-size:1.05rem;padding:18px 0 8px;color:var(--ink)}
+p{padding:6px 0;color:var(--ink-2)}
+ul{padding:6px 0 6px 22px;color:var(--ink-2)}
+li{padding:3px 0}
+.info-box{background:var(--paper-2);border:1px solid var(--rule-hi);border-left:4px solid var(--ink);padding:16px 20px;margin:20px 0;font-size:.9rem}
+.info-box .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:4px}
+.info-box .v{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink);word-break:break-all}
+.endpoint{border:1px solid var(--rule-hi);background:var(--paper-2);margin:20px 0;overflow:hidden}
+.endpoint-head{display:flex;align-items:baseline;gap:12px;padding:14px 20px;border-bottom:1px solid var(--rule-hi);background:var(--paper);flex-wrap:wrap}
+.method{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;background:var(--green);color:#fff}
+.path{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:600;color:var(--ink);word-break:break-all}
+.endpoint-desc{padding:12px 20px 0;font-size:.9rem;color:var(--ink-2)}
+.endpoint-body{padding:14px 20px 20px}
+pre{background:var(--paper);border:1px solid var(--rule-hi);padding:14px 16px;font-size:12px;line-height:1.6;overflow-x:auto;color:var(--ink);white-space:pre;position:relative}
+pre .copy{position:absolute;top:8px;right:8px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--rule-hi);background:var(--paper-2);color:var(--ink-3);cursor:pointer;transition:all .12s}
+pre .copy:hover{border-color:var(--ink);color:var(--ink)}
+pre .copy.copied{background:var(--green);color:#fff;border-color:var(--green)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.85rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);font-weight:600;border-bottom:2px solid var(--ink)}
+td code{font-size:12px;background:var(--paper-3);padding:1px 6px;color:var(--ink)}
+.note{background:rgba(165,109,15,.08);border:1px solid var(--amber);border-left:4px solid var(--amber);padding:14px 18px;margin:16px 0;font-size:.88rem;color:var(--ink-2)}
+.note strong{color:var(--amber)}
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--ink-3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--red);border-bottom:1px solid currentColor}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="top">
+  <span><a href="/">← WhatExpsAreOffline</a></span>
+  <span>API v1 · Public</span>
+</div>
+
+<h1>Public <span class="accent">API</span></h1>
+<p class="lede">Free, auto-updating JSON API for Roblox executor status. No key required, no auth, CORS-enabled. Updated every 6 hours by a GitHub Action.</p>
+
+<div class="info-box">
+  <span class="k">Base URL</span>
+  <span class="v">https://weaoffline.vercel.app/api</span>
+</div>
+
+<div class="info-box">
+  <span class="k">Format</span>
+  <span class="v">JSON · UTF-8</span>
+</div>
+
+<div class="info-box">
+  <span class="k">Update cadence</span>
+  <span class="v">Every 6 hours · check meta.json for updatedAt</span>
+</div>
+
+<h2>Quick start</h2>
+<pre><code>curl https://weaoffline.vercel.app/api/executors.json</code></pre>
+<pre><code>const res = await fetch('https://weaoffline.vercel.app/api/executors.json');
+const data = await res.json();
+console.log(data.count, 'executors tracked');
+for (const ex of data.executors) {
+  if (ex.banwaveRisk) console.log('⚠', ex.title);
+}</code></pre>
+
+<h2>Endpoints</h2>
+
+<div class="endpoint">
+  <div class="endpoint-head"><span class="method">GET</span><span class="path">/api/executors.json</span></div>
+  <div class="endpoint-desc">Every executor, in one bundle. This is what the site itself uses.</div>
+  <div class="endpoint-body">
+    <pre><code>{
+  "updatedAt": "2026-09-26T18:00:00.000Z",
+  "version": 1,
+  "sources": ["weao.gg", "scriptblox.com"],
+  "count": 32,
+  "executors": [ /* see Executor schema below */ ]
+}</code></pre>
+  </div>
+</div>
+
+<div class="endpoint">
+  <div class="endpoint-head"><span class="method">GET</span><span class="path">/api/executors/{slug}.json</span></div>
+  <div class="endpoint-desc">Single executor by slug. Cheap — use this if you only need one.</div>
+  <div class="endpoint-body">
+    <pre><code>curl https://weaoffline.vercel.app/api/executors/potassium.json</code></pre>
+    <pre><code>{
+  "slug": "potassium",
+  "title": "Potassium",
+  "version": "2.5.0",
+  "status": "online",
+  "sunc": 100,
+  "unc": 99,
+  "pricing": { "free": false, "cost": "$22.99 Lifetime" }
+  /* ...full Executor schema... */
+}</code></pre>
+  </div>
+</div>
+
+<div class="endpoint">
+  <div class="endpoint-head"><span class="method">GET</span><span class="path">/api/meta.json</span></div>
+  <div class="endpoint-desc">Timestamps and counts. Cheap poll target if you just want to know if data changed.</div>
+  <div class="endpoint-body">
+    <pre><code>{
+  "updatedAt": "2026-09-26T18:00:00.000Z",
+  "count": 32,
+  "version": 1
+}</code></pre>
+  </div>
+</div>
+
+<div class="endpoint">
+  <div class="endpoint-head"><span class="method">GET</span><span class="path">/api/status.json</span></div>
+  <div class="endpoint-desc">Summary counts. Fast to parse, good for status badges.</div>
+  <div class="endpoint-body">
+    <pre><code>{
+  "updatedAt": "2026-09-26T18:00:00.000Z",
+  "banwaveActive": false,
+  "banwaveRiskCount": 0,
+  "onlineCount": 24,
+  "offlineCount": 8,
+  "totalCount": 32
+}</code></pre>
+  </div>
+</div>
+
+<div class="endpoint">
+  <div class="endpoint-head"><span class="method">GET</span><span class="path">/api/banwaves.json</span></div>
+  <div class="endpoint-desc">Historical banwave sessions, newest first. 30 days retention.</div>
+  <div class="endpoint-body">
+    <pre><code>{
+  "updatedAt": "2026-09-26T18:00:00.000Z",
+  "count": 4,
+  "sessions": [
+    {
+      "startedAt": "2026-08-12T10:00:00.000Z",
+      "endedAt": "2026-08-13T22:00:00.000Z",
+      "peakFlagged": 6,
+      "flagged": ["Potassium", "Wave", "..."],
+      "durationMs": 129600000
+    }
+  ]
+}</code></pre>
+  </div>
+</div>
+
+<h2>Executor schema</h2>
+<p>Every entry in <code>executors[]</code> and every <code>/api/executors/{slug}.json</code> response has this shape:</p>
+
+<table>
+  <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+  <tr><td><code>slug</code></td><td>string</td><td>URL-safe id, e.g. <code>potassium</code></td></tr>
+  <tr><td><code>title</code></td><td>string</td><td>Display name</td></tr>
+  <tr><td><code>version</code></td><td>string</td><td>Latest known version</td></tr>
+  <tr><td><code>updatedDate</code></td><td>string | null</td><td>Human-readable last update</td></tr>
+  <tr><td><code>platform</code></td><td>string | null</td><td><code>Windows</code>, <code>Mac</code>, <code>Android</code>, <code>iOS</code></td></tr>
+  <tr><td><code>type</code></td><td>string</td><td><code>executor</code> · <code>external</code> · <code>mac</code> · <code>android</code></td></tr>
+  <tr><td><code>status</code></td><td>string</td><td><code>online</code> · <code>offline</code> · <code>banwave-risk</code></td></tr>
+  <tr><td><code>banwaveRisk</code></td><td>bool</td><td>True if flagged</td></tr>
+  <tr><td><code>detected</code></td><td>bool</td><td>Ever seen in a past banwave</td></tr>
+  <tr><td><code>detectionReason</code></td><td>string | null</td><td>Human-readable reason</td></tr>
+  <tr><td><code>sunc</code></td><td>number | null</td><td>0–100</td></tr>
+  <tr><td><code>unc</code></td><td>number | null</td><td>0–100</td></tr>
+  <tr><td><code>pricing.free</code></td><td>bool</td><td>—</td></tr>
+  <tr><td><code>pricing.cost</code></td><td>string | null</td><td>e.g. <code>"$22.99 Lifetime"</code></td></tr>
+  <tr><td><code>creator</code></td><td>string | null</td><td>—</td></tr>
+  <tr><td><code>description</code></td><td>string | null</td><td>Plain text, may contain markdown links</td></tr>
+  <tr><td><code>features</code></td><td>string[]</td><td>See feature enum below</td></tr>
+  <tr><td><code>links.*</code></td><td>string | null</td><td><code>website</code>, <code>discord</code>, <code>purchase</code>, <code>store</code>, <code>showcase</code></td></tr>
+  <tr><td><code>logo</code></td><td>string | null</td><td>Image URL</td></tr>
+  <tr><td><code>views</code></td><td>number | null</td><td>ScriptBlox view count</td></tr>
+  <tr><td><code>sources</code></td><td>string[]</td><td><code>weao</code>, <code>scriptblox</code></td></tr>
+  <tr><td><code>overrides</code></td><td>bool</td><td>True if manually corrected</td></tr>
+</table>
+
+<h3>Feature enum</h3>
+<ul>
+  <li><code>decompiler</code></li>
+  <li><code>multi-inject</code></li>
+  <li><code>raknet</code></li>
+  <li><code>key-system</code></li>
+  <li><code>client-mods</code></li>
+  <li><code>unc</code></li>
+  <li><code>element-certified</code></li>
+</ul>
+
+<h2>Rate limits &amp; caching</h2>
+<div class="note">
+  <strong>Please cache.</strong> Responses are cached at the CDN for 5–10 minutes. Don't poll more than once every 5 minutes. Use <code>/api/meta.json</code> to check whether data changed before refetching the full bundle.
+</div>
+<p>No authentication, no per-IP rate limit right now. If abuse becomes a problem, one will be added — you'll see it here first.</p>
+
+<h2>CORS</h2>
+<p>Every <code>/api/*</code> response includes:</p>
+<pre><code>Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, OPTIONS</code></pre>
+<p>Fetch directly from any browser context. No proxy needed.</p>
+
+<h2>Versioning</h2>
+<p>The current API is <strong>v1</strong>. Every response includes a <code>version</code> field. If a breaking change ever lands, it goes to <code>/api/v2/</code> and v1 keeps working for at least 90 days. Field additions are not breaking.</p>
+
+<h2>Attribution</h2>
+<p>Data is aggregated from <a href="https://weao.gg" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px solid currentColor">weao.gg</a> and <a href="https://scriptblox.com" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px solid currentColor">scriptblox.com</a>. If you build something public on top, a link back is appreciated but not required.</p>
+
+<footer>
+  <span>WhatExpsAreOffline API · v1 · Free forever</span>
+  <span><a href="/">← Back to site</a></span>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('pre').forEach(function(pre){
+  var btn = document.createElement('button');
+  btn.className = 'copy';
+  btn.textContent = 'copy';
+  btn.addEventListener('click', function(){
+    var code = pre.querySelector('code');
+    var text = code ? code.textContent : pre.textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      btn.classList.add('copied');
+      btn.textContent = 'copied';
+      setTimeout(function(){ btn.classList.remove('copied'); btn.textContent = 'copy'; }, 1200);
+    });
+  });
+  pre.appendChild(btn);
+});
+</script>
+</body>
+            </html>
