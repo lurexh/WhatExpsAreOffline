@@ -5,7 +5,7 @@
   "updatedDate": "09/22/2026 at 7:46 PM UTC",
   "platform": "Windows",
   "type": "external",
-  "status": "online",
+  "status": "offline",
   "banwaveRisk": false,
   "detected": false,
   "detectionReason": null,
