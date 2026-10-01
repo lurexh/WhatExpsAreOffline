@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T02:35:21.118Z",
+  "updatedAt": "2026-10-01T11:53:25.011Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.3.6",
-      "updatedDate": "09/30/2026 at 5:10 PM UTC",
+      "version": "2.3.7",
+      "updatedDate": "10/01/2026 at 2:56 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -831,11 +831,11 @@
     {
       "slug": "solara",
       "title": "Solara",
-      "version": "0.1.7a",
-      "updatedDate": "09/25/2026 at 2:07 AM UTC",
+      "version": "0.1.7b",
+      "updatedDate": "10/01/2026 at 4:09 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
@@ -912,8 +912,8 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "739.2b",
-      "updatedDate": "09/23/2026 at 7:30 AM UTC",
+      "version": "740.1b",
+      "updatedDate": "10/01/2026 at 5:04 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "offline",
