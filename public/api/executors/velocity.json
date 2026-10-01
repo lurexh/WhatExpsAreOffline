@@ -20,7 +20,6 @@
   "features": [
     "decompiler",
     "multi-inject",
-    "key-system",
     "client-mods",
     "unc",
     "element-certified"
