@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T22:02:38.426Z",
+  "updatedAt": "2026-10-02T02:41:07.038Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -33,7 +33,7 @@
         "website": "https://www.serotonin.win/",
         "discord": "https://discord.com/invite/serotonin",
         "purchase": "https://bloxproducts.com/r/weao#Serotonin",
-        "store": "https://rcheatz.com/product?id=serotonin&ref=ScriptBlox",
+        "store": "https://rocheats.com/product?id=serotonin-roblox-external&ref=scriptblox",
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/serotonin/logo.png",
@@ -74,7 +74,7 @@
         "website": "https://voltbz.net/",
         "discord": "https://discord.com/invite/voltbz",
         "purchase": "https://rcheatz.com/product?id=volt&ref=weao",
-        "store": "https://rcheatz.com/product?id=volt&ref=ScriptBlox",
+        "store": "https://rocheats.com/product?id=volt-roblox-executor&ref=scriptblox",
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/volt/logo.png",
@@ -111,7 +111,7 @@
         "website": "https://matcha-latte.win/",
         "discord": "https://discord.gg/VbJXKZmEw5",
         "purchase": "https://bloxproducts.com/r/weao#Matcha",
-        "store": "https://rcheatz.com/product?id=matcha&ref=ScriptBlox",
+        "store": "https://rocheats.com/product?id=matcha-external&ref=scriptblox",
         "showcase": null
       },
       "logo": "https://scriptblox.com/images/exec/thumbs/matcha.webp",
@@ -152,7 +152,7 @@
         "website": "https://www.potassium.pro/",
         "discord": "https://discord.com/invite/potassium",
         "purchase": "https://bloxproducts.com/r/weao#Potassium",
-        "store": "https://rcheatz.com/product?id=potassium&ref=ScriptBlox",
+        "store": "https://rocheats.com/product?id=potassium-roblox-executor&ref=scriptblox",
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/potassium/logo.png",
@@ -230,7 +230,7 @@
         "website": "https://getwave.gg",
         "discord": "https://discord.gg/rARhPpN7fY",
         "purchase": "https://bloxproducts.com/?affiliate_key=weao#Wave",
-        "store": "https://rcheatz.com/product?id=wave&ref=ScriptBlox",
+        "store": "https://rocheats.com/product?id=wave-roblox-executor&ref=scriptblox",
         "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
       },
       "logo": "https://cdn.weao.gg/slug/wave/logo.png",
@@ -582,7 +582,7 @@
         "website": "https://isaeva.xyz/",
         "discord": "https://discord.gg/6xFWKd4Qcr",
         "purchase": "https://cheapkeyz.store/products/isaeva?r=weao",
-        "store": "https://cheapkeyz.store/products/isaeva?r=weao",
+        "store": "https://rocheats.com/product?id=isaeva-roblox-executor&ref=scriptblox",
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/isaeva/logo.png",
@@ -1100,7 +1100,7 @@
         "website": "https://codex.lol",
         "discord": "https://discord.gg/codexlol",
         "purchase": "https://rcheatz.com/affiliate/weao",
-        "store": "https://rocheats.com",
+        "store": null,
         "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
       },
       "logo": "https://cdn.weao.gg/slug/codex/logo.png",
