@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T16:52:19.058Z",
+  "updatedAt": "2026-10-02T21:28:24.153Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -555,8 +555,8 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.3.8",
-      "updatedDate": "09/30/2026 at 6:50 PM UTC",
+      "version": "2.3.9",
+      "updatedDate": "10/02/2026 at 9:02 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
