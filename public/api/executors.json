@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T15:16:33.515Z",
+  "updatedAt": "2026-10-03T20:15:37.266Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.3.9",
-      "updatedDate": "10/03/2026 at 3:10 AM UTC",
+      "version": "2.4.0",
+      "updatedDate": "10/03/2026 at 6:21 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -747,8 +747,8 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.4.3",
-      "updatedDate": "10/03/2026 at 2:25 PM UTC",
+      "version": "1.4.4",
+      "updatedDate": "10/03/2026 at 5:38 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
