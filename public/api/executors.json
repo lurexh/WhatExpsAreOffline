@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T02:27:27.513Z",
+  "updatedAt": "2026-10-03T10:42:05.758Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.3.8",
-      "updatedDate": "10/03/2026 at 1:23 AM UTC",
+      "version": "2.3.9",
+      "updatedDate": "10/03/2026 at 3:10 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -747,8 +747,8 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.4.1",
-      "updatedDate": "10/01/2026 at 12:25 AM UTC",
+      "version": "1.4.2",
+      "updatedDate": "10/03/2026 at 2:51 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -911,8 +911,8 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "740.1b",
-      "updatedDate": "10/01/2026 at 5:04 AM UTC",
+      "version": "740.1",
+      "updatedDate": "10/03/2026 at 8:37 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "offline",
