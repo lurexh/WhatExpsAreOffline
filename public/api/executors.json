@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T20:31:46.519Z",
+  "updatedAt": "2026-10-05T02:31:15.938Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -911,11 +911,11 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "740.1",
-      "updatedDate": "10/03/2026 at 8:37 AM UTC",
+      "version": "741.1",
+      "updatedDate": "10/05/2026 at 1:53 AM UTC",
       "platform": "Mac",
       "type": "mac",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": false,
       "detectionReason": null,
