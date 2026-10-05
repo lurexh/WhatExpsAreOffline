@@ -1,8 +1,8 @@
 {
   "slug": "velocity",
   "title": "Velocity",
-  "version": "1.4.4",
-  "updatedDate": "10/03/2026 at 5:38 PM UTC",
+  "version": "1.4.5",
+  "updatedDate": "10/05/2026 at 4:45 AM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",
