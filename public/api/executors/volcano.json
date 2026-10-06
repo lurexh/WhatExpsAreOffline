@@ -1,25 +1,26 @@
 {
   "slug": "volcano",
   "title": "Volcano",
-  "version": "v3.2.5.1",
-  "updatedDate": "03/01/2026 at 8:42 PM UTC",
+  "version": "v3.2.3",
+  "updatedDate": "10/06/2026 at 2:56 AM UTC",
   "platform": "Windows",
   "type": "executor",
-  "status": "offline",
+  "status": "online",
   "banwaveRisk": false,
   "detected": true,
   "detectionReason": null,
   "sunc": 96,
   "unc": 99,
   "pricing": {
-    "free": false,
-    "cost": "$5.97 Weekly"
+    "free": true,
+    "cost": null
   },
   "creator": "(Co)",
   "description": "Volcano is a premium Windows script executor developed by Co, costing $5.97 weekly, featuring: \n\n* Clean executor interface\n* SysGuard (Cheatbuddy’s sandboxing solution)\n* 96% sUNC\n* Decent update speed under normal Roblox update conditions\n* Comes with a decompiler built in and supports Multi-Instance\n\nVolcano originally operated as a Freemium exploit, but after SysGuard was implemented, it turned to a subscription-based model. \n\n! Things to keep in mind: \n\n! Previously, Volcano operated under the name **Electron** (the same one from **Pre-Hyperion/UWP**) until releasing multiple times Post-Hyperion and facing banwaves. Existing Electron customers were compensated with a Lifetime Volcano key, and since then, no banwaves have occurred due to client-modification detections being implemented in Roblox after the Hunt event.",
   "features": [
     "decompiler",
     "multi-inject",
+    "key-system",
     "client-mods",
     "unc"
   ],

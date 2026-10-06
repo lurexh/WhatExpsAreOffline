@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T23:23:21.614Z",
+  "updatedAt": "2026-10-06T03:25:31.629Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -631,46 +631,6 @@
       "overrides": false
     },
     {
-      "slug": "cosmic",
-      "title": "Cosmic",
-      "version": "1.733",
-      "updatedDate": "08/08/2026 at 9:41 PM UTC",
-      "platform": "Windows",
-      "type": "executor",
-      "status": "offline",
-      "banwaveRisk": false,
-      "detected": true,
-      "detectionReason": null,
-      "sunc": 100,
-      "unc": 99,
-      "pricing": {
-        "free": false,
-        "cost": "$14.99 Lifetime"
-      },
-      "creator": "savage",
-      "description": "Cosmic is a budget-friendly premium Windows script executor priced at $14.99 lifetime, featuring:\n\n* Working Multi-Instance\n* Decompiler\n* 100% sUNC\n* Custom UI Support\n* Fast updates under normal Roblox update conditions\n\n! Things to keep in mind:\n\n! Cosmic has quickly gained attention in the exploiting community, with some users claiming it performs better than Potassium while being about $8 cheaper, making it an obvious great choice for newer exploiters on a budget and experienced script developers, thanks to its good environment. However, it is still a relatively new executor, so its long-term reliability and lifespan are not yet fully proven.",
-      "features": [
-        "decompiler",
-        "multi-inject",
-        "client-mods",
-        "unc"
-      ],
-      "links": {
-        "website": "https://cosmic.best",
-        "discord": null,
-        "purchase": null,
-        "store": null,
-        "showcase": null
-      },
-      "logo": "https://cdn.weao.gg/slug/cosmic/cosmic-transparent.png",
-      "views": null,
-      "sources": [
-        "weao",
-        "scriptblox"
-      ],
-      "overrides": false
-    },
-    {
       "slug": "ronin",
       "title": "Ronin",
       "version": "Version-4.1.9",
@@ -700,6 +660,47 @@
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/ronin/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "velocity",
+      "title": "Velocity",
+      "version": "1.4.5",
+      "updatedDate": "10/05/2026 at 4:45 AM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 99,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "CG",
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc",
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://realvelocity.xyz/",
+        "discord": "https://discord.com/invite/velocityide",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/velocity/logo.png",
       "views": null,
       "sources": [
         "weao",
@@ -745,39 +746,38 @@
       "overrides": false
     },
     {
-      "slug": "velocity",
-      "title": "Velocity",
-      "version": "1.4.5",
-      "updatedDate": "10/05/2026 at 4:45 AM UTC",
+      "slug": "cosmic",
+      "title": "Cosmic",
+      "version": "1.733",
+      "updatedDate": "08/08/2026 at 9:41 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "online",
+      "status": "offline",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
       "sunc": 100,
       "unc": 99,
       "pricing": {
-        "free": true,
-        "cost": null
+        "free": false,
+        "cost": "$14.99 Lifetime"
       },
-      "creator": "CG",
-      "description": "No description currently available. Check back soon!",
+      "creator": "savage",
+      "description": "Cosmic is a budget-friendly premium Windows script executor priced at $14.99 lifetime, featuring:\n\n* Working Multi-Instance\n* Decompiler\n* 100% sUNC\n* Custom UI Support\n* Fast updates under normal Roblox update conditions\n\n! Things to keep in mind:\n\n! Cosmic has quickly gained attention in the exploiting community, with some users claiming it performs better than Potassium while being about $8 cheaper, making it an obvious great choice for newer exploiters on a budget and experienced script developers, thanks to its good environment. However, it is still a relatively new executor, so its long-term reliability and lifespan are not yet fully proven.",
       "features": [
         "decompiler",
         "multi-inject",
         "client-mods",
-        "unc",
-        "element-certified"
+        "unc"
       ],
       "links": {
-        "website": "https://realvelocity.xyz/",
-        "discord": "https://discord.com/invite/velocityide",
+        "website": "https://cosmic.best",
+        "discord": null,
         "purchase": null,
         "store": null,
         "showcase": null
       },
-      "logo": "https://cdn.weao.gg/slug/velocity/logo.png",
+      "logo": "https://cdn.weao.gg/slug/cosmic/cosmic-transparent.png",
       "views": null,
       "sources": [
         "weao",
@@ -1225,25 +1225,26 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.5.1",
-      "updatedDate": "03/01/2026 at 8:42 PM UTC",
+      "version": "v3.2.3",
+      "updatedDate": "10/06/2026 at 2:56 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
       "sunc": 96,
       "unc": 99,
       "pricing": {
-        "free": false,
-        "cost": "$5.97 Weekly"
+        "free": true,
+        "cost": null
       },
       "creator": "(Co)",
       "description": "Volcano is a premium Windows script executor developed by Co, costing $5.97 weekly, featuring: \n\n* Clean executor interface\n* SysGuard (Cheatbuddy’s sandboxing solution)\n* 96% sUNC\n* Decent update speed under normal Roblox update conditions\n* Comes with a decompiler built in and supports Multi-Instance\n\nVolcano originally operated as a Freemium exploit, but after SysGuard was implemented, it turned to a subscription-based model. \n\n! Things to keep in mind: \n\n! Previously, Volcano operated under the name **Electron** (the same one from **Pre-Hyperion/UWP**) until releasing multiple times Post-Hyperion and facing banwaves. Existing Electron customers were compensated with a Lifetime Volcano key, and since then, no banwaves have occurred due to client-modification detections being implemented in Roblox after the Hunt event.",
       "features": [
         "decompiler",
         "multi-inject",
+        "key-system",
         "client-mods",
         "unc"
       ],
