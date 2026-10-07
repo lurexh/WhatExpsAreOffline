@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T02:49:13.549Z",
+  "updatedAt": "2026-10-07T12:07:40.951Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -555,8 +555,8 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.4.1",
-      "updatedDate": "10/06/2026 at 7:08 AM UTC",
+      "version": "2.4.2",
+      "updatedDate": "10/07/2026 at 5:11 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -748,8 +748,8 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.3.1",
-      "updatedDate": "10/06/2026 at 3:52 AM UTC",
+      "version": "v3.2.3.3",
+      "updatedDate": "10/07/2026 at 3:32 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
