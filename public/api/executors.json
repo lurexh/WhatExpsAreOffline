@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T03:07:09.604Z",
+  "updatedAt": "2026-10-08T12:18:02.078Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -670,8 +670,8 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.4.7",
-      "updatedDate": "10/08/2026 at 1:42 AM UTC",
+      "version": "1.4.8",
+      "updatedDate": "10/08/2026 at 6:33 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -689,6 +689,7 @@
       "features": [
         "decompiler",
         "multi-inject",
+        "key-system",
         "client-mods",
         "unc",
         "element-certified"
@@ -748,11 +749,11 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.3.3",
-      "updatedDate": "10/07/2026 at 3:32 AM UTC",
+      "version": "v3.2.4",
+      "updatedDate": "10/08/2026 at 4:59 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
@@ -951,8 +952,8 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "742.1",
-      "updatedDate": "10/07/2026 at 10:02 PM UTC",
+      "version": "742.3",
+      "updatedDate": "10/08/2026 at 10:01 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "online",
