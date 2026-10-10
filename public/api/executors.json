@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T11:26:19.911Z",
+  "updatedAt": "2026-10-10T16:25:23.882Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -670,8 +670,8 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.4.9",
-      "updatedDate": "10/09/2026 at 10:16 PM UTC",
+      "version": "1.5.0",
+      "updatedDate": "10/10/2026 at 12:45 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
