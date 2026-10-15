@@ -5,7 +5,7 @@
   "updatedDate": "10/14/2026 at 9:19 PM UTC",
   "platform": "Windows",
   "type": "executor",
-  "status": "online",
+  "status": "offline",
   "banwaveRisk": false,
   "detected": true,
   "detectionReason": null,
