@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T10:24:39.569Z",
+  "updatedAt": "2026-10-15T15:49:03.820Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -125,11 +125,11 @@
     {
       "slug": "potassium",
       "title": "Potassium",
-      "version": "2.5.2",
-      "updatedDate": "10/08/2026 at 12:47 PM UTC",
+      "version": "2.5.3",
+      "updatedDate": "10/15/2026 at 3:05 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: June 1st",
@@ -670,11 +670,11 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.5.1",
-      "updatedDate": "10/11/2026 at 10:08 PM UTC",
+      "version": "1.5.3",
+      "updatedDate": "10/15/2026 at 2:06 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
