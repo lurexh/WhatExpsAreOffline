@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T01:48:11.118Z",
+  "updatedAt": "2026-10-16T10:12:14.047Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,11 +321,11 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.5.6",
-      "updatedDate": "10/12/2026 at 10:09 PM UTC",
+      "version": "2.5.8",
+      "updatedDate": "10/16/2026 at 9:34 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: May 26",
@@ -513,11 +513,11 @@
     {
       "slug": "real",
       "title": "Real",
-      "version": "2.7.7",
-      "updatedDate": "10/15/2026 at 4:55 PM UTC",
+      "version": "2.7.8",
+      "updatedDate": "10/16/2026 at 10:08 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
