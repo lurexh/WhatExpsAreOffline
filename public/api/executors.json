@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T15:38:11.064Z",
+  "updatedAt": "2026-10-16T20:08:44.092Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.5.8",
-      "updatedDate": "10/16/2026 at 9:34 AM UTC",
+      "version": "2.5.9",
+      "updatedDate": "10/16/2026 at 4:46 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -555,11 +555,11 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.4.6",
-      "updatedDate": "10/14/2026 at 9:19 PM UTC",
+      "version": "2.4.7",
+      "updatedDate": "10/16/2026 at 4:53 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
