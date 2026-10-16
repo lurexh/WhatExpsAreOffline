@@ -1,8 +1,8 @@
 {
   "slug": "real",
   "title": "Real",
-  "version": "2.7.8",
-  "updatedDate": "10/16/2026 at 10:08 AM UTC",
+  "version": "2.7.9",
+  "updatedDate": "10/16/2026 at 10:38 AM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",
