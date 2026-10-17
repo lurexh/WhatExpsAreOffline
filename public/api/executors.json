@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:29:38.023Z",
+  "updatedAt": "2026-10-17T19:44:45.449Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -47,11 +47,11 @@
     {
       "slug": "volt",
       "title": "Volt",
-      "version": "1.3.17.2",
-      "updatedDate": "10/14/2026 at 2:02 AM UTC",
+      "version": "1.3.18.6",
+      "updatedDate": "10/17/2026 at 4:22 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: March 6-18th",
