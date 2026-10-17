@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:08:44.092Z",
+  "updatedAt": "2026-10-17T01:42:20.757Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -348,8 +348,8 @@
       "links": {
         "website": "https://getmadium.net/",
         "discord": "https://discord.com/invite/olemad",
-        "purchase": null,
-        "store": null,
+        "purchase": "http://wyv.gg/product/madium/ref/weao/",
+        "store": "http://wyv.gg/product/madium/ref/weao/",
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/madium/logo.png",
@@ -386,8 +386,8 @@
       "links": {
         "website": "https://madius.dev/",
         "discord": "https://discord.com/invite/olemad",
-        "purchase": null,
-        "store": null,
+        "purchase": "http://wyv.gg/product/madius/ref/weao/",
+        "store": "http://wyv.gg/product/madius/ref/weao/",
         "showcase": null
       },
       "logo": null,
@@ -749,8 +749,8 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.6",
-      "updatedDate": "10/16/2026 at 2:33 PM UTC",
+      "version": "v3.2.6.1",
+      "updatedDate": "10/16/2026 at 10:27 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
