@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T17:49:04.247Z",
+  "updatedAt": "2026-10-19T21:46:05.185Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -514,7 +514,7 @@
       "slug": "real",
       "title": "Real",
       "version": "2.7.9",
-      "updatedDate": "10/16/2026 at 10:38 AM UTC",
+      "updatedDate": "10/19/2026 at 7:36 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
