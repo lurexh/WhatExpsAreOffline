@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T10:43:01.336Z",
+  "updatedAt": "2026-10-22T16:07:42.684Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -47,8 +47,8 @@
     {
       "slug": "volt",
       "title": "Volt",
-      "version": "1.3.19.2",
-      "updatedDate": "10/21/2026 at 6:04 PM UTC",
+      "version": "1.3.19.4",
+      "updatedDate": "10/22/2026 at 4:04 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -125,11 +125,11 @@
     {
       "slug": "potassium",
       "title": "Potassium",
-      "version": "2.5.4",
-      "updatedDate": "10/16/2026 at 2:46 PM UTC",
+      "version": "2.5.5",
+      "updatedDate": "10/22/2026 at 3:57 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: June 1st",
@@ -218,7 +218,7 @@
         "cost": "$4.99 Weekly"
       },
       "creator": "Wave Team",
-      "description": "Wave is a premium Windows script executor, costing $5.99 weekly, featuring: \n\n* Nice executor interface \n* 100% sUNC, Decompiler, Multi-Instance support\n* Decent reputation\n\nWave is one of the oldest premium exploits still available on the market (dating back to KRAMPUS.GG), although a different team now develops Wave.\n\n! Things to keep in mind: \n\n! The experience of using this executor is not as great due to the **new developers** working on it (not the same developers from 2025), but they have at least proven they are able to keep updating\n\n! The executor interface is the same as [Fusion](https://www.youtube.com/live/6yLGExPnRHY), though it is said that it was **sold** to them\n\n! **For the price, there are other options that might perform better**",
+      "description": "Wave is a premium Windows script executor, costing $4.99 weekly, featuring: \n\n* Nice executor interface \n* 100% sUNC, Decompiler, Multi-Instance support\n* Decent reputation\n\nWave is one of the oldest premium exploits still available on the market (dating back to KRAMPUS.GG), although a different team now develops Wave.\n\n! Things to keep in mind: \n\n! The experience of using this executor may not be as great due to the **new developers** working on it (not the same developers from 2025), but they have at least proven they are able to keep updating",
       "features": [
         "decompiler",
         "multi-inject",

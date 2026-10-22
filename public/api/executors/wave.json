@@ -16,7 +16,7 @@
     "cost": "$4.99 Weekly"
   },
   "creator": "Wave Team",
-  "description": "Wave is a premium Windows script executor, costing $5.99 weekly, featuring: \n\n* Nice executor interface \n* 100% sUNC, Decompiler, Multi-Instance support\n* Decent reputation\n\nWave is one of the oldest premium exploits still available on the market (dating back to KRAMPUS.GG), although a different team now develops Wave.\n\n! Things to keep in mind: \n\n! The experience of using this executor is not as great due to the **new developers** working on it (not the same developers from 2025), but they have at least proven they are able to keep updating\n\n! The executor interface is the same as [Fusion](https://www.youtube.com/live/6yLGExPnRHY), though it is said that it was **sold** to them\n\n! **For the price, there are other options that might perform better**",
+  "description": "Wave is a premium Windows script executor, costing $4.99 weekly, featuring: \n\n* Nice executor interface \n* 100% sUNC, Decompiler, Multi-Instance support\n* Decent reputation\n\nWave is one of the oldest premium exploits still available on the market (dating back to KRAMPUS.GG), although a different team now develops Wave.\n\n! Things to keep in mind: \n\n! The experience of using this executor may not be as great due to the **new developers** working on it (not the same developers from 2025), but they have at least proven they are able to keep updating",
   "features": [
     "decompiler",
     "multi-inject",
