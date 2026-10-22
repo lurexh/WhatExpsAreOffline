@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T02:02:10.956Z",
+  "updatedAt": "2026-10-22T10:43:01.336Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -749,11 +749,11 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.7",
-      "updatedDate": "10/19/2026 at 1:46 PM UTC",
+      "version": "v3.2.7.1",
+      "updatedDate": "10/22/2026 at 3:19 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
