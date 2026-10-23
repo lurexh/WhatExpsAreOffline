@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T20:53:08.040Z",
+  "updatedAt": "2026-10-23T02:06:33.370Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -363,11 +363,11 @@
     {
       "slug": "madius",
       "title": "Madius",
-      "version": "1.11.6-beta",
-      "updatedDate": "10/19/2026 at 10:59 PM UTC",
+      "version": "1.11.7-beta",
+      "updatedDate": "10/22/2026 at 9:58 PM UTC",
       "platform": "Windows",
       "type": "external",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": false,
       "detectionReason": null,
