@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T02:06:33.370Z",
+  "updatedAt": "2026-10-23T10:35:08.187Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -829,8 +829,8 @@
     {
       "slug": "sirhurt",
       "title": "SirHurt",
-      "version": "V5.475",
-      "updatedDate": "10/20/2026 at 8:16 PM UTC",
+      "version": "V5.477",
+      "updatedDate": "10/23/2026 at 2:11 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -871,8 +871,8 @@
     {
       "slug": "solara",
       "title": "Solara",
-      "version": "0.1.7c",
-      "updatedDate": "10/21/2026 at 7:31 AM UTC",
+      "version": "0.1.7d",
+      "updatedDate": "10/23/2026 at 5:18 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
