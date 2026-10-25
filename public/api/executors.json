@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:05:56.890Z",
+  "updatedAt": "2026-10-25T20:02:34.567Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -994,8 +994,8 @@
     {
       "slug": "opiumware",
       "title": "Opiumware",
-      "version": "v2.5.8",
-      "updatedDate": "10/25/2026 at 7:41 AM UTC",
+      "version": "v2.5.8-hotfix1",
+      "updatedDate": "10/25/2026 at 7:53 PM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "offline",
