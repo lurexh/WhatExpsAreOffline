@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T17:42:16.692Z",
+  "updatedAt": "2026-10-26T21:57:17.619Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.6.7",
-      "updatedDate": "10/26/2026 at 4:47 PM UTC",
+      "version": "2.6.9",
+      "updatedDate": "10/26/2026 at 9:51 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
