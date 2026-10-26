@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T01:53:52.982Z",
+  "updatedAt": "2026-10-26T11:37:06.914Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -952,8 +952,8 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "744.1",
-      "updatedDate": "10/24/2026 at 5:38 AM UTC",
+      "version": "744.2",
+      "updatedDate": "10/26/2026 at 4:31 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "online",
