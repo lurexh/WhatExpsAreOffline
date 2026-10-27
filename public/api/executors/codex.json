@@ -1,39 +1,33 @@
 {
   "slug": "codex",
   "title": "Codex",
-  "version": "2.731.944",
-  "updatedDate": "08/10/2026 at 9:14 PM UTC",
+  "version": "2.726.1142",
+  "updatedDate": "2026-07-03T14:19:25.001Z",
   "platform": "Android",
   "type": "android",
-  "status": "offline",
+  "status": "online",
   "banwaveRisk": false,
-  "detected": true,
+  "detected": false,
   "detectionReason": null,
-  "sunc": 96,
-  "unc": 98,
+  "sunc": null,
+  "unc": null,
   "pricing": {
     "free": true,
     "cost": null
   },
-  "creator": "Furky",
-  "description": "No description currently available. Check back soon!",
-  "features": [
-    "decompiler",
-    "key-system",
-    "client-mods",
-    "unc"
-  ],
+  "creator": "Furky & Pain",
+  "description": "Codex stands out as the premier Roblox script executor, providing unparalleled functionality to effortlessly run scripts for your preferred Roblox games.",
+  "features": [],
   "links": {
-    "website": "https://codex.lol",
+    "website": "https://codex.lol/",
     "discord": "https://discord.gg/codexlol",
-    "purchase": "https://rcheatz.com/affiliate/weao",
+    "purchase": null,
     "store": null,
     "showcase": "https://youtube.com/watch?v=ft-1qNT_dQE"
   },
-  "logo": "https://cdn.weao.gg/slug/codex/logo.png",
+  "logo": "https://scriptblox.com/images/exec/thumbs/Codex.png",
   "views": null,
   "sources": [
-    "weao",
     "scriptblox"
   ],
   "overrides": false
