@@ -1,8 +1,8 @@
 {
   "slug": "volcano",
   "title": "Volcano",
-  "version": "v3.2.7.2",
-  "updatedDate": "10/26/2026 at 3:16 PM UTC",
+  "version": "v3.2.8.2",
+  "updatedDate": "10/27/2026 at 4:02 PM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",
