@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T21:30:16.549Z",
+  "updatedAt": "2026-10-28T02:41:03.178Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -167,10 +167,10 @@
       "slug": "severe",
       "title": "Severe",
       "version": "v2",
-      "updatedDate": "10/21/2026 at 12:59 AM UTC",
+      "updatedDate": "10/28/2026 at 1:05 AM UTC",
       "platform": "Windows",
       "type": "external",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": false,
       "detectionReason": null,
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.7.1",
-      "updatedDate": "10/27/2026 at 5:17 PM UTC",
+      "version": "2.7.4",
+      "updatedDate": "10/28/2026 at 12:21 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
