@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T17:27:56.549Z",
+  "updatedAt": "2026-10-28T21:55:28.604Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -321,8 +321,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.7.5",
-      "updatedDate": "10/28/2026 at 1:09 PM UTC",
+      "version": "2.7.7",
+      "updatedDate": "10/28/2026 at 8:52 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -478,8 +478,8 @@
     {
       "slug": "axis",
       "title": "Axis",
-      "version": "0.5.1-e411b4b2ba2ef272",
-      "updatedDate": "10/27/2026 at 9:20 PM UTC",
+      "version": "0.5.2-a7f47393ba2ef272",
+      "updatedDate": "10/28/2026 at 9:32 PM UTC",
       "platform": "Windows",
       "type": "external",
       "status": "online",
@@ -555,8 +555,8 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.6.0",
-      "updatedDate": "10/27/2026 at 8:30 PM UTC",
+      "version": "2.6.1",
+      "updatedDate": "10/28/2026 at 6:52 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
