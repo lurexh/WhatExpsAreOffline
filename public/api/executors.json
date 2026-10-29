@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T21:55:28.604Z",
+  "updatedAt": "2026-10-29T02:59:53.922Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -319,55 +319,13 @@
       "overrides": false
     },
     {
-      "slug": "madium",
-      "title": "Madium",
-      "version": "2.7.7",
-      "updatedDate": "10/28/2026 at 8:52 PM UTC",
-      "platform": "Windows",
-      "type": "executor",
-      "status": "online",
-      "banwaveRisk": false,
-      "detected": true,
-      "detectionReason": "Last banwave: May 26",
-      "sunc": 100,
-      "unc": 98,
-      "pricing": {
-        "free": true,
-        "cost": null
-      },
-      "creator": "Olemad",
-      "description": "Free Windows script executor by Olemad, key system.",
-      "features": [
-        "decompiler",
-        "multi-inject",
-        "raknet",
-        "key-system",
-        "client-mods",
-        "unc"
-      ],
-      "links": {
-        "website": "https://getmadium.net/",
-        "discord": "https://discord.com/invite/olemad",
-        "purchase": "http://wyv.gg/product/madium/ref/weao/",
-        "store": "http://wyv.gg/product/madium/ref/weao/",
-        "showcase": null
-      },
-      "logo": "https://cdn.weao.gg/slug/madium/logo.png",
-      "views": null,
-      "sources": [
-        "weao",
-        "scriptblox"
-      ],
-      "overrides": false
-    },
-    {
       "slug": "madius",
       "title": "Madius",
-      "version": "1.11.7-beta",
-      "updatedDate": "10/22/2026 at 9:58 PM UTC",
+      "version": "1.11.8-beta",
+      "updatedDate": "10/29/2026 at 12:18 AM UTC",
       "platform": "Windows",
       "type": "external",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": false,
       "detectionReason": null,
@@ -511,6 +469,85 @@
       "overrides": false
     },
     {
+      "slug": "madium",
+      "title": "Madium",
+      "version": "2.7.7",
+      "updatedDate": "10/28/2026 at 8:52 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": "Last banwave: May 26",
+      "sunc": 100,
+      "unc": 98,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": "Olemad",
+      "description": "Free Windows script executor by Olemad, key system.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "key-system",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getmadium.net/",
+        "discord": "https://discord.com/invite/olemad",
+        "purchase": "http://wyv.gg/product/madium/ref/weao/",
+        "store": "http://wyv.gg/product/madium/ref/weao/",
+        "showcase": null
+      },
+      "logo": "https://cdn.weao.gg/slug/madium/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "photon",
+      "title": "Photon",
+      "version": "7.1",
+      "updatedDate": "10/27/2026 at 4:09 PM UTC",
+      "platform": "Windows",
+      "type": "external",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": false,
+      "detectionReason": null,
+      "sunc": null,
+      "unc": null,
+      "pricing": {
+        "free": false,
+        "cost": "$20 Lifetime"
+      },
+      "creator": null,
+      "description": "No description currently available. Check back soon!",
+      "features": [
+        "element-certified"
+      ],
+      "links": {
+        "website": "https://photons.solutions/",
+        "discord": "https://discord.gg/vro",
+        "purchase": "https://photons.solutions/buy/photon-external/",
+        "store": "https://photons.solutions/buy/photon-external/",
+        "showcase": null
+      },
+      "logo": "https://scriptblox.com/images/exec/thumbs/photon.webp",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
       "slug": "real",
       "title": "Real",
       "version": "2.7.10",
@@ -594,10 +631,10 @@
       "overrides": false
     },
     {
-      "slug": "photon",
-      "title": "Photon",
-      "version": "7.1",
-      "updatedDate": "10/27/2026 at 4:09 PM UTC",
+      "slug": "dx9ware-v2",
+      "title": "DX9WARE V2",
+      "version": "1.1.226",
+      "updatedDate": "10/27/2026 at 5:49 PM UTC",
       "platform": "Windows",
       "type": "external",
       "status": "online",
@@ -608,7 +645,7 @@
       "unc": null,
       "pricing": {
         "free": false,
-        "cost": "$20 Lifetime"
+        "cost": "$15 Lifetime"
       },
       "creator": null,
       "description": "No description currently available. Check back soon!",
@@ -616,13 +653,13 @@
         "element-certified"
       ],
       "links": {
-        "website": "https://photons.solutions/",
-        "discord": "https://discord.gg/vro",
-        "purchase": "https://photons.solutions/buy/photon-external/",
-        "store": "https://photons.solutions/buy/photon-external/",
+        "website": "https://cultofintellect.com/",
+        "discord": "https://discord.gg/coi",
+        "purchase": "https://cultofintellect.com/dx9ware#pricing",
+        "store": "https://cultofintellect.com/dx9ware#pricing",
         "showcase": null
       },
-      "logo": "https://scriptblox.com/images/exec/thumbs/photon.webp",
+      "logo": "https://scriptblox.com/images/exec/thumbs/dx9ware-v2.webp",
       "views": null,
       "sources": [
         "weao",
@@ -671,50 +708,13 @@
       "overrides": false
     },
     {
-      "slug": "dx9ware-v2",
-      "title": "DX9WARE V2",
-      "version": "1.1.226",
-      "updatedDate": "10/27/2026 at 5:49 PM UTC",
-      "platform": "Windows",
-      "type": "external",
-      "status": "online",
-      "banwaveRisk": false,
-      "detected": false,
-      "detectionReason": null,
-      "sunc": null,
-      "unc": null,
-      "pricing": {
-        "free": false,
-        "cost": "$15 Lifetime"
-      },
-      "creator": null,
-      "description": "No description currently available. Check back soon!",
-      "features": [
-        "element-certified"
-      ],
-      "links": {
-        "website": "https://cultofintellect.com/",
-        "discord": "https://discord.gg/coi",
-        "purchase": "https://cultofintellect.com/dx9ware#pricing",
-        "store": "https://cultofintellect.com/dx9ware#pricing",
-        "showcase": null
-      },
-      "logo": "https://scriptblox.com/images/exec/thumbs/dx9ware-v2.webp",
-      "views": null,
-      "sources": [
-        "weao",
-        "scriptblox"
-      ],
-      "overrides": false
-    },
-    {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.5.4",
-      "updatedDate": "10/16/2026 at 11:08 AM UTC",
+      "version": "1.5.6",
+      "updatedDate": "10/28/2026 at 10:56 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
