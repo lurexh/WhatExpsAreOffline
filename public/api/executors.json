@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-29T17:38:50.132Z",
+  "updatedAt": "2026-10-29T22:03:50.775Z",
   "version": 1,
   "sources": [
     "weao.gg",
     "scriptblox.com"
   ],
-  "count": 31,
+  "count": 32,
   "executors": [
     {
       "slug": "serotonin",
@@ -125,11 +125,11 @@
     {
       "slug": "potassium",
       "title": "Potassium",
-      "version": "2.5.6",
-      "updatedDate": "10/24/2026 at 11:00 PM UTC",
+      "version": "2.6.0",
+      "updatedDate": "10/29/2026 at 7:07 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: June 1st",
@@ -311,6 +311,47 @@
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/synapsez/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "lucid",
+      "title": "Lucid",
+      "version": "1.0.3",
+      "updatedDate": "10/25/2026 at 11:46 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "offline",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 96,
+      "unc": 98,
+      "pricing": {
+        "free": false,
+        "cost": "$5.99 Weekly"
+      },
+      "creator": null,
+      "description": "Paid Windows script executor, $5.99 Weekly.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "raknet",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getlucid.gg/",
+        "discord": "https://discord.gg/Jup2CS3nE8",
+        "purchase": "https://getlucid.gg/resellers",
+        "store": "https://getlucid.gg/resellers",
+        "showcase": null
+      },
+      "logo": null,
       "views": null,
       "sources": [
         "weao",
@@ -750,8 +791,8 @@
       "overrides": false
     },
     {
-      "slug": "cosmic",
-      "title": "Cosmic",
+      "slug": "lynx",
+      "title": "Lynx",
       "version": "1.733",
       "updatedDate": "08/08/2026 at 9:41 PM UTC",
       "platform": "Windows",
@@ -775,8 +816,8 @@
         "unc"
       ],
       "links": {
-        "website": "https://cosmic.best",
-        "discord": null,
+        "website": "https://getlynx.gg",
+        "discord": "https://discord.gg/getlynx",
         "purchase": null,
         "store": null,
         "showcase": null

@@ -1,0 +1,41 @@
+{
+  "slug": "lucid",
+  "title": "Lucid",
+  "version": "1.0.3",
+  "updatedDate": "10/25/2026 at 11:46 PM UTC",
+  "platform": "Windows",
+  "type": "executor",
+  "status": "offline",
+  "banwaveRisk": false,
+  "detected": true,
+  "detectionReason": null,
+  "sunc": 96,
+  "unc": 98,
+  "pricing": {
+    "free": false,
+    "cost": "$5.99 Weekly"
+  },
+  "creator": null,
+  "description": "Paid Windows script executor, $5.99 Weekly.",
+  "features": [
+    "decompiler",
+    "multi-inject",
+    "raknet",
+    "client-mods",
+    "unc"
+  ],
+  "links": {
+    "website": "https://getlucid.gg/",
+    "discord": "https://discord.gg/Jup2CS3nE8",
+    "purchase": "https://getlucid.gg/resellers",
+    "store": "https://getlucid.gg/resellers",
+    "showcase": null
+  },
+  "logo": null,
+  "views": null,
+  "sources": [
+    "weao",
+    "scriptblox"
+  ],
+  "overrides": false
+}
