@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T02:59:53.922Z",
+  "updatedAt": "2026-10-29T11:50:45.229Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -471,8 +471,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.7.7",
-      "updatedDate": "10/28/2026 at 8:52 PM UTC",
+      "version": "2.7.8",
+      "updatedDate": "10/29/2026 at 11:05 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -670,8 +670,8 @@
     {
       "slug": "volcano",
       "title": "Volcano",
-      "version": "v3.2.9.2",
-      "updatedDate": "10/28/2026 at 10:01 AM UTC",
+      "version": "v3.2.9.3",
+      "updatedDate": "10/29/2026 at 7:57 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
