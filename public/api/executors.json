@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T22:03:50.775Z",
+  "updatedAt": "2026-10-30T03:05:02.659Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -322,10 +322,10 @@
       "slug": "lucid",
       "title": "Lucid",
       "version": "1.0.3",
-      "updatedDate": "10/25/2026 at 11:46 PM UTC",
+      "updatedDate": "10/30/2026 at 12:36 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
