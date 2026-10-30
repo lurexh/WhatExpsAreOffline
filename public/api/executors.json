@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T17:17:41.794Z",
+  "updatedAt": "2026-10-30T21:43:18.710Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -203,11 +203,11 @@
     {
       "slug": "wave",
       "title": "Wave",
-      "version": "NEW-1.5.9",
-      "updatedDate": "10/21/2026 at 4:44 AM UTC",
+      "version": "NEW-1.6.0",
+      "updatedDate": "10/30/2026 at 8:12 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": "Last banwave: May 26",
@@ -591,11 +591,11 @@
     {
       "slug": "real",
       "title": "Real",
-      "version": "2.7.10",
-      "updatedDate": "10/27/2026 at 6:30 PM UTC",
+      "version": "3.0.1",
+      "updatedDate": "10/30/2026 at 7:40 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
