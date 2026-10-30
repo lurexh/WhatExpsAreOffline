@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T11:43:25.816Z",
+  "updatedAt": "2026-10-30T17:17:41.794Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -363,7 +363,7 @@
       "slug": "madius",
       "title": "Madius",
       "version": "1.11.8-beta",
-      "updatedDate": "10/29/2026 at 12:18 AM UTC",
+      "updatedDate": "10/30/2026 at 4:54 PM UTC",
       "platform": "Windows",
       "type": "external",
       "status": "online",
@@ -512,8 +512,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.7.8",
-      "updatedDate": "10/29/2026 at 11:05 AM UTC",
+      "version": "2.8.0",
+      "updatedDate": "10/30/2026 at 5:13 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -633,8 +633,8 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.6.2",
-      "updatedDate": "10/29/2026 at 12:24 PM UTC",
+      "version": "2.6.3",
+      "updatedDate": "10/30/2026 at 4:30 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -875,8 +875,8 @@
     {
       "slug": "solara",
       "title": "Solara",
-      "version": "0.1.7d",
-      "updatedDate": "10/28/2026 at 4:08 PM UTC",
+      "version": "0.1.8a",
+      "updatedDate": "10/30/2026 at 2:46 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",

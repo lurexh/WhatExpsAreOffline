@@ -1,8 +1,8 @@
 {
   "slug": "madium",
   "title": "Madium",
-  "version": "2.7.8",
-  "updatedDate": "10/29/2026 at 11:05 AM UTC",
+  "version": "2.8.0",
+  "updatedDate": "10/30/2026 at 5:13 PM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",
