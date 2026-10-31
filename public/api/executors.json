@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T21:43:18.710Z",
+  "updatedAt": "2026-10-31T02:51:27.422Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -347,8 +347,8 @@
       "links": {
         "website": "https://getlucid.gg/",
         "discord": "https://discord.gg/Jup2CS3nE8",
-        "purchase": "https://getlucid.gg/resellers",
-        "store": "https://getlucid.gg/resellers",
+        "purchase": "http://bloxproducts.com/r/weao#Lucid",
+        "store": "http://bloxproducts.com/r/weao#Lucid",
         "showcase": null
       },
       "logo": null,
@@ -512,8 +512,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.8.0",
-      "updatedDate": "10/30/2026 at 5:13 PM UTC",
+      "version": "2.8.1",
+      "updatedDate": "10/30/2026 at 9:57 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -633,8 +633,8 @@
     {
       "slug": "isaeva",
       "title": "Isaeva",
-      "version": "2.6.3",
-      "updatedDate": "10/30/2026 at 4:30 PM UTC",
+      "version": "2.6.4",
+      "updatedDate": "10/31/2026 at 1:45 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
