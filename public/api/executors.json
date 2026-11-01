@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T02:44:03.021Z",
+  "updatedAt": "2026-11-01T12:06:32.366Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -279,11 +279,11 @@
     {
       "slug": "synapse-z",
       "title": "Synapse Z",
-      "version": "1.0.3.7",
-      "updatedDate": "10/07/2026 at 6:50 PM UTC",
+      "version": "1.0.3.8",
+      "updatedDate": "11/01/2026 at 2:47 AM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
