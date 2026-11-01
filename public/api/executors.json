@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T20:42:42.736Z",
+  "updatedAt": "2026-11-01T02:44:03.021Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -797,7 +797,7 @@
       "updatedDate": "08/08/2026 at 9:41 PM UTC",
       "platform": "Windows",
       "type": "executor",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": true,
       "detectionReason": null,
@@ -875,8 +875,8 @@
     {
       "slug": "solara",
       "title": "Solara",
-      "version": "0.1.8a",
-      "updatedDate": "10/30/2026 at 2:46 PM UTC",
+      "version": "0.1.8b",
+      "updatedDate": "11/01/2026 at 2:11 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
