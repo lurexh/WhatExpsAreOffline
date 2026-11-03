@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-03T00:05:26.288Z",
+  "updatedAt": "2026-11-03T13:04:14.220Z",
   "version": 1,
   "sources": [
     "weao.gg",
     "scriptblox.com"
   ],
-  "count": 32,
+  "count": 33,
   "executors": [
     {
       "slug": "serotonin",
@@ -467,6 +467,46 @@
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/seliware/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "athena",
+      "title": "Athena",
+      "version": "0.2.7",
+      "updatedDate": "10/29/2026 at 8:48 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 96,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": null,
+      "description": "Free Windows script executor.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getathena.gg/",
+        "discord": "https://discord.gg/EWuswf5cK",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": null,
       "views": null,
       "sources": [
         "weao",
@@ -999,8 +1039,8 @@
     {
       "slug": "opiumware",
       "title": "Opiumware",
-      "version": "v2.5.9",
-      "updatedDate": "10/31/2026 at 3:40 AM UTC",
+      "version": "v2.5.9-hotfix1",
+      "updatedDate": "11/03/2026 at 3:06 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "online",
