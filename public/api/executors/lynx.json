@@ -1,8 +1,8 @@
 {
   "slug": "lynx",
   "title": "Lynx",
-  "version": "1.733",
-  "updatedDate": "08/08/2026 at 9:41 PM UTC",
+  "version": "0.745",
+  "updatedDate": "11/03/2026 at 8:02 PM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",

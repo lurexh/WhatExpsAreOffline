@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T13:04:14.220Z",
+  "updatedAt": "2026-11-03T22:37:10.279Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -475,46 +475,6 @@
       "overrides": false
     },
     {
-      "slug": "athena",
-      "title": "Athena",
-      "version": "0.2.7",
-      "updatedDate": "10/29/2026 at 8:48 PM UTC",
-      "platform": "Windows",
-      "type": "executor",
-      "status": "online",
-      "banwaveRisk": false,
-      "detected": true,
-      "detectionReason": null,
-      "sunc": 100,
-      "unc": 96,
-      "pricing": {
-        "free": true,
-        "cost": null
-      },
-      "creator": null,
-      "description": "Free Windows script executor.",
-      "features": [
-        "decompiler",
-        "multi-inject",
-        "client-mods",
-        "unc"
-      ],
-      "links": {
-        "website": "https://getathena.gg/",
-        "discord": "https://discord.gg/EWuswf5cK",
-        "purchase": null,
-        "store": null,
-        "showcase": null
-      },
-      "logo": null,
-      "views": null,
-      "sources": [
-        "weao",
-        "scriptblox"
-      ],
-      "overrides": false
-    },
-    {
       "slug": "axis",
       "title": "Axis",
       "version": "0.5.2-a7f47393ba2ef272",
@@ -833,8 +793,8 @@
     {
       "slug": "lynx",
       "title": "Lynx",
-      "version": "1.733",
-      "updatedDate": "08/08/2026 at 9:41 PM UTC",
+      "version": "0.745",
+      "updatedDate": "11/03/2026 at 8:02 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -1292,6 +1252,45 @@
         "website": "https://melatonin.win/",
         "discord": "https://discord.gg/rcTdg9wbVa",
         "purchase": "https://melatonin.win/index.php?account/upgrades",
+        "store": null,
+        "showcase": null
+      },
+      "logo": null,
+      "views": null,
+      "sources": [
+        "weao"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "athena",
+      "title": "Athena",
+      "version": "0.2.7",
+      "updatedDate": "10/29/2026 at 8:48 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 96,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": null,
+      "description": null,
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getathena.gg/",
+        "discord": "https://discord.gg/EWuswf5cK",
+        "purchase": null,
         "store": null,
         "showcase": null
       },
