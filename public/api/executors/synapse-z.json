@@ -1,8 +1,8 @@
 {
   "slug": "synapse-z",
   "title": "Synapse Z",
-  "version": "1.0.3.8",
-  "updatedDate": "11/01/2026 at 2:47 AM UTC",
+  "version": "1.0.3.9",
+  "updatedDate": "11/02/2026 at 3:59 PM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",

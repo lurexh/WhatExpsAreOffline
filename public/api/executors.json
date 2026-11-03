@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T13:55:32.231Z",
+  "updatedAt": "2026-11-03T00:05:26.288Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -279,8 +279,8 @@
     {
       "slug": "synapse-z",
       "title": "Synapse Z",
-      "version": "1.0.3.8",
-      "updatedDate": "11/01/2026 at 2:47 AM UTC",
+      "version": "1.0.3.9",
+      "updatedDate": "11/02/2026 at 3:59 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -347,8 +347,8 @@
       "links": {
         "website": "https://getlucid.gg/",
         "discord": "https://discord.gg/Jup2CS3nE8",
-        "purchase": "http://bloxproducts.com/r/weao#Lucid",
-        "store": "http://bloxproducts.com/r/weao#Lucid",
+        "purchase": "https://rcheatz.com/product?id=lucid&ref=weao",
+        "store": "https://rcheatz.com/product?id=lucid&ref=ScriptBlox",
         "showcase": null
       },
       "logo": null,
