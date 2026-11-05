@@ -16,7 +16,7 @@
     "cost": null
   },
   "creator": null,
-  "description": null,
+  "description": "Free Windows script executor.",
   "features": [
     "decompiler",
     "multi-inject",
@@ -33,7 +33,8 @@
   "logo": null,
   "views": null,
   "sources": [
-    "weao"
+    "weao",
+    "scriptblox"
   ],
   "overrides": false
 }

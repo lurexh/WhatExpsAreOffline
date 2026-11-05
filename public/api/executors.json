@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T22:55:55.884Z",
+  "updatedAt": "2026-11-05T03:50:17.021Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -467,6 +467,46 @@
         "showcase": null
       },
       "logo": "https://cdn.weao.gg/slug/seliware/logo.png",
+      "views": null,
+      "sources": [
+        "weao",
+        "scriptblox"
+      ],
+      "overrides": false
+    },
+    {
+      "slug": "athena",
+      "title": "Athena",
+      "version": "0.2.7",
+      "updatedDate": "10/29/2026 at 8:48 PM UTC",
+      "platform": "Windows",
+      "type": "executor",
+      "status": "online",
+      "banwaveRisk": false,
+      "detected": true,
+      "detectionReason": null,
+      "sunc": 100,
+      "unc": 96,
+      "pricing": {
+        "free": true,
+        "cost": null
+      },
+      "creator": null,
+      "description": "Free Windows script executor.",
+      "features": [
+        "decompiler",
+        "multi-inject",
+        "client-mods",
+        "unc"
+      ],
+      "links": {
+        "website": "https://getathena.gg/",
+        "discord": "https://discord.gg/EWuswf5cK",
+        "purchase": null,
+        "store": null,
+        "showcase": null
+      },
+      "logo": null,
       "views": null,
       "sources": [
         "weao",
@@ -1252,45 +1292,6 @@
         "website": "https://melatonin.win/",
         "discord": "https://discord.gg/rcTdg9wbVa",
         "purchase": "https://melatonin.win/index.php?account/upgrades",
-        "store": null,
-        "showcase": null
-      },
-      "logo": null,
-      "views": null,
-      "sources": [
-        "weao"
-      ],
-      "overrides": false
-    },
-    {
-      "slug": "athena",
-      "title": "Athena",
-      "version": "0.2.7",
-      "updatedDate": "10/29/2026 at 8:48 PM UTC",
-      "platform": "Windows",
-      "type": "executor",
-      "status": "online",
-      "banwaveRisk": false,
-      "detected": true,
-      "detectionReason": null,
-      "sunc": 100,
-      "unc": 96,
-      "pricing": {
-        "free": true,
-        "cost": null
-      },
-      "creator": null,
-      "description": null,
-      "features": [
-        "decompiler",
-        "multi-inject",
-        "client-mods",
-        "unc"
-      ],
-      "links": {
-        "website": "https://getathena.gg/",
-        "discord": "https://discord.gg/EWuswf5cK",
-        "purchase": null,
         "store": null,
         "showcase": null
       },
