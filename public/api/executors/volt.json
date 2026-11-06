@@ -5,7 +5,7 @@
   "updatedDate": "11/05/2026 at 12:40 PM UTC",
   "platform": "Windows",
   "type": "executor",
-  "status": "online",
+  "status": "offline",
   "banwaveRisk": false,
   "detected": true,
   "detectionReason": "Last banwave: March 6-18th",
@@ -25,7 +25,7 @@
     "unc"
   ],
   "links": {
-    "website": "https://voltbz.net/",
+    "website": "https://volt.rs/",
     "discord": "https://discord.com/invite/voltbz",
     "purchase": "https://rcheatz.com/product?id=volt&ref=weao",
     "store": "https://rcheatz.com/product?id=volt&ref=ScriptBlox",
