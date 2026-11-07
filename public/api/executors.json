@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T17:15:54.561Z",
+  "updatedAt": "2026-11-07T21:07:37.259Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -362,11 +362,11 @@
     {
       "slug": "madius",
       "title": "Madius",
-      "version": "1.11.8-beta",
-      "updatedDate": "10/30/2026 at 4:54 PM UTC",
+      "version": "1.11.9-beta",
+      "updatedDate": "11/07/2026 at 7:12 PM UTC",
       "platform": "Windows",
       "type": "external",
-      "status": "offline",
+      "status": "online",
       "banwaveRisk": false,
       "detected": false,
       "detectionReason": null,
@@ -632,8 +632,8 @@
     {
       "slug": "madium",
       "title": "Madium",
-      "version": "2.8.5",
-      "updatedDate": "11/06/2026 at 12:54 AM UTC",
+      "version": "2.8.6",
+      "updatedDate": "11/07/2026 at 7:51 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -792,8 +792,8 @@
     {
       "slug": "athena",
       "title": "Athena",
-      "version": "1.0.0",
-      "updatedDate": "11/06/2026 at 9:39 PM UTC",
+      "version": "1.0.1",
+      "updatedDate": "11/07/2026 at 6:57 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -1039,8 +1039,8 @@
     {
       "slug": "opiumware",
       "title": "Opiumware",
-      "version": "v2.5.9-hotfix1",
-      "updatedDate": "11/03/2026 at 3:06 AM UTC",
+      "version": "v2.6.0",
+      "updatedDate": "11/07/2026 at 7:42 PM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "offline",

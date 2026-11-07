@@ -1,8 +1,8 @@
 {
   "slug": "athena",
   "title": "Athena",
-  "version": "1.0.0",
-  "updatedDate": "11/06/2026 at 9:39 PM UTC",
+  "version": "1.0.1",
+  "updatedDate": "11/07/2026 at 6:57 PM UTC",
   "platform": "Windows",
   "type": "executor",
   "status": "online",
