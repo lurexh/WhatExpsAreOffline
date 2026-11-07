@@ -1,22 +1,22 @@
 {
   "slug": "athena",
   "title": "Athena",
-  "version": "0.2.7",
-  "updatedDate": "10/29/2026 at 8:48 PM UTC",
+  "version": "1.0.0",
+  "updatedDate": "11/06/2026 at 9:39 PM UTC",
   "platform": "Windows",
   "type": "executor",
-  "status": "offline",
+  "status": "online",
   "banwaveRisk": false,
   "detected": true,
   "detectionReason": null,
   "sunc": 100,
   "unc": 96,
   "pricing": {
-    "free": true,
-    "cost": null
+    "free": false,
+    "cost": "$4.99 Weekly"
   },
   "creator": null,
-  "description": "Free Windows script executor.",
+  "description": "Paid Windows script executor, $4.99 Weekly.",
   "features": [
     "decompiler",
     "multi-inject",
@@ -26,8 +26,8 @@
   "links": {
     "website": "https://getathena.gg/",
     "discord": "https://discord.gg/EWuswf5cK",
-    "purchase": null,
-    "store": null,
+    "purchase": "https://getathena.gg/resellers",
+    "store": "https://getathena.gg/resellers",
     "showcase": null
   },
   "logo": null,
