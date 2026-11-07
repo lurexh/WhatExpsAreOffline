@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T03:21:04.649Z",
+  "updatedAt": "2026-11-07T11:57:41.622Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -817,8 +817,8 @@
       "links": {
         "website": "https://getathena.gg/",
         "discord": "https://discord.gg/EWuswf5cK",
-        "purchase": "https://getathena.gg/resellers",
-        "store": "https://getathena.gg/resellers",
+        "purchase": "https://wyv.gg/product/athena-executor/ref/weao",
+        "store": "https://wyv.gg/product/athena-executor/ref/weao",
         "showcase": null
       },
       "logo": null,
@@ -997,8 +997,8 @@
     {
       "slug": "macsploit",
       "title": "MacSploit",
-      "version": "746.1",
-      "updatedDate": "11/06/2026 at 7:26 AM UTC",
+      "version": "746.2",
+      "updatedDate": "11/07/2026 at 5:51 AM UTC",
       "platform": "Mac",
       "type": "mac",
       "status": "online",
