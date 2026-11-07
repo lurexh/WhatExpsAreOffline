@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T11:57:41.622Z",
+  "updatedAt": "2026-11-07T17:15:54.561Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -565,7 +565,7 @@
       "unc": null,
       "pricing": {
         "free": false,
-        "cost": "$20 Lifetime"
+        "cost": "$22.99 Lifetime"
       },
       "creator": null,
       "description": "No description currently available. Check back soon!",
@@ -832,8 +832,8 @@
     {
       "slug": "velocity",
       "title": "Velocity",
-      "version": "1.5.8",
-      "updatedDate": "11/06/2026 at 9:07 AM UTC",
+      "version": "1.5.9",
+      "updatedDate": "11/07/2026 at 2:34 PM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
