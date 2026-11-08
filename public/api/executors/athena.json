@@ -20,6 +20,7 @@
   "features": [
     "decompiler",
     "multi-inject",
+    "raknet",
     "client-mods",
     "unc"
   ],
