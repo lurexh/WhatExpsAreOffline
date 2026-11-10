@@ -5,7 +5,7 @@
   "updatedDate": "11/09/2026 at 7:11 PM UTC",
   "platform": "Windows",
   "type": "executor",
-  "status": "online",
+  "status": "offline",
   "banwaveRisk": false,
   "detected": true,
   "detectionReason": null,
@@ -27,7 +27,7 @@
   "links": {
     "website": "https://isaeva.xyz/",
     "discord": "https://discord.gg/6xFWKd4Qcr",
-    "purchase": "https://cheapkeyz.store/products/isaeva?r=weao",
+    "purchase": "https://j3ware.xyz/products/?name=Isaeva",
     "store": "https://rocheats.com/product?id=isaeva-roblox-executor&ref=scriptblox",
     "showcase": null
   },
