@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T03:41:41.375Z",
+  "updatedAt": "2026-11-14T12:34:26.892Z",
   "version": 1,
   "sources": [
     "weao.gg",
@@ -792,8 +792,8 @@
     {
       "slug": "athena",
       "title": "Athena",
-      "version": "1.0.2",
-      "updatedDate": "11/10/2026 at 5:10 PM UTC",
+      "version": "1.0.3",
+      "updatedDate": "11/14/2026 at 9:25 AM UTC",
       "platform": "Windows",
       "type": "executor",
       "status": "online",
@@ -803,15 +803,16 @@
       "sunc": 100,
       "unc": 96,
       "pricing": {
-        "free": false,
+        "free": true,
         "cost": "$4.99 Weekly"
       },
       "creator": null,
-      "description": "Paid Windows script executor, $4.99 Weekly.",
+      "description": "Free Windows script executor, key system.",
       "features": [
         "decompiler",
         "multi-inject",
         "raknet",
+        "key-system",
         "client-mods",
         "unc"
       ],
